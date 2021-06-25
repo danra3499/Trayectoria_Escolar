@@ -1,4 +1,6 @@
-trayectoria escolar
+Trayectoria escolar
+
+
 Requisitos:
 
 1. Python
