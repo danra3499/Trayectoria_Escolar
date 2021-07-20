@@ -10,7 +10,7 @@ create table tipo_usuario(
 create table usuario(
   id int unsigned not null auto_increment,
   usuario varchar(20) not null,
-  nombres varchar(20) not null,
+  nombres varchar(20) not null,-- normalizar apellidos
   apellidos varchar(20) not null,
   password char(120) not null,
   tipo_usuario tinyint(1) unsigned not null,
