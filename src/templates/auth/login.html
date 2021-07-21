@@ -4,36 +4,41 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
 {% endblock %}
 {% block body %}
-<div class="formulario">
-  <form action="/login" method="POST">
-    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-    <div class="mb-3">
-      <label for="usuario" class="form-label">Número de empleado</label>
-      <input type="text" class="form-control" id="usuario" name="usuario">
-    </div>
-    <div class="mb-3">
-      <label for="password" class="form-label">Contraseña</label>
-      <input type="password" class="form-control" id="password" name="password">
-    </div>
-    <button type="submit" class="btn btn-primary">Ingresar</button>
+<div class="col-md-6 offset-md-3">
+  <h1 class="text-center mb-4">Login</h1>
+  <div class="card card-body">
+    <form action="/login" method="POST">
+      <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+      <div class="form-group mb-2">
+        <label for="usuario" class="form-label">Número de empleado</label>
+        <input type="text" class="form-control" id="usuario" name="usuario">
+      </div>
+      <div class="form-group mb-2">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password" name="password">
+      </div>
+      <button type="submit" class="btn btn-primary">Ingresar</button>
       {% with messages = get_flashed_messages(with_categories = True) %}
       {% if messages %}
-      <br/>
+      <br />
       {% for category, message in messages %}
       {% if category == 'warning' %}
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>{{message}}</strong>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+      <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+        <strong>{{message}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
       {% else %}
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>{{message}}</strong>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{message}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
       {% endif %}
       {% endfor %}
       {% endif %}
       {% endwith %}
-  </form>
+    </form>
+
+  </div>
+  <p class="text-center mt-5">Sistema trayectoria escolar ISC</p>
 </div>
 {% endblock %}

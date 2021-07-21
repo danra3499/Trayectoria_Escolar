@@ -3,7 +3,8 @@ class Config:
     MYSQL_HOST = 'localhost'
     MYSQL_USER = 'root'
     MYSQL_PASSWORD = 'secret'
-    MYSQL_DB = 'trayectoria_escolar'
+    MYSQL_DB = 't_e'
+
 
 class DevelopmentConfig(Config):
     DEBUG = True

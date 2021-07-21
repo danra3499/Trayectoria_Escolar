@@ -10,10 +10,19 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Evaluaciones</a>
+          <a class="nav-link" href="{{url_for('evaluar')}}">Evaluaciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Alumnos</a>
+          <a class="nav-link" href="{{url_for('agregar_alumno')}}">Alumnos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Docentes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('agregar_materia')}}">Materias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Índices</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

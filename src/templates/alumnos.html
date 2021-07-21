@@ -1,0 +1,100 @@
+{% extends 'body.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block body %}
+<div class="row">
+  <div class="col-md-5">
+    <div class="card card-body">
+      <h1 class="text-center">Registrar alumnos</h1>
+      <form action="/agregar_alumno" method="POST">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" name="numero_control" placeholder="Numero de control">
+        </div>
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" name="nombres" placeholder="Nombres">
+        </div>
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" name="apellido_p" placeholder="Apellido paterno">
+        </div>
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" name="apellido_m" placeholder="Apellido meterno">
+        </div>
+        <div class="form-group mb-2">
+          <label for="genero">Genero</label><br>
+          <input type="radio" value="M" name="genero">Masculino <br>
+          <input type="radio" value="F" name="genero">Femenino <br>
+        </div>
+        <div class="form-group mb-2">
+          <label for="status">Status</label><br>
+          <input type="radio" value="1" name="status">Activo <br>
+          <input type="radio" value="0" name="status">Baja <br>
+        </div>
+        <div class="form-group mb-2">
+          <input type="number" class="form-control" name="semestre" placeholder="Semestre example 2">
+        </div>
+        <div class="form-group mb-2">
+          <input type="number" class="form-control" name="grupo" placeholder="Grupo example 3801">
+        </div>
+        <input type="submit" value="agregar" class="btn btn-primary mt-3">
+      </form>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div class="card card-body">
+      <h1 class="text-center">Lista de alumnos</h1>
+      <table class="table table-striped table-bordered bg-white table-sm">
+        <thead>
+          <tr>
+            <td>Nombres</td>
+            <td>Apellido paterno</td>
+            <td>Apellido materno</td>
+            <td>No.Control</td>
+            <td>Genero</td>
+            <td>status</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for a in data %}
+          <tr>
+            <td>{{ a.nombres }}</td>
+            <td>{{ a.apellido_p }}</td>
+            <td>{{ a.apellido_m }}</td>
+            <td>{{ a.id }}</td>
+            <td>{{ a.genero }}</td>
+            <td>{{ a.status }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- <hr />
+<h1>Calificar alumnos</h1>
+<form action="/evaluar" method="POST">
+  <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+  <table>
+    <tr>
+      <th>fecha</th>
+      <th>Parcial</th>
+      <th>Materia</th>
+      <th>Nombre</th>
+      <th>No.Control</th>
+      <th>Calificacion</th>
+    </tr>
+    {% for a in data %}
+    <tr>
+      <td><input type="text" name="fecha" value="{{fecha}}" disabled></td>
+      <td><input type="number" name="parcial" value="1" disabled></td>
+      <td><input type="number" name="materia" value="1" disabled></td>
+      <td><input type="text" name="alumno" value="{{a.nombres}}" disabled></td>
+      <td><input type="text" name="id_alumno" value="{{a.id}}" disabled></td>
+      <td><input type="text" name="calificacion"></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <input type="submit" value="Guardar calificaciones">
+</form>
+<hr> -->
+{% endblock %}
