@@ -25,7 +25,7 @@ def load_user(id):
     return ModeloUsuario.get_id(db, id)
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         user = request.form['usuario']
@@ -37,7 +37,7 @@ def login():
         if logged != None:
             login_user(logged)
             flash(BIENVENIDA, 'success')
-            return redirect(url_for('index'))
+            return redirect(url_for('home'))
 
         else:
             flash(LOGIN_NO_VALIDO, 'warning')
@@ -48,25 +48,21 @@ def login():
 
 
 @app.route('/logout')
+@login_required
 def logout():
     logout_user()
     flash(LOGOUT, 'success')
     return redirect(url_for('login'))
 
 
+@app.route('/home')
 @login_required
-@app.route('/')
-def index():
+def home():
     return render_template('index.html', title='home')
 
 
-# @app.route('/password/<password>')
-# def generate_password(password):
-#     return generate_password_hash(password)
-
-# CRUD DE ALUMNOS Y MAESTROS
-
 @app.route('/agregar_alumno', methods=['POST', 'GET'])
+@login_required
 def agregar_alumno():
     alumnos = Modelo_alumno.obtener_alumnos(db)
     if request.method == 'POST':
@@ -87,6 +83,7 @@ def agregar_alumno():
 
 
 @app.route('/agregar_materia', methods=['POST', 'GET'])
+@login_required
 def agregar_materia():
     if request.method == 'POST':
         nombre = request.form['nombre']
@@ -99,6 +96,7 @@ def agregar_materia():
 
 
 @app.route('/evaluar', methods=['POST', 'GET'])
+@login_required
 def evaluar():
     if request.method == 'POST':
         parcial = request.form.getlist('parcial')

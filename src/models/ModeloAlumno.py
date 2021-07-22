@@ -17,13 +17,13 @@ class Modelo_alumno():
     def obtener_alumnos(self, db):
         try:
             cursor = db.connection.cursor()
-            query = """SELECT id, nombres, apellido_p, apellido_m FROM alumno"""
+            query = """SELECT id, nombres, apellido_p, apellido_m, genero, status FROM alumno"""
             cursor.execute(query)
             data = cursor.fetchall()
             alumnos = []
             for alumno in data:
                 alum = Alumno(alumno[0], alumno[1], alumno[2],
-                              alumno[3], None, None, None, None)
+                              alumno[3], alumno[4], alumno[5], None, None)
                 alumnos.append(alum)
             return alumnos
         except Exception as e:
