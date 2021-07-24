@@ -16,14 +16,172 @@
 
 {% endwith %}
 <div class="row mt-4">
-  <!-- <div class="col-sm-6">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div> -->
+  <div class="col-md-7">
+    <h1 class="text-center">Lista de alumnos</h1>
+    <table class="table table-striped table-bordered bg-white table-sm">
+      <thead>
+        <tr>
+          <td>Nombres</td>
+          <td>Apellido paterno</td>
+          <td>Apellido materno</td>
+          <td>No.Control</td>
+          <td>Genero</td>
+          <td>status</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for a in data.alumnos %}
+        <tr>
+          <td>{{ a.nombres }}</td>
+          <td>{{ a.apellido_p }}</td>
+          <td>{{ a.apellido_m }}</td>
+          <td>{{ a.id }}</td>
+          <td>{{ a.genero }}</td>
+          <td>{{ a.status }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-5">
+    <h1 class="text-center">Lista de materias</h1>
+    <h2 class="text-center">Primer semestre</h2>
+    <table class="table table-striped table-bordered bg-white table-sm">
+      <thead>
+        <tr>
+          <td>Nombre</td>
+          <td>No.Creditos</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m in data.materias1 %}
+        <tr>
+          <td>{{ m.nombre }}</td>
+          <td>{{ m.n_creditos }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2 class="text-center">Segundo semestre</h2>
+    <table class="table table-striped table-bordered bg-white table-sm">
+      <thead>
+        <tr>
+          <td>Nombre</td>
+          <td>No.Creditos</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m2 in data.materias2 %}
+        <tr>
+          <td>{{ m2.nombre }}</td>
+          <td>{{ m2.n_creditos }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2 class="text-center">Tercer semestre</h2>
+    <table class="table table-striped table-bordered bg-white table-sm">
+      <thead>
+        <tr>
+          <td>Nombre</td>
+          <td>No.Creditos</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m3 in data.materias3 %}
+        <tr>
+          <td>{{ m3.nombre }}</td>
+          <td>{{ m3.n_creditos }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2 class="text-center">Cuarto semestre</h2>
+    <table class="table table-striped table-bordered bg-white table-sm">
+      <thead>
+        <tr>
+          <td>Nombre</td>
+          <td>No.Creditos</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m4 in data.materias4 %}
+        <tr>
+          <td>{{ m4.nombre }}</td>
+          <td>{{ m4.n_creditos }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2 class="text-center">Quinto semestre</h2>
+    <table class="table table-striped table-bordered bg-white table-sm">
+      <thead>
+        <tr>
+          <td>Nombre</td>
+          <td>No.Creditos</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m5 in data.materias5 %}
+        <tr>
+          <td>{{ m5.nombre }}</td>
+          <td>{{ m5.n_creditos }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2 class="text-center">Sexto semestre</h2>
+    <table class="table table-striped table-bordered bg-white table-sm">
+      <thead>
+        <tr>
+          <td>Nombre</td>
+          <td>No.Creditos</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m6 in data.materias6 %}
+        <tr>
+          <td>{{ m6.nombre }}</td>
+          <td>{{ m6.n_creditos }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2 class="text-center">Septimo semestre</h2>
+    <table class="table table-striped table-bordered bg-white table-sm">
+      <thead>
+        <tr>
+          <td>Nombre</td>
+          <td>No.Creditos</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m7 in data.materias7 %}
+        <tr>
+          <td>{{ m7.nombre }}</td>
+          <td>{{ m7.n_creditos }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2 class="text-center">Octavo semestre</h2>
+    <table class="table table-striped table-bordered bg-white table-sm">
+      <thead>
+        <tr>
+          <td>Nombre</td>
+          <td>No.Creditos</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m8 in data.materias8 %}
+        <tr>
+          <td>{{ m8.nombre }}</td>
+          <td>{{ m8.n_creditos }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
 {% endblock %}
