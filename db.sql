@@ -73,12 +73,14 @@ values ('2017123026', 'Jorge Alberto', 'Garcia Estrada', 'pbkdf2:sha256:260000$d
 insert into semestre(nombre) values('primer semestre'), ('segundo semestre'), ('tercero semestre'), 
 ('cuartosemestre'), ('quinto semestre'), ('sexto semestre'), ('septimo semestre'), ('octavo semestre');
 
+-- GRUPOS
 insert into grupo(id, semestre) values(3101, 1), (3102, 1), (3111, 1),
 (3201, 2), (3202, 2), (3211, 2), (3301, 3), (3302, 3), (3311, 3),
 (3401, 4), (3402, 4), (3411, 4), (3501, 5), (3502, 5), (3511, 5),
 (3601, 6), (3602, 6), (3611, 6), (3701, 7), (3702, 7), (3711, 7),
 (3801, 8), (3802, 8), (3811, 8);
 
+-- MATERIAS
 insert into materia(nombre, n_creditos, id_semestre) values
 -- SEMESTRE 1
 ('CALCULO DIFERENCIAL', 5, 1),
