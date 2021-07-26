@@ -80,6 +80,22 @@ insert into grupo(id, semestre) values(3101, 1), (3102, 1), (3111, 1),
 (3601, 6), (3602, 6), (3611, 6), (3701, 7), (3702, 7), (3711, 7),
 (3801, 8), (3802, 8), (3811, 8);
 
+--  id INT(10) NOT NULL,
+--   nombres VARCHAR(50) NOT NULL,
+--   apellido_p VARCHAR(50) NOT NULL,
+--   apellido_m VARCHAR(50) NOT NULL,
+--   genero CHAR(1) NOT NULL,
+--   status BOOLEAN NOT NULL,
+--   id_semestre INT NOT NULL,
+--   id_grupo INT NOT NULL,
+insert into alumno(id, nombres, apellido_p, apellido_m, genero, status, id_semestre, id_grupo) values
+(2017123089, 'Alonso', 'Guadarrama', 'Ruiz', 'M', true, 8, 3801),
+(2018123078, 'Fernanda', 'Millan', 'Rodriguez', 'F', true, 6, 3601),
+(2019123009, 'Alejandro', 'Ocampo', 'Madero', 'M', true, 4, 3401),
+(2020123056, 'Angel', 'Cruz', 'Salinas', 'M', true, 2, 3201),
+(2021123001, 'Alejandra', 'Martinez', 'Sanchez', 'F', true, 1, 3101);
+
+
 -- MATERIAS
 insert into materia(nombre, n_creditos, id_semestre) values
 -- SEMESTRE 1

@@ -1,0 +1,250 @@
+{% extends 'body.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block body %}
+<!-- <div class="row">
+  <div class="col-lg-4">
+    {% for g in data%}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{g.id}}</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="{{url_for('materias')}}" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div> -->
+<h1 class="text-center mb-4">Grupos</h1>
+<div class="row mb-4">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3101</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="{{url_for('materias')}}" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3102</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3111</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-4">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3201</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="{{url_for('materias')}}" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3202</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3211</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-4">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3301</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="{{url_for('materias')}}" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3302</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3311</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-4">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3401</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="{{url_for('materias')}}" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3402</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3411</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-4">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3501</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="{{url_for('materias')}}" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3502</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3511</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-4">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3601</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="{{url_for('materias')}}" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3602</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3611</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-4">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3701</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="{{url_for('materias')}}" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3702</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3711</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-4">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3801</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="{{url_for('materias')}}" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3802</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">3811</h5>
+        <p class="card-text">Ingenieria en sistemas computacionales.</p>
+        <a href="#" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

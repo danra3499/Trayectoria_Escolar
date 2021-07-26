@@ -8,6 +8,7 @@ from .models.ModeloUsuario import ModeloUsuario
 from .models.ModeloAlumno import Modelo_alumno
 from .models.ModeloEvaluacion import Modelo_evaluacion
 from .models.ModeloMateria import Modelo_materia
+from .models.ModeloGrupo import Modelo_grupo
 from .models.entities.Usuario import Usuario
 
 from .consts import *
@@ -113,6 +114,17 @@ def agregar_materia():
         return redirect(url_for('agregar_materia'))
     else:
         return render_template('materias.html')
+
+
+@app.route('/grupos')
+def grupos():
+    grupos = Modelo_grupo.obtener_grupos(db)
+    return render_template('grupos.html', data=grupos)
+
+
+@app.route('/materias')
+def materias():
+    return render_template('materias.html')
 
 
 @app.route('/evaluar', methods=['POST', 'GET'])

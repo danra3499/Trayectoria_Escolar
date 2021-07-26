@@ -1,12 +1,14 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
-<h1>Materias</h1>
+<!-- <h1>Materias</h1>
 <form action="/agregar_materia" method="POST">
   <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
   <input type="text" name="nombre" placeholder="Nombre de la materia" required>
   <input type="number" name="creditos" placeholder="Numero de creditos" required>
   <input type="number" name="semestre" placeholder="Semestre" required>
   <input type="submit" value="Agregar">
-</form>
+</form> -->
+<button type="button" class="btn btn-primary btn-lg">Calculo Diferencial</button>
+<button type="button" class="btn btn-primary btn-lg">Princios de programacion</button>
 {% endblock %}
