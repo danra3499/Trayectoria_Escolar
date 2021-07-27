@@ -28,3 +28,19 @@ class Modelo_materia():
             return materias_por_semestre
         except Exception as e:
             raise Exception(e)
+
+    @classmethod
+    def obtener_nombre_materia(self, db, semestre):
+        try:
+            cursor = db.connection.cursor()
+            query = """SELECT nombre FROM materia
+            WHERE id_semestre = {0}""".format(semestre)
+            cursor.execute(query)
+            data = cursor.fetchall()
+            materias = []
+            for materia in data:
+                m = Materia(None, materia[0], None, None)
+                materias.append(m)
+            return materias
+        except Exception as e:
+            raise Exception(e)

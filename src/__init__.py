@@ -1,3 +1,4 @@
+from src.models.entities.Materia import Materia
 from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_wtf.csrf import CSRFProtect
 from flask_mysqldb import MySQL
@@ -124,7 +125,8 @@ def grupos():
 
 @app.route('/materias')
 def materias():
-    return render_template('materias.html')
+    materias = Modelo_materia.obtener_nombre_materia(db, 1)
+    return render_template('materias.html', data=materias)
 
 
 @app.route('/evaluar', methods=['POST', 'GET'])
