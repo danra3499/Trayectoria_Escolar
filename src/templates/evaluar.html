@@ -1,0 +1,26 @@
+{% extends 'body.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block body %}
+<form action="/evaluar" method="POST">
+  <table class="table table-striped table-bordered bg-white table-sm">
+    <thead>
+      <tr>
+        <td>Alumno</td>
+        <td>No.Control</td>
+        <td>Calificacion</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in data %}
+      <tr>
+        <td>{{ a.nombre_completo() }}</td>
+        <td>{{ a.id }}</td>
+        <td><input type="number"></td>
+        <td><input type="submit" value="Guardar"></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</form>
+{% endblock %}

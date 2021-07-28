@@ -129,6 +129,12 @@ def materias():
     return render_template('materias.html', data=materias)
 
 
+@app.route('/materia')
+def materia():
+    alumnos = Modelo_alumno.obtener_alumnos(db)
+    return render_template('evaluar.html', data=alumnos)
+
+
 @app.route('/evaluar', methods=['POST', 'GET'])
 @login_required
 def evaluar():

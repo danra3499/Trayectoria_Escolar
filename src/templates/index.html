@@ -16,14 +16,12 @@
 
 {% endwith %}
 <div class="row mt-4">
-  <div class="col-md-7">
+  <div class="col-md-6">
     <h1 class="text-center">Lista de alumnos</h1>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td>Nombres</td>
-          <td>Apellido paterno</td>
-          <td>Apellido materno</td>
+          <td>Alumno</td>
           <td>No.Control</td>
           <td>Genero</td>
           <td>status</td>
@@ -32,9 +30,7 @@
       <tbody>
         {% for a in data.alumnos %}
         <tr>
-          <td>{{ a.nombres }}</td>
-          <td>{{ a.apellido_p }}</td>
-          <td>{{ a.apellido_m }}</td>
+          <td>{{ a.nombre_completo() }}</td>
           <td>{{ a.id }}</td>
           <td>{{ a.genero }}</td>
           <td>{{ a.status }}</td>

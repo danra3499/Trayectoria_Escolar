@@ -12,7 +12,7 @@
 <ul class="list">
   {% for m in data %}
   <li>
-    <a type="button" class="btn btn-primary btn-lg mb-4" href="{{}}">{{m.nombre}}</a>
+    <a type="button" class="btn btn-primary btn-lg mb-4" href="{{url_for('materia')}}">{{m.nombre}}</a>
   </li>
   {% endfor %}
 </ul>

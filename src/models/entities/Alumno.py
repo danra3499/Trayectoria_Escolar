@@ -10,4 +10,4 @@ class Alumno():
         self.grupo = grupo
 
     def nombre_completo(self):
-        return f'{self.apellido_p} {self.apellido_m} {self.nombres}'
+        return '{0} {1} {2}'.format(self.apellido_p, self.apellido_m, self.nombres)
