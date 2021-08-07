@@ -115,6 +115,18 @@ def agregar_materia():
     else:
         return render_template('materias.html')
 
+@app.route('/docenrtes')
+def docentes():
+    return "Docentes page"
+
+# return render_template('docentes.html')
+
+
+# def start_app(config):
+#     app.config.from_object(config)
+#     csrf.init_app(app)
+#     return app
+
 
 @app.route('/grupos')
 def grupos():
