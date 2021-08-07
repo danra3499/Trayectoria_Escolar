@@ -66,6 +66,17 @@ CREATE TABLE evaluacion(
   PRIMARY KEY(id)
 );
 
+create table docentes(
+  id int not null auto_increment,
+  Profesión varchar(150) not null,
+  Nombres varchar(150) not null,
+  Telefono varchar(20) not null,
+  Email varchar (100) not null,
+  Materias_impartidas varchar (250) not null,
+  Horas varchar (50) not null,
+  primary key(id)
+);
+
 insert into tipo_usuario(usuario) values('Administrador'), ('docente');
 insert into usuario(usuario, nombres, apellidos, password, tipo_usuario)
 values ('2017123026', 'Jorge Alberto', 'Garcia Estrada', 'pbkdf2:sha256:260000$drnY9ksi9BZwmW2O$9c0f70ac804982253886e4181815beb9901624ef5d441e0e6c05a175bb4197bb', 1);
