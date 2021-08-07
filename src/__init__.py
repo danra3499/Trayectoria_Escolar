@@ -81,7 +81,6 @@ def agregar_alumno():
     else:
         return render_template('alumnos.html', data=alumnos)
 
-
 @app.route('/agregar_materia', methods=['POST', 'GET'])
 @login_required
 def agregar_materia():
