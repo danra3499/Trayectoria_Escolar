@@ -60,6 +60,7 @@ def logout():
 @app.route('/home')
 @login_required
 def home():
+    return render_template('index.html', title='home')
     alumnos = Modelo_alumno.obtener_alumnos(db)
     materias_semestre1 = Modelo_materia.obtener_materias_por_semestre(db, 1)
     materias_semestre2 = Modelo_materia.obtener_materias_por_semestre(db, 2)
@@ -83,6 +84,8 @@ def home():
     return render_template('index.html', title='home', data=data)
 
 
+
+
 @app.route('/agregar_alumno', methods=['POST', 'GET'])
 @login_required
 def agregar_alumno():
@@ -103,6 +106,18 @@ def agregar_alumno():
     else:
         return render_template('alumnos.html', data=alumnos)
 
+@app.route('/agregar_docentes')
+def agregar_docentes():
+    if request.method == 'POST':
+        Profesión = request.form['Profesión']
+        Nombre = request.form['Nombre']
+        Telefono = request.form['Telefono']
+        Email = request.form['Email']
+        Materias_impartidas = request.form.get('Materias_impartidas')
+        Horas = request.form.get('Horas')
+    return render_template('docentes.html')
+
+
 @app.route('/agregar_materia', methods=['POST', 'GET'])
 @login_required
 def agregar_materia():
@@ -115,9 +130,7 @@ def agregar_materia():
     else:
         return render_template('materias.html')
 
-@app.route('/docenrtes')
-def docentes():
-    return "Docentes page"
+    
 
 # return render_template('docentes.html')
 
@@ -144,6 +157,8 @@ def materias():
 def materia():
     alumnos = Modelo_alumno.obtener_alumnos(db)
     return render_template('evaluar.html', data=alumnos)
+
+        
 
 
 @app.route('/evaluar', methods=['POST', 'GET'])
