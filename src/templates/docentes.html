@@ -1,9 +1,10 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
-    <div class="row">
+<div class="row">
+    <h1 class="text-center mb-4">Registrar Docente</h1>
     <div class="col-md-5">
-{% with messages = get_flashed_messages() %}
+        <!-- {% with messages = get_flashed_messages() %}
 {% if messages %}
 {% for message in messages %}
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -16,89 +17,101 @@
 </div>
 {% endfor %}
 {% endif %}
-{% endwith %}
+{% endwith %} -->
+        <div class="card card-body">
+            <form action="/agregar_docentes" method='POST'>
+                <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                <div class="form-group">
+                    <input class="form-control mb-2" type="text" name="Profesión" placeholder="Profesión">
+                </div>
+                <div class="form-group">
+                    <input class="form-control mb-2" type="text" name="Nombre" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <input class="form-control mb-2" type="text" name="Telefono" placeholder="Telefono">
+                </div>
+                <div class="form-group">
+                    <input class="form-control mb-2" type="text" name="Email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input class="form-control mb-2" type="text" name="Materias_impartidas"
+                        placeholder="Materias_impartidas">
+                </div>
+                <div class="form-group">
+                    <input class="form-control mb-2" type="text" name="Horas" placeholder="Horas">
+                </div>
+                <button class="btn btn-primary btn-block">
+                    Guardar
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+                            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+                            crossorigin="anonymous"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+                            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+                            crossorigin="anonymous"></script> 
+                    </svg>-->
+                </button>
+            </form>
+        </div>
+    </div>
 
-<h3><b>Registrar Docente</h3></b>
-<div class="card card-body">
-<form action="/agregar_docentes" method='POST'>
-    <div class="form-group">
-        <input type="text" name="Profesión" placeholder="Profesión">
-    </div>
-    <div class="form-group">
-        <input type="text" name="Nombre" placeholder="Nombre">
-    </div>
-    <div class="form-group">
-        <input type="text" name="Telefono" placeholder="Telefono">
-    </div>
-    <div class="form-group">
-        <input type="text" name="Email" placeholder="Email">
-    </div>
-    <div class="form-group">
-        <input type="text" name="Materias_impartidas" placeholder="Materias_impartidas">
-    </div>
-    <div class="form-group">
-        <input type="text" name="Horas" placeholder="Horas">
-    </div>
-    <button class="btn btn-primary btn-block">
-        Guardar
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-        </svg>
-    </button>
-  </form>
- </div>
-</div>
+    <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong style='font-size: 14px;'>{{message}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div> -->
 
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong style='font-size: 14px;'>{{message}}</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
+    <div class="col-md-7">
+        <table class="table table-striped table-hover table-bordered table-sm bg-white">
+            <thead>
+                <tr>
+                    <p>
+                        <td>Profesión</td>
+                        <td>Nombre</td>
+                        <td>Telefono</td>
+                        <td>Email</td>
+                        <td>Materias_impartidas</td>
+                        <td>Horas</td>
+                        <td>Operations</td>
+                    </p>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in registro %}
+                <tr>
+                    <td>{{ contact.1}}</td>
+                    <td>{{ contact.2}}</td>
+                    <td>{{ contact.3}}</td>
+                    <td>{{ contact.4}}</td>
+                    <td>{{ contact.5}}</td>
+                    <td>{{ contact.6}}</td>
 
-<div class="col-md-7">
-    <table class="table table-striped table-hover table-bordered table-sm bg-white">
-        <thead>
-         <tr>
-            <p>
-                <td>Profesión</td>
-                <td>Nombre</td>
-                <td>Telefono</td>
-                <td>Email</td>
-                <td>Materias_impartidas</td>
-                <td>Horas</td>
-                <td>Operations</td>
-            </p>
-        </tr>
-    </thead>
-    <tbody>
-        {% for contact in registro %}
-            <tr>
-                <td>{{ contact.1}}</td>
-                <td>{{ contact.2}}</td>
-                <td>{{ contact.3}}</td>
-                <td>{{ contact.4}}</td>
-                <td>{{ contact.5}}</td>
-                <td>{{ contact.6}}</td>
-               
-                <td>
-                    <a href="/edit/{{contact.0}}">Editar</a>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                      </svg>
-                    <a href="/delete/{{contact.0}}">Eliminar</a>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                      </svg>
-                </td>
-            </tr>
-            {% endfor %}
-    </tbody>
-</table>
-</div>
+                    <td>
+                        <a href="/edit/{{contact.0}}">Editar</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                        </svg>
+                        <a href="/delete/{{contact.0}}">Eliminar</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-trash" viewBox="0 0 16 16">
+                            <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                            <path fill-rule="evenodd"
+                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                        </svg>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 
 {% endblock %}

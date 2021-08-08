@@ -60,7 +60,6 @@ def logout():
 @app.route('/home')
 @login_required
 def home():
-    return render_template('index.html', title='home')
     alumnos = Modelo_alumno.obtener_alumnos(db)
     materias_semestre1 = Modelo_materia.obtener_materias_por_semestre(db, 1)
     materias_semestre2 = Modelo_materia.obtener_materias_por_semestre(db, 2)
@@ -84,8 +83,6 @@ def home():
     return render_template('index.html', title='home', data=data)
 
 
-
-
 @app.route('/agregar_alumno', methods=['POST', 'GET'])
 @login_required
 def agregar_alumno():
@@ -106,32 +103,43 @@ def agregar_alumno():
     else:
         return render_template('alumnos.html', data=alumnos)
 
-@app.route('/agregar_docentes')
-def agregar_docentes():
-    if request.method == 'POST':
-        Profesión = request.form['Profesión']
-        Nombre = request.form['Nombre']
-        Telefono = request.form['Telefono']
-        Email = request.form['Email']
-        Materias_impartidas = request.form.get('Materias_impartidas')
-        Horas = request.form.get('Horas')
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO registro (Profesión, Nombre, Telefono, Email, Materias_impartidas, Horas) VALUES (%s, %s, %s, %s, %s, %s)", 
-        (profesión, nombre, telefono, email, materias, horas))
-        mysql.connection.commit()
-        flash('Registro exitoso')
+
+@app.route('/docente')
+def docentes():
     return render_template('docentes.html')
 
-@app.route('/edit_docentes/<id>', methods = ['POST', 'GET'])
+
+@app.route('/agregar_docentes', methods=['POST'])
+def agregar_docentes():
+    if request.method == 'POST':
+        profesión = request.form['Profesión']
+        nombre = request.form['Nombre']
+        telefono = request.form['Telefono']
+        email = request.form['Email']
+        materias = request.form.get('Materias_impartidas')
+        horas = request.form.get('Horas')
+        cur = db.connection.cursor()
+        cur.execute("INSERT INTO registro (Profesión, Nombre, Telefono, Email, Materias_impartidas, Horas) VALUES (%s, %s, %s, %s, %s, %s)",
+                    (profesión, nombre, telefono, email, materias, horas))
+        db.connection.commit()
+        flash('Registro exitoso')
+        return redirect(url_for('docentes'))
+    else:
+        return render_template('docentes.html')
+    # return render_template('docentes.html')
+
+
+@app.route('/edit_docentes/<id>', methods=['POST', 'GET'])
 def edit_docentes(id):
-    cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM registro WHERE id = %s',(id))
+    cur = db.connection.cursor()
+    cur.execute('SELECT * FROM registro WHERE id = %s', (id))
     data = cur.fetchall()
     cur.close()
     print(data[0])
-    return render_template('docentes.html', contact = data[0])
+    return render_template('docentes.html', contact=data[0])
 
-@app.route('/update_docentes/<id>', methods = ['POST'])
+
+@app.route('/update_docentes/<id>', methods=['POST'])
 def update_docentes(id):
     if request.method == 'POST':
         profesión = request.form['Profesión']
@@ -140,7 +148,7 @@ def update_docentes(id):
         email = request.form['Email']
         materias = request.form['Materias_impartidas']
         horas = request.form['Horas']
-        cur = mysql.connection.cursor()
+        cur = db.connection.cursor()
         cur.execute("""
            UPDATE registro
            SET Profesión = %s,
@@ -152,14 +160,15 @@ def update_docentes(id):
            WHERE id = %s
     """, (profesión, nombre, telefono, email, materias, horas, id))
     flash('Registro actualizado correctamente')
-    mysql.connection.commit()
+    db.connection.commit()
     return redirect(url_for('docentes.html'))
 
-@app.route('/delete_docentes/<string:id>', methods = ['POST' ,'GET'])
+
+@app.route('/delete_docentes/<string:id>', methods=['POST', 'GET'])
 def delete_docentes(id):
-    cur = mysql.connection.cursor()
+    cur = db.connection.cursor()
     cur.execute('DELETE FROM registro WHERE id = {0}'.format(id))
-    mysql.connection.commit()
+    db.connection.commit()
     flash('Registro eliminado correctamente')
     return redirect(url_for('docentes.html'))
 
@@ -176,7 +185,6 @@ def agregar_materia():
     else:
         return render_template('materias.html')
 
-    
 
 # return render_template('docentes.html')
 
@@ -203,8 +211,6 @@ def materias():
 def materia():
     alumnos = Modelo_alumno.obtener_alumnos(db)
     return render_template('evaluar.html', data=alumnos)
-
-        
 
 
 @app.route('/evaluar', methods=['POST', 'GET'])
