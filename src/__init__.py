@@ -115,7 +115,53 @@ def agregar_docentes():
         Email = request.form['Email']
         Materias_impartidas = request.form.get('Materias_impartidas')
         Horas = request.form.get('Horas')
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO registro (Profesión, Nombre, Telefono, Email, Materias_impartidas, Horas) VALUES (%s, %s, %s, %s, %s, %s)", 
+        (profesión, nombre, telefono, email, materias, horas))
+        mysql.connection.commit()
+        flash('Registro exitoso')
     return render_template('docentes.html')
+
+@app.route('/edit_docentes/<id>', methods = ['POST', 'GET'])
+def edit_docentes(id):
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM registro WHERE id = %s',(id))
+    data = cur.fetchall()
+    cur.close()
+    print(data[0])
+    return render_template('docentes.html', contact = data[0])
+
+@app.route('/update_docentes/<id>', methods = ['POST'])
+def update_docentes(id):
+    if request.method == 'POST':
+        profesión = request.form['Profesión']
+        nombre = request.form['Nombre']
+        telefono = request.form['Telefono']
+        email = request.form['Email']
+        materias = request.form['Materias_impartidas']
+        horas = request.form['Horas']
+        cur = mysql.connection.cursor()
+        cur.execute("""
+           UPDATE registro
+           SET Profesión = %s,
+                Nombre = %s,
+                Telefono = %s,
+                Email = %s,
+                Materias_impartidas = %s,
+                Horas = %s
+           WHERE id = %s
+    """, (profesión, nombre, telefono, email, materias, horas, id))
+    flash('Registro actualizado correctamente')
+    mysql.connection.commit()
+    return redirect(url_for('docentes.html'))
+
+@app.route('/delete_docentes/<string:id>', methods = ['POST' ,'GET'])
+def delete_docentes(id):
+    cur = mysql.connection.cursor()
+    cur.execute('DELETE FROM registro WHERE id = {0}'.format(id))
+    mysql.connection.commit()
+    flash('Registro eliminado correctamente')
+    return redirect(url_for('docentes.html'))
 
 
 @app.route('/agregar_materia', methods=['POST', 'GET'])
