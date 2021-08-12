@@ -17,7 +17,7 @@ class ModeloUsuario():
                 match = Usuario.check_password(data[2], usuario.password)
                 if match:
                     logged = Usuario(data[0], data[1],
-                                     None, None, data[2], None)
+                                     None, None, None, data[2], None)
                     return logged
                 else:
                     return None
@@ -38,7 +38,7 @@ class ModeloUsuario():
             data = cursor.fetchone()
             print(data)
             usuario = TipoUsuario(data[2], data[3])
-            logged = Usuario(data[0], data[1], None, None, None, usuario)
+            logged = Usuario(data[0], data[1], None, None, None, None, usuario)
             return logged
 
         except Exception as e:

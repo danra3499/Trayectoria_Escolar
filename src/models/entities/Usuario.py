@@ -3,11 +3,12 @@ from flask_login import UserMixin
 
 
 class Usuario(UserMixin):
-    def __init__(self, id, usuario, nombres, apellidos, password, tipo_usuario):
+    def __init__(self, id, usuario, nombres, apellido_p, apellido_m, password, tipo_usuario):
         self.id = id
         self.usuario = usuario
         self.nombres = nombres
-        self.apellidos = apellidos
+        self.apellido_p = apellido_p
+        self.apellido_m = apellido_m
         self.password = password
         self.tipo_usuario = tipo_usuario
 
