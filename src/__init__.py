@@ -60,27 +60,17 @@ def logout():
 @app.route('/home')
 @login_required
 def home():
-    alumnos = Modelo_alumno.obtener_alumnos(db)
-    materias_semestre1 = Modelo_materia.obtener_materias_por_semestre(db, 1)
-    materias_semestre2 = Modelo_materia.obtener_materias_por_semestre(db, 2)
-    materias_semestre3 = Modelo_materia.obtener_materias_por_semestre(db, 3)
-    materias_semestre4 = Modelo_materia.obtener_materias_por_semestre(db, 4)
-    materias_semestre5 = Modelo_materia.obtener_materias_por_semestre(db, 5)
-    materias_semestre6 = Modelo_materia.obtener_materias_por_semestre(db, 6)
-    materias_semestre7 = Modelo_materia.obtener_materias_por_semestre(db, 7)
-    materias_semestre8 = Modelo_materia.obtener_materias_por_semestre(db, 8)
-    data = {
-        'alumnos': alumnos,
-        'materias1': materias_semestre1,
-        'materias2': materias_semestre2,
-        'materias3': materias_semestre3,
-        'materias4': materias_semestre4,
-        'materias5': materias_semestre5,
-        'materias6': materias_semestre6,
-        'materias7': materias_semestre7,
-        'materias8': materias_semestre8,
-    }
-    return render_template('index.html', title='home', data=data)
+    if current_user.is_authenticated:
+        if current_user.tipo_usuario.id == 1:
+            alumnos = Modelo_alumno.obtener_alumnos(db)
+            data = []
+            for i in range(1, 8):
+                objeto = 'materia_semestre'+str(i)
+                objeto = Modelo_materia.obtener_materias_por_semestre(db, i)
+                data.append(objeto)
+            return render_template('index.html', title='home', alumnos=alumnos, data=data)
+    else:
+        return redirect(url_for('login'))
 
 
 @app.route('/agregar_alumno', methods=['POST', 'GET'])

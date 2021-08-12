@@ -44,3 +44,19 @@ class Modelo_materia():
             return materias
         except Exception as e:
             raise Exception(e)
+
+    @classmethod
+    def materia_docente(self, db, id_docente):
+        try:
+            cursor = db.connection.cursor()
+            query = "SELECT nombre FROM materia WHERE id_docente = {0}".format(
+                id_docente)
+            cursor.execute(query)
+            data = cursor.fetchall()
+            materias = []
+            for m in data:
+                materia = Materia(None, m[0], None, None, None)
+                materias.append(materia)
+            return materias
+        except Exception as e:
+            raise Exception(e)
