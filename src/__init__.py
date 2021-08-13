@@ -104,15 +104,12 @@ def docentes():
 @app.route('/agregar_docentes', methods=['POST'])
 def agregar_docentes():
     if request.method == 'POST':
-        profesión = request.form['Profesión']
-        nombre = request.form['Nombre']
-        telefono = request.form['Telefono']
-        email = request.form['Email']
-        materias = request.form.get('Materias_impartidas')
-        horas = request.form.get('Horas')
+        nombres = request.form['nombres']
+        apellido_p = request.form['apellido_p']
+        apellido_m = request.form['apellido_m']
         cur = db.connection.cursor()
-        cur.execute("INSERT INTO docentes (Profesión, Nombre, Telefono, Email, Materias_impartidas, Horas) VALUES (%s, %s, %s, %s, %s, %s)",
-                    (profesión, nombre, telefono, email, materias, horas))
+        cur.execute("INSERT INTO docente (nombres, apellido_p, apellido_m) VALUES (%s, %s, %s)",
+                    (nombres, apellido_p, apellido_m))
         db.connection.commit()
         flash('Registro exitoso')
         return redirect(url_for('docentes'))
@@ -121,48 +118,48 @@ def agregar_docentes():
     # return render_template('docentes.html')
 
 
-@app.route('/edit_docentes/<id>', methods=['POST', 'GET'])
-def edit_docentes(id):
-    cur = db.connection.cursor()
-    cur.execute('SELECT * FROM registro WHERE id = %s', (id))
-    data = cur.fetchall()
-    cur.close()
-    print(data[0])
-    return render_template('docentes.html', contact=data[0])
+#@app.route('/edit_docentes/<id>', methods=['POST', 'GET'])
+#def edit_docentes(id):
+ #   cur = db.connection.cursor()
+  #  cur.execute('SELECT * FROM registro WHERE id = %s', (id))
+   # data = cur.fetchall()
+   # cur.close()
+    #print(data[0])
+    #return render_template('docentes.html', contact=data[0])
 
 
-@app.route('/update_docentes/<id>', methods=['POST'])
-def update_docentes(id):
-    if request.method == 'POST':
-        profesión = request.form['Profesión']
-        nombre = request.form['Nombre']
-        telefono = request.form['Telefono']
-        email = request.form['Email']
-        materias = request.form['Materias_impartidas']
-        horas = request.form['Horas']
-        cur = db.connection.cursor()
-        cur.execute("""
-           UPDATE registro
-           SET Profesión = %s,
-                Nombre = %s,
-                Telefono = %s,
-                Email = %s,
-                Materias_impartidas = %s,
-                Horas = %s
-           WHERE id = %s
-    """, (profesión, nombre, telefono, email, materias, horas, id))
-    flash('Registro actualizado correctamente')
-    db.connection.commit()
-    return redirect(url_for('docentes.html'))
+#@app.route('/update_docentes/<id>', methods=['POST'])
+#def update_docentes(id):
+ #   if request.method == 'POST':
+  #      profesión = request.form['Profesión']
+   #     nombre = request.form['Nombre']
+    #    telefono = request.form['Telefono']
+     #   email = request.form['Email']
+      #  materias = request.form['Materias_impartidas']
+ #       horas = request.form['Horas']
+ #       cur = db.connection.cursor()
+ #       cur.execute("""
+  #         UPDATE registro
+   #        SET Profesión = %s,
+    #            Nombre = %s,
+     #           Telefono = %s,
+      #          Email = %s,
+       #         Materias_impartidas = %s,
+        #        Horas = %s
+         #  WHERE id = %s
+    #""", (profesión, nombre, telefono, email, materias, horas, id))
+    #flash('Registro actualizado correctamente')
+    #db.connection.commit()
+    #return redirect(url_for('docentes.html'))
 
 
-@app.route('/delete_docentes/<string:id>', methods=['POST', 'GET'])
-def delete_docentes(id):
-    cur = db.connection.cursor()
-    cur.execute('DELETE FROM registro WHERE id = {0}'.format(id))
-    db.connection.commit()
-    flash('Registro eliminado correctamente')
-    return redirect(url_for('docentes.html'))
+#@app.route('/delete_docentes/<string:id>', methods=['POST', 'GET'])
+#def delete_docentes(id):
+ #   cur = db.connection.cursor()
+  #  cur.execute('DELETE FROM registro WHERE id = {0}'.format(id))
+   # db.connection.commit()
+    #flash('Registro eliminado correctamente')
+    #return redirect(url_for('docentes.html'))
 
 
 @app.route('/agregar_materia', methods=['POST', 'GET'])

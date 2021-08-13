@@ -24,23 +24,13 @@
             <form action="/agregar_docentes" method='POST'>
                 <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
                 <div class="form-group">
-                    <input class="form-control mb-2" type="text" name="Profesión" placeholder="Profesión">
+                    <input class="form-control mb-2" type="text" name="nombres" placeholder="nombres">
                 </div>
                 <div class="form-group">
-                    <input class="form-control mb-2" type="text" name="Nombre" placeholder="Nombre">
+                    <input class="form-control mb-2" type="text" name="apellido_p" placeholder="apellido_p">
                 </div>
                 <div class="form-group">
-                    <input class="form-control mb-2" type="text" name="Telefono" placeholder="Telefono">
-                </div>
-                <div class="form-group">
-                    <input class="form-control mb-2" type="text" name="Email" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <input class="form-control mb-2" type="text" name="Materias_impartidas"
-                        placeholder="Materias_impartidas">
-                </div>
-                <div class="form-group">
-                    <input class="form-control mb-2" type="text" name="Horas" placeholder="Horas">
+                    <input class="form-control mb-2" type="text" name="apellido_m" placeholder="apellido_m">
                 </div>
                 <button class="btn btn-primary btn-block">
                     Guardar
@@ -73,12 +63,9 @@
             <thead>
                 <tr>
                     <p>
-                        <td>Profesión</td>
-                        <td>Nombre</td>
-                        <td>Telefono</td>
-                        <td>Email</td>
-                        <td>Materias_impartidas</td>
-                        <td>Horas</td>
+                        <td>nombres</td>
+                        <td>apellido_p</td>
+                        <td>apellido_m</td>
                         <td>Operations</td>
                     </p>
                 </tr>
@@ -89,10 +76,7 @@
                     <td>{{ contact.1}}</td>
                     <td>{{ contact.2}}</td>
                     <td>{{ contact.3}}</td>
-                    <td>{{ contact.4}}</td>
-                    <td>{{ contact.5}}</td>
-                    <td>{{ contact.6}}</td>
-
+                   
                     <td>
                         <a href="/edit/{{contact.0}}">Editar</a>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
