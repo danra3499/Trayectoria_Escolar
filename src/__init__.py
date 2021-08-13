@@ -7,6 +7,7 @@ from werkzeug.security import generate_password_hash
 
 from .models.ModeloUsuario import ModeloUsuario
 from .models.ModeloAlumno import Modelo_alumno
+from .models.ModeloDocentes import Modelo_docente
 from .models.ModeloEvaluacion import Modelo_evaluacion
 from .models.ModeloMateria import Modelo_materia
 from .models.ModeloGrupo import Modelo_grupo
@@ -119,7 +120,7 @@ def agregar_docentes():
         materias = request.form.get('Materias_impartidas')
         horas = request.form.get('Horas')
         cur = db.connection.cursor()
-        cur.execute("INSERT INTO registro (Profesión, Nombre, Telefono, Email, Materias_impartidas, Horas) VALUES (%s, %s, %s, %s, %s, %s)",
+        cur.execute("INSERT INTO docentes (Profesión, Nombre, Telefono, Email, Materias_impartidas, Horas) VALUES (%s, %s, %s, %s, %s, %s)",
                     (profesión, nombre, telefono, email, materias, horas))
         db.connection.commit()
         flash('Registro exitoso')

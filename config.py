@@ -3,7 +3,8 @@ class Config:
     MYSQL_HOST = 'localhost'
     MYSQL_USER = 'root'
     # Jimena11
-    MYSQL_PASSWORD = 'secret'
+    #secret
+    MYSQL_PASSWORD = 'Jimena11'
     MYSQL_DB = 't_e'
 
 
