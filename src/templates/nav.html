@@ -7,6 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
+        {% if current_user.tipo_usuario.id == 1 %}
         <li class="nav-item">
           <a class="nav-link" href="{{url_for('grupos')}}">Grupos</a>
         </li>
@@ -19,10 +20,11 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Índices</a>
         </li>
+        {% endif %}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
-            Usuario
+            <strong>{{ current_user.usuario }}</strong>({{current_user.tipo_usuario.usuario }})
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="{{url_for('logout')}}">Cerrar sesión</a></li>
