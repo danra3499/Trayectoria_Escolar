@@ -101,7 +101,7 @@ def docentes():
     return render_template('docentes.html')
 
 
-@app.route('/agregar_docentes', methods=['POST'])
+@app.route('/agregar_docentes', methods=['POST', 'GET'])
 def agregar_docentes():
     if request.method == 'POST':
         nombres = request.form['nombres']
@@ -109,12 +109,13 @@ def agregar_docentes():
         apellido_m = request.form['apellido_m']
         cur = db.connection.cursor()
         cur.execute("INSERT INTO docente (nombres, apellido_p, apellido_m) VALUES (%s, %s, %s)",
-                    (nombres, apellido_p, apellido_m))
+                   (nombres, apellido_p, apellido_m))
         db.connection.commit()
         flash('Registro exitoso')
+        #Modelo_docente.add(db, nombres, apellido_p, apellido_m)
         return redirect(url_for('docentes'))
     else:
-        return render_template('docentes.html')
+        return render_template('docentes.html', data=docentes)
     # return render_template('docentes.html')
 
 

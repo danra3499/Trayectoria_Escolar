@@ -2,7 +2,7 @@
 {% block title %}{{title}}{% endblock %}
 {% block body %}
 <div class="row">
-    <div class="col-md-5">
+ <div class="col-md-5">
     <div class="card card-body">
         <h1 class="text-center mb-4">Registrar Docente</h1>
     
@@ -23,14 +23,14 @@
         
             <form action="/agregar_docentes" method='POST'>
                 <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-                <div class="form-group">
-                    <input class="form-control mb-2" type="text" name="nombres" placeholder="nombres">
+                <div class="form-group mb-2">
+                    <input class="form-control" type="text" name="nombres" placeholder="nombres">
                 </div>
-                <div class="form-group">
-                    <input class="form-control mb-2" type="text" name="apellido_p" placeholder="apellido_p">
+                <div class="form-group mb-2">
+                    <input class="form-control" type="text" name="apellido_p" placeholder="apellido_p">
                 </div>
-                <div class="form-group">
-                    <input class="form-control mb-2" type="text" name="apellido_m" placeholder="apellido_m">
+                <div class="form-group mb-2">
+                    <input class="form-control" type="text" name="apellido_m" placeholder="apellido_m">
                 </div>
                 <button class="btn btn-primary btn-block">
                     Guardar
@@ -62,20 +62,20 @@
         <table class="table table-striped table-hover table-bordered table-sm bg-white">
             <thead>
                 <tr>
-                    <p>
+                    
                         <td>nombres</td>
                         <td>apellido_p</td>
                         <td>apellido_m</td>
                         <td>Operations</td>
-                    </p>
+                    
                 </tr>
             </thead>
             <tbody>
-                {% for contact in docente %}
+                {% for a in data %}
                 <tr>
-                    <td>{{ contact.1}}</td>
-                    <td>{{ contact.2}}</td>
-                    <td>{{ contact.3}}</td>
+                    <td>{{ a.nombres}}</td>
+                    <td>{{ a.apellido_p}}</td>
+                    <td>{{ a.apellido_m}}</td>
                    
                     <td>
                         <a href="/edit/{{contact.0}}">Editar</a>
@@ -100,6 +100,7 @@
             </tbody>
         </table>
     </div>
+  </div>
 </div>
 
 {% endblock %}

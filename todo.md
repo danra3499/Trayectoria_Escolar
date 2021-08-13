@@ -6,3 +6,8 @@
 
 # 11/08/2021
 1. Actualizar la tabla materia de la base de datos
+
+# 12/08/2021
+1. Agregar registros a la tabla de docentes 
+2. Corregir código, introducir registros de forma manual
+3. Agregar botones de editar y eliminar
