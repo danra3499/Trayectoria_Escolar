@@ -70,19 +70,6 @@ def home():
             objeto = Modelo_materia.obtener_materias_por_semestre(db, i)
             data.append(objeto)
         return render_template('index.html', title='home', alumnos=alumnos, data=data, materias=materias)
-    #     if current_user.tipo_usuario.id == 1:
-    #         # si el tipo de usuario es administrador cargara la tabla de alumnos y tablas de materias
-    #         alumnos = Modelo_alumno.obtener_alumnos(db)
-    #         data = []
-    #         for i in range(1, 8):
-    #             objeto = 'materia_semestre'+str(i)
-    #             objeto = Modelo_materia.obtener_materias_por_semestre(db, i)
-    #             data.append(objeto)
-    #     else:
-    #         # Si el tipo de usuario es docente cargara los grupos a los que imparte
-    #         materias = Modelo_materia.materia_docente(db, 1284373821)
-    #     return render_template('index.html', title='home', alumnos=alumnos, data=data, materias=materias)
-
     else:
         return redirect(url_for('login'))
 
