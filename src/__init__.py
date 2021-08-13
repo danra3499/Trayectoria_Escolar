@@ -97,11 +97,13 @@ def agregar_alumno():
 
 
 @app.route('/docente')
+@login_required
 def docentes():
     return render_template('docentes.html')
 
 
 @app.route('/agregar_docentes', methods=['POST'])
+@login_required
 def agregar_docentes():
     if request.method == 'POST':
         profesión = request.form['Profesión']
@@ -122,6 +124,7 @@ def agregar_docentes():
 
 
 @app.route('/edit_docentes/<id>', methods=['POST', 'GET'])
+@login_required
 def edit_docentes(id):
     cur = db.connection.cursor()
     cur.execute('SELECT * FROM registro WHERE id = %s', (id))
@@ -132,6 +135,7 @@ def edit_docentes(id):
 
 
 @app.route('/update_docentes/<id>', methods=['POST'])
+@login_required
 def update_docentes(id):
     if request.method == 'POST':
         profesión = request.form['Profesión']
@@ -157,6 +161,7 @@ def update_docentes(id):
 
 
 @app.route('/delete_docentes/<string:id>', methods=['POST', 'GET'])
+@login_required
 def delete_docentes(id):
     cur = db.connection.cursor()
     cur.execute('DELETE FROM registro WHERE id = {0}'.format(id))
@@ -178,28 +183,22 @@ def agregar_materia():
         return render_template('materias.html')
 
 
-# return render_template('docentes.html')
-
-
-# def start_app(config):
-#     app.config.from_object(config)
-#     csrf.init_app(app)
-#     return app
-
-
 @app.route('/grupos')
+@login_required
 def grupos():
     grupos = Modelo_grupo.obtener_grupos(db)
     return render_template('grupos.html', data=grupos)
 
 
 @app.route('/materias')
+@login_required
 def materias():
     materias = Modelo_materia.obtener_nombre_materia(db, 1)
     return render_template('materias.html', data=materias)
 
 
 @app.route('/materia')
+@login_required
 def materia():
     alumnos = Modelo_alumno.obtener_alumnos(db)
     return render_template('evaluar.html', data=alumnos)
@@ -221,7 +220,17 @@ def evaluar():
         return render_template('alumnos.html')
 
 
+def pagina_no_encontrada(error):
+    return render_template('error/404.html'), 404
+
+
+def pagina_no_autorizada(error):
+    return render_template(url_for('login'))
+
+
 def start_app(config):
     app.config.from_object(config)
     csrf.init_app(app)
+    app.register_error_handler(401, pagina_no_autorizada)
+    app.register_error_handler(404, pagina_no_encontrada)
     return app
