@@ -75,6 +75,11 @@ def home():
         return redirect(url_for('login'))
 
 
+@app.route('/usuarios')
+def usuario():
+    return render_template('usuarios.html')
+
+
 @app.route('/agregar_alumno', methods=['POST', 'GET'])
 @login_required
 def agregar_alumno():
