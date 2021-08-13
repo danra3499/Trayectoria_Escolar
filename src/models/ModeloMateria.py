@@ -14,16 +14,20 @@ class Modelo_materia():
             raise Exception(e)
 
     @classmethod
-    def obtener_materias_por_semestre(self, db, semestre):
+    def obtener_materias_por_semestre(self, db, id_semestre):
         try:
             cursor = db.connection.cursor()
-            query = """SELECT nombre, n_creditos FROM materia
-            WHERE id_semestre = {0}""".format(semestre)
+            query = """SELECT materia.nombre, materia.n_creditos 
+            FROM materia 
+            JOIN grupo ON materia.id_grupo = grupo.id 
+            JOIN semestre ON grupo.semestre = semestre.id 
+            WHERE semestre.id = {0}""".format(
+                id_semestre)
             cursor.execute(query)
             data = cursor.fetchall()
             materias_por_semestre = []
             for materia in data:
-                materias = Materia(None, materia[0], materia[1], None)
+                materias = Materia(None, materia[0], materia[1], None, None)
                 materias_por_semestre.append(materias)
             return materias_por_semestre
         except Exception as e:
@@ -41,6 +45,22 @@ class Modelo_materia():
             for materia in data:
                 m = Materia(None, materia[0], None, None)
                 materias.append(m)
+            return materias
+        except Exception as e:
+            raise Exception(e)
+
+    @classmethod
+    def materia_docente(self, db, id_docente):
+        try:
+            cursor = db.connection.cursor()
+            query = "SELECT nombre, id_grupo FROM materia WHERE id_docente = {0}".format(
+                id_docente)
+            cursor.execute(query)
+            data = cursor.fetchall()
+            materias = []
+            for m in data:
+                materia = Materia(None, m[0], None, m[1], None)
+                materias.append(materia)
             return materias
         except Exception as e:
             raise Exception(e)
