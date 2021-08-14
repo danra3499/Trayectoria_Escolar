@@ -36,10 +36,37 @@ class ModeloUsuario():
 						WHERE usuario.id = {0}""".format(id)
             cursor.execute(query)
             data = cursor.fetchone()
-            print(data)
             usuario = TipoUsuario(data[2], data[3])
             logged = Usuario(data[0], data[1], None, None, None, None, usuario)
             return logged
 
         except Exception as e:
             raise Exception(e)
+
+    @classmethod
+    def agregar_usuario(self, db, usuario, nombres, apellido_p, apellido_m, password, tipo_usuario):
+        try:
+            cursor = db.connection.cursor()
+            query = """INSERT INTO usuario(usuario, nombres, apellido_p, apellido_m, password, tipo_usuario)
+            VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')""".format(
+                usuario, nombres, apellido_p, apellido_m, password, tipo_usuario)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def consultar_usuarios(self, db):
+        try:
+            cursor = db.connection.cursor()
+            query = """SELECT usuario, nombres, apellido_p, apellido_m, tipo_usuario
+            FROM usuario"""
+            cursor.execute(query)
+            data = cursor.fetchall()
+            usuarios = []
+            for u in data:
+                usuario = Usuario(None, u[0], u[1], u[2], u[3], None, u[4])
+                usuarios.append(usuario)
+            return usuarios
+        except Exception as ex:
+            raise Exception(ex)

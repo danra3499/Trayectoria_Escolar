@@ -12,6 +12,11 @@ class Usuario(UserMixin):
         self.password = password
         self.tipo_usuario = tipo_usuario
 
+    # @classmethod
+    # def nombre_completo(self):
+    #     return '{0} {1} {2}'.format(self.apellido_p, self.apellido_m, self.nombres)
+    #     # return f'{self.apellido_p} {self.apellido_m} {self.nombres}'
+
     @classmethod
     def check_password(self, encrypted, password):
         return check_password_hash(encrypted, password)

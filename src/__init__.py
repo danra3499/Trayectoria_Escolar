@@ -76,8 +76,28 @@ def home():
 
 
 @app.route('/usuarios')
+@login_required
 def usuario():
-    return render_template('usuarios.html')
+    data = ModeloUsuario.consultar_usuarios(db)
+    # data=usuarios
+    return render_template('usuarios.html', data=data)
+
+
+@app.route('/agregar_usuario', methods=['POST'])
+@login_required
+def agregar_usuario():
+    if request.method == 'POST':
+        usuario = request.form['usuario']
+        nombres = request.form['nombres']
+        apellido_p = request.form['apellido_p']
+        apellido_m = request.form['apellido_m']
+        password = generate_password_hash(request.form['password'])
+        tipo_usuario = request.form.get('tipo_usuario')
+        ModeloUsuario.agregar_usuario(
+            db, usuario, nombres, apellido_p, apellido_m, password, tipo_usuario)
+        return redirect(url_for('usuario'))
+    else:
+        return render_template('usuario.html')
 
 
 @app.route('/agregar_alumno', methods=['POST', 'GET'])

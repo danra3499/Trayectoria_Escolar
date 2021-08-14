@@ -3,7 +3,7 @@ from .entities.Alumno import Alumno
 
 class Modelo_alumno():
     @classmethod
-    def add(self, db, id, nombres, apellido_p, apellido_m, genero, status, semestre, grupo):
+    def add(self, db, id, nombres, apellido_p, apellido_m, genero, status, grupo):
         try:
             cursor = db.connection.cursor()
             query = """INSERT INTO alumno(id, nombres, apellido_p, apellido_m, genero, status, id_grupo)
