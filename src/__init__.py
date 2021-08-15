@@ -102,7 +102,7 @@ def docentes():
 
 
 @app.route('/agregar_docentes', methods=['POST', 'GET'])
-def agregar_docentes():
+def agregar_docentes(): 
     if request.method == 'POST':
         nombres = request.form['nombres']
         apellido_p = request.form['apellido_p']
