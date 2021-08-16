@@ -1,0 +1,39 @@
+{% extends 'body.html' %}
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card card-body">
+                <form action='/update_usuario/{usuario}' method='POST'>
+                    <div class="form-group mb-2">
+                        <input type="text" class="form-control" name="usuario" placeholder="Numero de empleado">
+                      </div>
+                      <div class="form-group mb-2">
+                        <input type="text" class="form-control" name="nombres" placeholder="Nombres">
+                      </div>
+                      <div class="form-group mb-2">
+                        <input type="text" class="form-control" name="apellido_p" placeholder="Apellido paterno">
+                      </div>
+                      <div class="form-group mb-2">
+                        <input type="text" class="form-control" name="apellido_m" placeholder="Apellido meterno">
+                      </div>
+                      <div class="form-group mb-2">
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                      </div>
+                      <div class="form-group mb-2">
+                        <label for="tipo_usuario">Tipo de usuario</label><br>
+                        <input type="radio" value="1" name="tipo_usuario">Administrador<br>
+                        <input type="radio" value="2" name="tipo_usuario">Docente<br>
+                      </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Actualizar 
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
