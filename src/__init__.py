@@ -99,17 +99,20 @@ def agregar_usuario():
     else:
         return render_template('usuario.html')
 
-@app.route('/edit/<usuario>', methods = ['POST', 'GET'])
+
+@app.route('/edit/<usuario>', methods=['POST', 'GET'])
 def edit(usuario):
     cursor = db.connection.cursor()
-    cursor.execute('SELECT * FROM usuario WHERE usuario = {0}'. format(usuario))
+    cursor.execute(
+        'SELECT * FROM usuario WHERE usuario = {0}'. format(usuario))
     data = cursor.fetchall()
     cursor.close()
-    #print(data[0])
+    # print(data[0])
     return render_template('edit_usuario.html')
    # return render_template('usuarios.html', usuarios = data[0])
 
-@app.route('/update/<usuario>', methods = ['POST'])
+
+@app.route('/update/<usuario>', methods=['POST'])
 def update(usuario):
     if request.method == 'POST':
         usuario = request.form['Usuario']
@@ -137,15 +140,17 @@ def update(usuario):
         return render_template('usuario.html')
    # return render_template('usuarios.html', usuarios = data[0])
 
-@app.route('/delete/<usuario>', methods = ['POST' ,'GET'])
+
+@app.route('/delete/<usuario>', methods=['POST', 'GET'])
 def delete(usuario):
     cursor = db.connection.cursor()
     cursor.execute('DELETE FROM usuario WHERE usuario = {0}'.format(usuario))
     db.connection.commit()
     flash('Registro eliminado correctamente')
     return redirect(url_for('usuario'))
-    
-@app.route('/agregar_alumno', methods=['POST' ,'GET'])
+
+
+@app.route('/agregar_alumno', methods=['POST', 'GET'])
 @login_required
 def agregar_alumno():
     alumnos = Modelo_alumno.obtener_alumnos(db)
@@ -194,19 +199,19 @@ def agregar_docentes():
 
 
 #app.route('/edit_docentes/<id>', methods=['POST', 'GET'])
-#@login_required
-#def edit_docentes(id):
+# @login_required
+# def edit_docentes(id):
  #   cur = db.connection.cursor()
   #  cur.execute('SELECT * FROM registro WHERE id = %s', (id))
    # data = cur.fetchall()
-    #cur.close()
-    #print(data[0])
-    #return render_template('docentes.html', contact=data[0])
+    # cur.close()
+    # print(data[0])
+    # return render_template('docentes.html', contact=data[0])
 
 
-#@app.route('/update_docentes/<id>', methods=['POST'])
-#@login_required
-#def update_docentes(id):
+# @app.route('/update_docentes/<id>', methods=['POST'])
+# @login_required
+# def update_docentes(id):
  #   if request.method == 'POST':
   #      profesión = request.form['Profesión']
    #     nombre = request.form['Nombre']
@@ -217,27 +222,27 @@ def agregar_docentes():
        # cur = db.connection.cursor()
        # cur.execute("""
         #   UPDATE registro
-         #  SET Profesión = %s,
-          #      Nombre = %s,
-           #     Telefono = %s,
-            #    Email = %s,
-             #   Materias_impartidas = %s,
-              #  Horas = %s
-           #WHERE id = %s
+        #  SET Profesión = %s,
+        #      Nombre = %s,
+        #     Telefono = %s,
+        #    Email = %s,
+        #   Materias_impartidas = %s,
+        #  Horas = %s
+        # WHERE id = %s
    # """, (profesión, nombre, telefono, email, materias, horas, id))
    # flash('Registro actualizado correctamente')
-    #db.connection.commit()
-    #return redirect(url_for('docentes.html'))
+    # db.connection.commit()
+    # return redirect(url_for('docentes.html'))
 
 
-#@app.route('/delete_docentes/<string:id>', methods=['POST', 'GET'])
-#@login_required
-#def delete_docentes(id):
+# @app.route('/delete_docentes/<string:id>', methods=['POST', 'GET'])
+# @login_required
+# def delete_docentes(id):
  #   cur = db.connection.cursor()
   #  cur.execute('DELETE FROM registro WHERE id = {0}'.format(id))
    # db.connection.commit()
     #flash('Registro eliminado correctamente')
-    #return redirect(url_for('docentes.html'))
+    # return redirect(url_for('docentes.html'))
 
 
 @app.route('/agregar_materia', methods=['POST', 'GET'])
