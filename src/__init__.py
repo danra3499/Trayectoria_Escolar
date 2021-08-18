@@ -112,8 +112,8 @@ def edit(usuario):
 @app.route('/update/<usuario>', methods = ['POST'])
 def update(usuario):
     if request.method == 'POST':
-        usuario = request.form['usuario']
-        nombres = request.form['nombres']
+        usuario = request.form['Usuario']
+        nombres = request.form['Nombres']
         apellido_p = request.form['apellido_p']
         apellido_m = request.form['apellido_m']
         password = generate_password_hash(request.form['password'])
@@ -121,13 +121,15 @@ def update(usuario):
         cursor = db.connection.cursor()
         cursor.execute("""
           UPDATE usuario
-          SET nombres = %s,
-               apellido_p = %s,
-               apellido_m = %s,
-               password = %s,
-               tipo_usuario = %s
-          WHERE usuario = %s
-        """. format(nombres, apellido_p, apellido_m, password, tipo_usuario, usuario))
+          SET usuario = {0},
+               nombres = {1},
+               apellido_p = {2},
+               apellido_m = {3},
+               password = {4},
+               tipo_usuario = {5}
+          WHERE usuario = {0}
+        """, ModeloUsuario.agregar_usuario(
+            db, usuario, nombres, apellido_p, apellido_m, password, tipo_usuario))
         #flash('Registro actualizado correctamente')
         db.connection.commit()
         return redirect(url_for('usuario'))
