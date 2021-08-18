@@ -99,13 +99,18 @@ def agregar_usuario():
     else:
         return render_template('usuario.html')
 
-@app.route('/edit_usuario', methods = ['POST', 'GET'])
-def edit_usuario(id):
-    #cur = mysql.connection.cursor()
-    #cur.execute('SELECT * FROM usuario WHERE id = %s',(id))
-    #data = cur.fetchall()
-    #cur.close()
+@app.route('/edit/<usuario>', methods = ['POST', 'GET'])
+def edit(usuario):
+    cursor = db.connection.cursor()
+    cursor.execute('SELECT * FROM usuario WHERE usuario = {0}'. format(usuario))
+    data = cursor.fetchall()
+    cursor.close()
     #print(data[0])
+    return render_template('edit_usuario.html')
+   # return render_template('usuarios.html', usuarios = data[0])
+
+@app.route('/update/<usuario>', methods = ['POST'])
+def update(usuario):
     if request.method == 'POST':
         usuario = request.form['usuario']
         nombres = request.form['nombres']
@@ -113,21 +118,31 @@ def edit_usuario(id):
         apellido_m = request.form['apellido_m']
         password = generate_password_hash(request.form['password'])
         tipo_usuario = request.form.get('tipo_usuario')
+        cursor = db.connection.cursor()
+        cursor.execute("""
+          UPDATE usuario
+          SET nombres = %s,
+               apellido_p = %s,
+               apellido_m = %s,
+               password = %s,
+               tipo_usuario = %s
+          WHERE usuario = %s
+        """. format(nombres, apellido_p, apellido_m, password, tipo_usuario, usuario))
+        #flash('Registro actualizado correctamente')
+        db.connection.commit()
         return redirect(url_for('usuario'))
     else:
         return render_template('usuario.html')
    # return render_template('usuarios.html', usuarios = data[0])
 
 @app.route('/delete/<usuario>', methods = ['POST' ,'GET'])
-def delete_usuario(usuario):
-    #cur = mysql.connection.cursor()
-    #cur.execute('DELETE FROM usuario WHERE id = {0}'.format(id))
-    #mysql.connection.commit()
+def delete(usuario):
+    cursor = db.connection.cursor()
+    cursor.execute('DELETE FROM usuario WHERE usuario = {0}'.format(usuario))
+    db.connection.commit()
     flash('Registro eliminado correctamente')
     return redirect(url_for('usuario'))
-
-
-
+    
 @app.route('/agregar_alumno', methods=['POST' ,'GET'])
 @login_required
 def agregar_alumno():

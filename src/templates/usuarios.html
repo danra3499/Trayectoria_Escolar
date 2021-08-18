@@ -56,8 +56,8 @@
             <td>{{ u.apellido_m }}</td>
             <td>{{ u.tipo_usuario }}</td>
             <td>
-              <a class="btn btn-warning" href='/edit_usuario/{{u.usuario}}'>Editar</a>
-              <a class="btn btn-danger" href='/delete/{{u.usuario}}'>Eliminar</a>
+              <a class="btn btn-warning" href="/edit/{{u.usuario}}">Editar</a>
+              <a class="btn btn-danger" href="/delete/{{u.usuario}}">Eliminar</a>
             </td>
           </tr>
           {% endfor %}
