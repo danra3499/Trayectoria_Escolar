@@ -1,40 +1,43 @@
 {% extends 'body.html' %}
 {% block body %}
 
-    <div class="row">
-        <div class="col-md-4 offset-md-4">
-            <div class="card card-body">
-              <h3 class="text-center mb-4">Actualización de datos</h3>
-                <form action="/update/{{usuario}}" method='POST'>
-                    <div class="form-group">
-                        <input type="text"  name="usuario" placeholder="Numero de empleado" class="form-control">
-                      </div>
-                      <div class="form-group mb-2">
-                        <input type="text" class="form-control" name="nombres" placeholder="Nombres">
-                      </div>
-                      <div class="form-group mb-2">
-                        <input type="text" class="form-control" name="apellido_p" placeholder="Apellido paterno">
-                      </div>
-                      <div class="form-group mb-2">
-                        <input type="text" class="form-control" name="apellido_m" placeholder="Apellido meterno">
-                      </div>
-                      <div class="form-group mb-2">
-                        <input type="password" class="form-control" name="password" placeholder="Contraseña">
-                      </div>
-                      <div class="form-group mb-2">
-                        <label for="tipo_usuario">Tipo de usuario</label><br>
-                        <input type="radio" value="1" name="tipo_usuario">Administrador<br>
-                        <input type="radio" value="2" name="tipo_usuario">Docente<br>
-                      </div>
-                    <div class="mt-3 d-grid gap-2">
-                        <button type="submit" class="btn btn-primary btn-block">
-                            Actualizar 
-                        </button>
-                    </div>
-                </form>
-            </div>
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card card-body">
+      <h3 class="text-center mb-4">Actualización de datos</h3>
+      <form action="/update/{{usuarios.1}}" method='POST'>
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <div class="form-group mb-2">
+          <input type="text" name="usuario" placeholder="Numero de empleado" class="form-control"
+            value="{{usuarios.1}}">
         </div>
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" name="nombres" placeholder="Nombres" value="{{usuarios.2}}">
+        </div>
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" name="apellido_p" placeholder="Apellido paterno"
+            value="{{usuarios.3}}">
+        </div>
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" name="apellido_m" placeholder="Apellido meterno"
+            value="{{usuarios.4}}">
+        </div>
+        <div class="form-group mb-2">
+          <input type="password" class="form-control" name="password" placeholder="Contraseña">
+        </div>
+        <div class="form-group mb-2">
+          <label for="tipo_usuario">Tipo de usuario</label><br>
+          <input type="radio" value="1" name="tipo_usuario">Administrador<br>
+          <input type="radio" value="2" name="tipo_usuario">Docente<br>
+        </div>
+        <div class="mt-3 d-grid gap-2">
+          <button type="submit" class="btn btn-primary btn-block">
+            Actualizar
+          </button>
+        </div>
+      </form>
     </div>
+  </div>
+</div>
 
 {% endblock %}
-

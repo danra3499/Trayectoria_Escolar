@@ -79,7 +79,6 @@ def home():
 @login_required
 def usuario():
     data = ModeloUsuario.consultar_usuarios(db)
-    # data=usuarios
     return render_template('usuarios.html', data=data)
 
 
@@ -103,49 +102,31 @@ def agregar_usuario():
 @app.route('/edit/<usuario>', methods=['POST', 'GET'])
 def edit(usuario):
     cursor = db.connection.cursor()
-    cursor.execute(
-        'SELECT * FROM usuario WHERE usuario = {0}'. format(usuario))
+    query = """SELECT * FROM usuario WHERE usuario = '{0}'""".format(usuario)
+    cursor.execute(query)
     data = cursor.fetchall()
-    cursor.close()
-    # print(data[0])
-    return render_template('edit_usuario.html')
-   # return render_template('usuarios.html', usuarios = data[0])
+    return render_template('edit_usuario.html', usuarios=data[0])
 
 
 @app.route('/update/<usuario>', methods=['POST'])
 def update(usuario):
     if request.method == 'POST':
-        usuario = request.form['Usuario']
-        nombres = request.form['Nombres']
+        usuario = request.form['usuario']
+        nombres = request.form['nombres']
         apellido_p = request.form['apellido_p']
         apellido_m = request.form['apellido_m']
-        password = generate_password_hash(request.form['password'])
+        # password = generate_password_hash(request.form['password'])
         tipo_usuario = request.form.get('tipo_usuario')
-        cursor = db.connection.cursor()
-        cursor.execute("""
-          UPDATE usuario
-          SET usuario = {0},
-               nombres = {1},
-               apellido_p = {2},
-               apellido_m = {3},
-               password = {4},
-               tipo_usuario = {5}
-          WHERE usuario = {0}
-        """, ModeloUsuario.agregar_usuario(
-            db, usuario, nombres, apellido_p, apellido_m, password, tipo_usuario))
-        #flash('Registro actualizado correctamente')
-        db.connection.commit()
+        ModeloUsuario.editar_usuario(
+            db, usuario, nombres, apellido_p, apellido_m, tipo_usuario)
         return redirect(url_for('usuario'))
     else:
         return render_template('usuario.html')
-   # return render_template('usuarios.html', usuarios = data[0])
 
 
 @app.route('/delete/<usuario>', methods=['POST', 'GET'])
 def delete(usuario):
-    cursor = db.connection.cursor()
-    cursor.execute('DELETE FROM usuario WHERE usuario = {0}'.format(usuario))
-    db.connection.commit()
+    ModeloUsuario.eliminar_usuario(db, usuario)
     flash('Registro eliminado correctamente')
     return redirect(url_for('usuario'))
 

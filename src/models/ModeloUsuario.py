@@ -59,14 +59,35 @@ class ModeloUsuario():
     def consultar_usuarios(self, db):
         try:
             cursor = db.connection.cursor()
-            query = """SELECT usuario, nombres, apellido_p, apellido_m, tipo_usuario
+            query = """SELECT id, usuario, nombres, apellido_p, apellido_m, password, tipo_usuario
             FROM usuario"""
             cursor.execute(query)
             data = cursor.fetchall()
             usuarios = []
             for u in data:
-                usuario = Usuario(None, u[0], u[1], u[2], u[3], None, u[4])
+                usuario = Usuario(u[0], u[1], u[2], u[3], u[4], u[5], u[6])
                 usuarios.append(usuario)
             return usuarios
+        except Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def editar_usuario(self, db, usuario, nombres, apellido_p, apellido_m, tipo_usuario):
+        try:
+            cursor = db.connection.cursor()
+            query = """ UPDATE usuario SET usuario = '{0}', nombres = '{1}', apellido_p = '{2}', apellido_m = '{3}', tipo_usuario = '{4}'
+            WHERE usuario = '{5}'""".format(usuario, nombres, apellido_p, apellido_m, tipo_usuario, usuario)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def eliminar_usuario(self, db, usuario):
+        try:
+            cursor = db.connection.cursor()
+            query = "DELETE FROM usuario WHERE usuario = '{0}'".format(usuario)
+            cursor.execute(query)
+            db.connection.commit()
         except Exception as ex:
             raise Exception(ex)
