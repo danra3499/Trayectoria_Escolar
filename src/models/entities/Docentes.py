@@ -1,9 +1,6 @@
 class Docentes():
-    def __init__(self, id, Profesión, Nombre, Telefono, Email, Materias_impartidas, Horas):
+    def __init__(self, id, nombres, apellido_p, apellido_m):
         self.id = id
-        self.Profesión = Profesión
-        self.Nombre = Nombre
-        self.Telefono = Telefono
-        self.Email = Email
-        self.Materias_impartidas = Materias_impartidas
-        self.Horas = Horas
+        self.nombres = nombres
+        self.apellido_p = apellido_p
+        self.apellido_m = apellido_m

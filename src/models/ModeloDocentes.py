@@ -3,11 +3,11 @@ from .entities.Docentes import Docentes
 
 class Modelo_docente():
     @classmethod
-    def add(self, db, id, Profesión, Nombre, Telefono, Email, Materias_impartidas, Horas):
+    def add(self, db, id, nombres, apellido_p, apellido_m):
         try:
             cursor = db.connection.cursor()
-            query = """INSERT INTO docentes(id, Profesión, Nombre, Telefono, Email, Materias_impartidas, Horas,)
-            VALUES({0},'{1}','{2}','{3}','{4}','{5}','{6}','{7}')""".format(id, Profesión, Nombre, Telefono, Email, Materias_impartidas, Horas)
+            query = """INSERT INTO docente(id, nombres, apellido_p, apellido_m)
+            VALUES({0},'{1}','{2}','{3}')""".format(id, nombres, apellido_p, apellido_m)
             cursor.execute(query)
             db.connection.commit()
         except Exception as e:

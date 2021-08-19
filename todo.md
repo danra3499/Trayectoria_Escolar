@@ -7,5 +7,3 @@
 # 11/08/2021
 1. Actualizar la tabla materia de la base de datos
 
-# 18/08/2021
-1. Configurar (actualizar usuarios)
