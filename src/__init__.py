@@ -155,25 +155,56 @@ def agregar_alumno():
 @app.route('/docente')
 @login_required
 def docentes():
-    return render_template('docentes.html')
+    docente = Modelo_docente.obtener_docentes(db)
+    return render_template('docentes.html', data=docente)
+
 
 @app.route('/agregar_docentes', methods=['POST', 'GET'])
-def agregar_docentes(): 
+def agregar_docentes():
     if request.method == 'POST':
+        n_control = request.form['n_control']
         nombres = request.form['nombres']
         apellido_p = request.form['apellido_p']
         apellido_m = request.form['apellido_m']
-        cur = db.connection.cursor()
-        cur.execute("INSERT INTO docente (nombres, apellido_p, apellido_m) VALUES (%s, %s, %s)",
-                   (nombres, apellido_p, apellido_m))
-        db.connection.commit()
-        flash('Registro exitoso')
-        #Modelo_docente.add(db, nombres, apellido_p, apellido_m)
+        Modelo_docente.agregar_docente(
+            db, n_control, nombres, apellido_p, apellido_m)
         return redirect(url_for('docentes'))
     else:
         return render_template('docentes.html', data=docentes)
     # return render_template('docentes.html')
-    
+
+
+@app.route('/editar_docente/<id>', methods=['POST', 'GET'])
+def editar_docente(id):
+    cursor = db.connection.cursor()
+    query = """SELECT * FROM docente WHERE id = '{0}'""".format(id)
+    cursor.execute(query)
+    data = cursor.fetchall()
+    return render_template('editar_docente.html', docente=data[0])
+
+
+@app.route('/actualizar_docente/<id>', methods=['POST'])
+def actualizar_docente(id):
+    if request.method == 'POST':
+        n_control = request.form['n_control']
+        nombres = request.form['nombres']
+        apellido_p = request.form['apellido_p']
+        apellido_m = request.form['apellido_m']
+        tipo_usuario = request.form.get('tipo_usuario')
+        Modelo_docente.editar_docente(
+            db, n_control, nombres, apellido_p, apellido_m)
+        return redirect(url_for('docentes'))
+    else:
+        return render_template('docentes.html')
+
+
+@app.route('/eliminar_docente/<id>', methods=['POST', 'GET'])
+def eliminar_docente(id):
+    Modelo_docente.eliminar_docente(db, id)
+    flash('Registro eliminado correctamente')
+    return redirect(url_for('docentes'))
+
+
 @app.route('/agregar_materia', methods=['POST', 'GET'])
 @login_required
 def agregar_materia():
