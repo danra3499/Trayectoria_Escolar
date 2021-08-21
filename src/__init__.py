@@ -100,6 +100,7 @@ def agregar_usuario():
 
 
 @app.route('/edit/<usuario>', methods=['POST', 'GET'])
+@login_required
 def edit(usuario):
     cursor = db.connection.cursor()
     query = """SELECT * FROM usuario WHERE usuario = '{0}'""".format(usuario)
@@ -109,6 +110,7 @@ def edit(usuario):
 
 
 @app.route('/update/<usuario>', methods=['POST'])
+@login_required
 def update(usuario):
     if request.method == 'POST':
         usuario = request.form['usuario']
@@ -125,6 +127,7 @@ def update(usuario):
 
 
 @app.route('/delete/<usuario>', methods=['POST', 'GET'])
+@login_required
 def delete(usuario):
     ModeloUsuario.eliminar_usuario(db, usuario)
     flash('Registro eliminado correctamente')
@@ -160,6 +163,7 @@ def docentes():
 
 
 @app.route('/agregar_docentes', methods=['POST', 'GET'])
+@login_required
 def agregar_docentes():
     if request.method == 'POST':
         n_control = request.form['n_control']
@@ -175,6 +179,7 @@ def agregar_docentes():
 
 
 @app.route('/editar_docente/<id>', methods=['POST', 'GET'])
+@login_required
 def editar_docente(id):
     cursor = db.connection.cursor()
     query = """SELECT * FROM docente WHERE id = '{0}'""".format(id)
@@ -184,6 +189,7 @@ def editar_docente(id):
 
 
 @app.route('/actualizar_docente/<id>', methods=['POST'])
+@login_required
 def actualizar_docente(id):
     if request.method == 'POST':
         n_control = request.form['n_control']
@@ -199,6 +205,7 @@ def actualizar_docente(id):
 
 
 @app.route('/eliminar_docente/<id>', methods=['POST', 'GET'])
+@login_required
 def eliminar_docente(id):
     Modelo_docente.eliminar_docente(db, id)
     flash('Registro eliminado correctamente')
