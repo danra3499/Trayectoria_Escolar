@@ -1,4 +1,5 @@
 from .entities.Materia import Materia
+from .entities.Alumno import Alumno
 
 
 class Modelo_materia():
@@ -53,8 +54,41 @@ class Modelo_materia():
     def materia_docente(self, db, id_docente):
         try:
             cursor = db.connection.cursor()
-            query = "SELECT nombre, id_grupo FROM materia WHERE id_docente = {0}".format(
+            query = "SELECT id, nombre, id_grupo FROM materia WHERE id_docente = {0}".format(
                 id_docente)
+            cursor.execute(query)
+            data = cursor.fetchall()
+            materias = []
+            for m in data:
+                materia = Materia(m[0], m[1], None, m[2], None)
+                materias.append(materia)
+            return materias
+        except Exception as e:
+            raise Exception(e)
+
+    @classmethod
+    def alumnos_materia_id(self, db, id_materia):
+        """Funcion para consultar a los alumnos que cursan una materia"""
+        try:
+            cursor = db.connection.cursor()
+            query = "SELECT alumno.id, alumno.nombres, alumno.apellido_p, alumno.apellido_m FROM materia JOIN grupo ON materia.id_grupo = grupo.id JOIN alumno ON alumno.id_grupo = grupo.id WHERE materia.id = {0}".format(
+                id_materia)
+            cursor.execute(query)
+            data = cursor.fetchall()
+            alumnos = []
+            for a in data:
+                alumno = Alumno(a[0], a[1], a[2], a[3], None, None, None)
+                alumnos.append(alumno)
+            return alumnos
+        except Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def materia_grupo(self, db, id_grupo):
+        try:
+            cursor = db.connection.cursor()
+            query = "SELECT nombre, id_grupo FROM materia WHERE id_grupo = '{0}'".format(
+                id_grupo)
             cursor.execute(query)
             data = cursor.fetchall()
             materias = []
@@ -62,5 +96,5 @@ class Modelo_materia():
                 materia = Materia(None, m[0], None, m[1], None)
                 materias.append(materia)
             return materias
-        except Exception as e:
-            raise Exception(e)
+        except Exception as ex:
+            raise Exception(ex)

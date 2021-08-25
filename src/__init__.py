@@ -34,19 +34,15 @@ def login():
     if request.method == 'POST':
         user = request.form['usuario']
         password = request.form['password']
-
         usuario = Usuario(None, user, None, None, None, password, None)
         logged = ModeloUsuario.login(db, usuario)
-
         if logged != None:
             login_user(logged)
             flash(BIENVENIDA, 'success')
             return redirect(url_for('home'))
-
         else:
             flash(LOGIN_NO_VALIDO, 'warning')
             return render_template('/auth/login.html', title='Login')
-
     else:
         return render_template('/auth/login.html', title='Login')
 
@@ -64,7 +60,7 @@ def logout():
 def home():
     if current_user.is_authenticated:
         alumnos = Modelo_alumno.obtener_alumnos(db)
-        materias = Modelo_materia.materia_docente(db, 1284373821)
+        materias = Modelo_materia.materia_docente(db, current_user.usuario)
         data = []
         for i in range(1, 8):
             objeto = 'materia_semestre'+str(i)
@@ -232,34 +228,32 @@ def grupos():
     return render_template('grupos.html', data=grupos)
 
 
-@app.route('/materias')
+# @app.route('/materias')
+# @login_required
+# def materias():
+#     materias = Modelo_materia.obtener_nombre_materia(db, 1)
+#     return render_template('materias.html', data=materias)
+
+
+@app.route('/materia/<grupo>')
 @login_required
-def materias():
-    materias = Modelo_materia.obtener_nombre_materia(db, 1)
+def materia(grupo):
+    # materias = Modelo_materia.obtener_nombre_materia(db, 1)
+    materias = Modelo_materia.materia_grupo(db, grupo)
     return render_template('materias.html', data=materias)
 
+# @app.route('/materia')
+# @login_required
+# def materia():
+#     alumnos = Modelo_alumno.obtener_alumnos(db)
+#     return render_template('evaluar.html', data=alumnos)
 
-@app.route('/materia')
+
+@app.route('/evaluar/<id>', methods=['POST', 'GET'])
 @login_required
-def materia():
-    alumnos = Modelo_alumno.obtener_alumnos(db)
+def evaluar(id):
+    alumnos = Modelo_materia.alumnos_materia_id(db, id)
     return render_template('evaluar.html', data=alumnos)
-
-
-@app.route('/evaluar', methods=['POST', 'GET'])
-@login_required
-def evaluar():
-    if request.method == 'POST':
-        parcial = request.form.getlist('parcial')
-        id_materia = request.form.getlist('materia')
-        id_alumno = request.form.getlist('id_alumno')
-        calificacion = request.form.getlist('calificacion')
-        for i in range(1, len(parcial)+1):
-            Modelo_evaluacion.evaluar(
-                db, parcial[i], fecha, id_materia[i], id_alumno[i], calificacion[i])
-        return redirect(url_for('evaluar'))
-    else:
-        return render_template('alumnos.html')
 
 
 def pagina_no_encontrada(error):

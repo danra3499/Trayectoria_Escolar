@@ -1,19 +1,5 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
-<!-- <h1>Materias</h1>
-<form action="/agregar_materia" method="POST">
-  <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-  <input type="text" name="nombre" placeholder="Nombre de la materia" required>
-  <input type="number" name="creditos" placeholder="Numero de creditos" required>
-  <input type="number" name="semestre" placeholder="Semestre" required>
-  <input type="submit" value="Agregar">
-</form> -->
-<ul class="list">
-  {% for m in data %}
-  <li>
-    <a type="button" class="btn btn-primary btn-lg mb-4" href="{{url_for('materia')}}">{{m.nombre}}</a>
-  </li>
-  {% endfor %}
-</ul>
+<h1 class="text-center">Materias</h1>
 {% endblock %}
