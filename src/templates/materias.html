@@ -1,5 +1,24 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
-<h1 class="text-center">Materias</h1>
+<h1 class="text-center mb-5">Materias</h1>
+<div class="row">
+
+  {% for m in data%}
+  <div class="list-group col-sm-12 col-md-4 mb-4">
+
+    <!-- <a href="">{{m.nombre}}</a> -->
+
+    <a href="#" class="list-group-item list-group-item-action active mb-4" aria-current="true">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{m.nombre}}</h5>
+        <!-- <small>Docente: </small> -->
+      </div>
+      <p class="mb-1">Docente: </p>
+      <!-- <small>And some small print.</small> -->
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
 {% endblock %}
