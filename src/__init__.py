@@ -251,6 +251,9 @@ def materia(grupo):
 #     return render_template('evaluar.html', data=alumnos)
 
 
+"""---------------------------EVALUACIONES---------------------------"""
+
+
 @app.route('/evaluar/<id>', methods=['POST', 'GET'])
 @login_required
 def evaluar(id):
@@ -258,42 +261,56 @@ def evaluar(id):
     return render_template('evaluar.html', data=alumnos, fecha=fecha)
 
 
-@app.route('/evaluar_alumno/<id>', methods=['POST', 'GET'])
+""" Propuesta para solucionar el problema rederict a la tabla de los alumnos de la materia"""
+# @app.route('/evaluar_alumno/<id_alumno>/<id_materia>', methods=['POST', 'GET'])
+# @login_required
+# def evaluar_alumno(id_alumno, id_materia):
+#     hoy = date.today()
+#     cursor = db.connection.cursor()
+#     query = """SELECT * FROM alumno WHERE id = '{0}'""".format(id_alumno)
+#     cursor.execute(query)
+#     data = cursor.fetchall()
+
+#     query2 = """SELECT id FROM materia WHERE id = '{0}'""".format(id_materia)
+#     cursor.execute(query2)
+#     data2 = cursor.fetchall()
+#     return render_template('evaluar_alumno.html', data=data[0], materia=data2[0], fecha=hoy)
+"""-----------------------------------------------------------------------------------------"""
+
+
+@app.route('/evaluar_alumno/<id_alumno>', methods=['POST', 'GET'])
 @login_required
-def evaluar_alumno(id):
+def evaluar_alumno(id_alumno):
     hoy = date.today()
     cursor = db.connection.cursor()
-    query = """SELECT * FROM alumno WHERE id = '{0}'""".format(id)
+    query = """SELECT * FROM alumno WHERE id = '{0}'""".format(id_alumno)
     cursor.execute(query)
     data = cursor.fetchall()
     return render_template('evaluar_alumno.html', data=data[0], fecha=hoy)
-
-# @app.route('/editar_docente/<id>', methods=['POST', 'GET'])
-# @login_required
-# def editar_docente(id):
-#     cursor = db.connection.cursor()
-#     query = """SELECT * FROM docente WHERE id = '{0}'""".format(id)
-#     cursor.execute(query)
-#     data = cursor.fetchall()
-#     return render_template('editar_docente.html', docente=data[0])
 
 
 @app.route('/capturar_evaluacion', methods=['POST'])
 @login_required
 def capturar_evaluacion():
-    fecha = date.today()
     if request.method == 'POST':
         parcial = request.form['parcial']
-        fecha = fecha
+        fecha = request.form['fecha']
         calificacion = request.form['calificacion']
-        tipo_evaluacion = request.form['tipo_evaluacion']
-        id_materia = request.form['id_materia']
+        tipo_evaluacion = request.form.get('tipo_evaluacion')
+        id_materia = request.form['materia']
         id_alumno = request.form['n_control']
         Modelo_evaluacion.evaluar(
             db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
+        """
+        Al finalizar la captura de calificacion debera regresar a la lista de alumnos 
+        sin el alumno que ya ha sido calificado
+        """
         return render_template('evaluar.html')
     else:
         return render_template('evaluar.html')
+
+
+"""---------------------------FIN DE EVALUACIONES---------------------------"""
 
 
 def pagina_no_encontrada(error):

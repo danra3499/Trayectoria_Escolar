@@ -61,6 +61,7 @@ INSERT INTO materia(nombre, n_creditos, id_grupo, id_docente) VALUES
 ('ALGEBRA LINEAL', 5, 3201, 1392749212),
 ('PROBABILIDAD Y ESTADISTICA', 5, 3201, 1284373821);
 
+INSERT INTO tipo_evaluacion(nombre) VALUES ('Curso normal'), ('Segunda oportunidad'), ('Recurse'), ('Especial');
 
 
 -- -- MATERIAS

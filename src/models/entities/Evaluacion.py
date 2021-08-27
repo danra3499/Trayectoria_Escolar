@@ -1,11 +1,8 @@
-from datetime import date
-
-
 class Evaluacion():
     def __init__(self, id, parcial, fecha, calificacion,  id_tipo_evaluacion, id_materia, id_alumno):
         self.id = id
         self.parcial = parcial
-        self.fecha = date.today()
+        self.fecha = fecha
         self.calificacion = calificacion
         self.id_tipo_evaluacion = id_tipo_evaluacion
         self.id_meteria = id_materia
