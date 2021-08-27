@@ -1,3 +1,5 @@
+from src.models.entities.Alumno import Alumno
+from werkzeug.datastructures import RequestCacheControl
 from src.models.entities.Grupo import Grupo
 from src.models.entities.Materia import Materia
 from flask import Flask, render_template, redirect, request, url_for, flash
@@ -15,13 +17,13 @@ from .models.ModeloGrupo import Modelo_grupo
 from .models.entities.Usuario import Usuario
 
 from .consts import *
-import datetime
+from datetime import date
 
 app = Flask(__name__)
 csrf = CSRFProtect()
 db = MySQL(app)
 login_manager_app = LoginManager(app)
-fecha = datetime.date.today()
+fecha = date.today()
 
 
 @login_manager_app.user_loader
@@ -253,7 +255,45 @@ def materia(grupo):
 @login_required
 def evaluar(id):
     alumnos = Modelo_materia.alumnos_materia_id(db, id)
-    return render_template('evaluar.html', data=alumnos)
+    return render_template('evaluar.html', data=alumnos, fecha=fecha)
+
+
+@app.route('/evaluar_alumno/<id>', methods=['POST', 'GET'])
+@login_required
+def evaluar_alumno(id):
+    hoy = date.today()
+    cursor = db.connection.cursor()
+    query = """SELECT * FROM alumno WHERE id = '{0}'""".format(id)
+    cursor.execute(query)
+    data = cursor.fetchall()
+    return render_template('evaluar_alumno.html', data=data[0], fecha=hoy)
+
+# @app.route('/editar_docente/<id>', methods=['POST', 'GET'])
+# @login_required
+# def editar_docente(id):
+#     cursor = db.connection.cursor()
+#     query = """SELECT * FROM docente WHERE id = '{0}'""".format(id)
+#     cursor.execute(query)
+#     data = cursor.fetchall()
+#     return render_template('editar_docente.html', docente=data[0])
+
+
+@app.route('/capturar_evaluacion', methods=['POST'])
+@login_required
+def capturar_evaluacion():
+    fecha = date.today()
+    if request.method == 'POST':
+        parcial = request.form['parcial']
+        fecha = fecha
+        calificacion = request.form['calificacion']
+        tipo_evaluacion = request.form['tipo_evaluacion']
+        id_materia = request.form['id_materia']
+        id_alumno = request.form['n_control']
+        Modelo_evaluacion.evaluar(
+            db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
+        return render_template('evaluar.html')
+    else:
+        return render_template('evaluar.html')
 
 
 def pagina_no_encontrada(error):

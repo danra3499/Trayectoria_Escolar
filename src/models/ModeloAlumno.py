@@ -28,3 +28,13 @@ class Modelo_alumno():
             return alumnos
         except Exception as e:
             raise Exception(e)
+
+    @classmethod
+    def obtener_alumno_id(self, db, id):
+        try:
+            cursor = db.connection.cursor()
+            query = "SELECT id, nombre, apellido_p, apellido_m FROM alumno WHERE id = {0}".format(
+                id)
+            cursor.execute(query)
+        except Exception as ex:
+            raise Exception(ex)
