@@ -1,0 +1,39 @@
+{% extends 'body.html' %}
+{% block body %}
+
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card card-body">
+      <h3 class="text-center mb-4">Actualización de datos materias</h3>
+      <form action="/actualizar_materia/{{materia.0}}" method='POST'>
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <div class="form-group mb-2">
+          <input type="text" name="id" placeholder="Id" class="form-control"
+            value="{{materia.0}}">
+        </div>
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" name="nombre" placeholder="Nombre materia" value="{{materia.1}}">
+        </div>
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" name="n_creditos" placeholder="Numero de creditos"
+            value="{{materia.2}}">
+        </div>
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" name="id_grupo" placeholder="Grupo"
+            value="{{materia.3}}">
+        </div>
+        <div class="form-group mb-2">
+            <input type="text" class="form-control" name="id_docente" placeholder="Docente"
+              value="{{materia.4}}">
+          </div>
+        <div class="mt-3 d-grid gap-2">
+          <button type="submit" class="btn btn-primary btn-block">
+            Actualizar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,87 @@
+
+{% extends 'body.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block body %}
+<div class="row">
+    <div class="col-md-5">
+        <div class="card card-body">
+            <h1 class="text-center mb-4">Registrar Materia</h1>
+
+            <!-- {% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong style='font-size: 14px;'>
+        {{message}}
+    </strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">}
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %} -->
+
+            <form action="/agregar_materia" method='POST'>
+                <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                <div class="form-group mb-2">
+                    <input class="form-control" type="number" name="id" placeholder="Id materia">
+                </div>
+                <div class="form-group mb-2">
+                    <input class="form-control" type="text" name="nombre" placeholder="Nombre">
+                </div>
+                <div class="form-group mb-2">
+                    <input class="form-control" type="text" name="n_creditos" placeholder="Numero de creditos">
+                </div>
+                <div class="form-group mb-2">
+                    <input class="form-control" type="number" name="id_grupo" placeholder="Grupo">
+                </div>
+                <div class="form-group mb-2">
+                    <input class="form-control" type="text" name="id_docente" placeholder="Docente">
+                </div>
+                <button class="btn btn-primary btn-block">
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong style='font-size: 14px;'>{{message}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div> -->
+
+    <div class="col-md-7">
+        <div class="card card-body">
+            <h1 class="text-center">Lista de materias</h1>
+            <table class="table table-striped table-hover table-bordered table-sm bg-white">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Nombre</td>
+                        <td>Creditos</td>
+                        <td>Grupo</td>
+                        <td>Docente</td>
+                        <td>Acciones</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in data %}
+                    <tr>
+                        <td>{{ m.id}}</td> 
+                        <td>{{ m.nombre}}</td>
+                        <td>{{ m.n_creditos}}</td>
+                        <td>{{ m.id_grupo}}</td>
+                        <td>{{ m.id_docente}}</td>
+                        <td>
+                            <a class="btn btn-warning" href="/editar_materia/{{m.id}}">Editar</a>
+                            <a class="btn btn-danger btn-delete" href="/eliminar_materia/{{m.id}}">Eliminar</a>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

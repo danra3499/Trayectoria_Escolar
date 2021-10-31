@@ -64,7 +64,7 @@ def home():
         alumnos = Modelo_alumno.obtener_alumnos(db)
         materias = Modelo_materia.materia_docente(db, current_user.usuario)
         data = []
-        for i in range(1, 8):
+        for i in range(1, 9):
             objeto = 'materia_semestre'+str(i)
             objeto = Modelo_materia.obtener_materias_por_semestre(db, i)
             data.append(objeto)
@@ -72,7 +72,7 @@ def home():
     else:
         return redirect(url_for('login'))
 
-
+"""-----------------------------------------USUARIOS------------------------------------------------------"""
 @app.route('/usuarios')
 @login_required
 def usuario():
@@ -131,6 +131,7 @@ def delete(usuario):
     flash('Registro eliminado correctamente')
     return redirect(url_for('usuario'))
 
+"""----------------------------------------------ALUMNO----------------------------------------------"""
 
 @app.route('/agregar_alumno', methods=['POST', 'GET'])
 @login_required
@@ -152,6 +153,7 @@ def agregar_alumno():
     else:
         return render_template('alumnos.html', data=alumnos)
 
+"""-----------------------------------------------DOCENTE-----------------------------------------------"""
 
 @app.route('/docente')
 @login_required
@@ -209,19 +211,63 @@ def eliminar_docente(id):
     flash('Registro eliminado correctamente')
     return redirect(url_for('docentes'))
 
+"""--------------------------------------MATERIAS------------------------------------------------------"""    
+
+@app.route('/materias')
+@login_required
+def materias():
+    materia = Modelo_materia.obtener_materias(db)
+    return render_template('materia_ventana.html', data=materia)
 
 @app.route('/agregar_materia', methods=['POST', 'GET'])
 @login_required
 def agregar_materia():
     if request.method == 'POST':
+        id = request.form['id']
         nombre = request.form['nombre']
-        creditos = request.form['creditos']
-        semestre = request.form['semestre']
-        Modelo_materia.agregar(db, nombre, creditos, semestre)
-        return redirect(url_for('agregar_materia'))
+        creditos = request.form['n_creditos']
+        grupo = request.form['id_grupo']
+        docente = request.form['id_docente']
+        Modelo_materia.agregar_materia(db, id, nombre, creditos, grupo, docente)
+        return redirect(url_for('materias'))
     else:
-        return render_template('materias.html')
+        return render_template('materia_ventana.html')
 
+@app.route('/editar_materia/<id>', methods=['POST', 'GET'])
+@login_required
+def editar_materia(id):
+    cursor = db.connection.cursor()
+    query = """SELECT * FROM materia WHERE id = '{0}'""".format(id)
+    cursor.execute(query)
+    data = cursor.fetchall()
+    return render_template('editar_materias.html', materia=data[0])
+
+
+@app.route('/actualizar_materia/<id>', methods=['POST'])
+@login_required
+def actualizar_materia(id):
+    if request.method == 'POST':
+        id = request.form['id']
+        nombre = request.form['nombre']
+        creditos = request.form['n_creditos']
+        grupo = request.form['id_grupo']
+        docente = request.form.get('id_docente')
+        Modelo_materia.editar_materia(
+            db, id, nombre, creditos, grupo, docente)
+        return redirect(url_for('materias'))
+    else:
+        return render_template('materia_ventana.html')
+
+
+@app.route('/eliminar_materia/<id>', methods=['POST', 'GET'])
+@login_required
+def eliminar_materia(id):
+    Modelo_materia.eliminar_materia(db, id)
+    flash('Registro eliminado correctamente')
+    return redirect(url_for('materias'))
+
+
+"""#--------------------------------------GRUPOS------------------------------------------------------------"""
 
 @app.route('/grupos')
 @login_required

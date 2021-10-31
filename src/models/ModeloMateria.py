@@ -4,15 +4,31 @@ from .entities.Alumno import Alumno
 
 class Modelo_materia():
     @classmethod
-    def agregar(self, db, nombre, n_creditos, semestre):
+    def agregar_materia(self, db, id, nombre, n_creditos, id_grupo, id_docente):
         try:
             cursor = db.connection.cursor()
-            query = """INSERT INTO materia(nombre, n_creditos, id_semestre)
-            VALUES('{0}','{1}','{2}')""".format(nombre, n_creditos, semestre)
+            query = """INSERT INTO materia(id, nombre, n_creditos, id_grupo, id_docente)
+            VALUES('{0}','{1}','{2}','{3}', '{4}')""".format(id, nombre, n_creditos, id_grupo, id_docente)
             cursor.execute(query)
             db.connection.commit()
         except Exception as e:
             raise Exception(e)
+
+    @classmethod
+    def obtener_materias(self, db):
+        try:
+            cursor = db.connection.cursor()
+            query = """SELECT id, nombre, n_creditos, id_grupo, id_docente FROM materia"""
+            cursor.execute(query)
+            data = cursor.fetchall()
+            vista_materias = []
+            for m in data:
+                materias = Materia(m[0], m[1], m[2], m[3], m[4])
+                vista_materias.append(materias)
+            return vista_materias
+        except Exception as ex:
+            raise Exception(ex)
+
 
     @classmethod
     def obtener_materias_por_semestre(self, db, id_semestre):
@@ -96,5 +112,26 @@ class Modelo_materia():
                 materia = Materia(None, m[0], None, m[1], None)
                 materias.append(materia)
             return materias
+        except Exception as ex:
+            raise Exception(ex)
+    
+    @classmethod
+    def editar_materia(self, db, id, nombre, n_creditos, id_grupo, id_docente):
+        try:
+            cursor = db.connection.cursor()
+            query = """ UPDATE materia SET id = '{0}', nombre = '{1}', n_creditos = '{2}', id_grupo = '{3}', id_docente = '{4}'
+            WHERE id = '{5}'""".format(id, nombre, n_creditos, id_grupo, id_docente, id)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def eliminar_materia(self, db, id):
+        try:
+            cursor = db.connection.cursor()
+            query = "DELETE FROM materia WHERE id = '{0}'".format(id)
+            cursor.execute(query)
+            db.connection.commit()
         except Exception as ex:
             raise Exception(ex)
