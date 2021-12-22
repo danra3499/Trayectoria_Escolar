@@ -8,6 +8,7 @@ from flask_mysqldb import MySQL
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash
 
+
 from .models.ModeloUsuario import ModeloUsuario
 from .models.ModeloAlumno import Modelo_alumno
 from .models.ModeloDocentes import Modelo_docente
@@ -343,7 +344,7 @@ def capturar_evaluacion():
         fecha = request.form['fecha']
         calificacion = request.form['calificacion']
         tipo_evaluacion = request.form.get('tipo_evaluacion')
-        id_materia = request.form['materia']
+        id_materia = request.form['id']
         id_alumno = request.form['n_control']
         Modelo_evaluacion.evaluar(
             db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
