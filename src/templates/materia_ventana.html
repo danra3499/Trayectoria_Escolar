@@ -25,7 +25,7 @@
             <form action="/agregar_materia" method='POST'>
                 <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
                 <div class="form-group mb-2">
-                    <input class="form-control" type="number" name="id" placeholder="Id materia">
+                    <input class="form-control" type="number" name="id" placeholder="id_materia">
                 </div>
                 <div class="form-group mb-2">
                     <input class="form-control" type="text" name="nombre" placeholder="Nombre">
@@ -34,10 +34,10 @@
                     <input class="form-control" type="text" name="n_creditos" placeholder="Numero de creditos">
                 </div>
                 <div class="form-group mb-2">
-                    <!--input class="form-control" type="number" name="id_grupo" placeholder="Grupo"-->
-                    <label for="grupo">Grupo: </label>
+                    <input class="form-control" type="number" name="id_grupo" placeholder="Grupo">
+                    <!--label for="grupo">Grupo: </label>
                     <select  id="grupo">
-                        <option value="3101">3101</option>
+                        <option value="{{id.grupo}}">3101</option>
                         <option value="3201">3201</option>
                         <option value="3111">3111</option>
                         <option value="3201">3201</option>
@@ -61,13 +61,16 @@
                         <option value="3801">3801</option>
                         <option value="3802">3802</option>
                         <option value="3811">3811</option>
-                    </select>
+                    </select-->
                 </div>
                 <div class="form-group mb-2">
                     <input class="form-control" type="text" name="id_docente" placeholder="Docente">
                 </div>
                 <button class="btn btn-primary btn-block">
                     Guardar
+                </button>
+                <button class="btn btn-primary btn-block" type="reset">
+                    Borrar
                 </button>
             </form>
         </div>
@@ -84,7 +87,7 @@
             <table class="table table-striped table-hover table-bordered table-sm bg-white">
                 <thead>
                     <tr>
-                        <td><b>ID</td></b>
+                        <!--td><b>ID</td></b-->
                         <td><b>Nombre</td></b>
                         <td><b>Creditos</b>
                         <td><b>Grupo</td></b>
