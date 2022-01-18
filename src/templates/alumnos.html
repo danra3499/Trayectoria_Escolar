@@ -42,15 +42,27 @@
   <div class="col-md-7">
     <div class="card card-body">
       <h1 class="text-center">Lista de alumnos</h1>
+      <div style = "overflow: scroll; height: 500px;">
       <table class="table table-striped table-bordered bg-white table-sm">
         <thead>
           <tr>
+<<<<<<< HEAD
             <td><b>Nombres</td></b>
             <td><b>Apellido paterno</td></b>
             <td><b>Apellido materno</td></b>
             <td><b>No.Control</td></b>
             <td><b>Genero</td></b>
             <td><b>Status</td></b>
+=======
+            <td>Nombres</td>
+            <td>Apellido paterno</td>
+            <td>Apellido materno</td>
+            <td>No.Control</td>
+            <td>Genero</td>
+            <td>Status</td>
+            <td>Id_grupo</td>
+            <td>Acciones</td>
+>>>>>>> 5094fb11f18d9fd591d6db15e616f947e676581a
           </tr>
         </thead>
         <tbody>
@@ -62,10 +74,15 @@
             <td>{{ a.id }}</td>
             <td>{{ a.genero }}</td>
             <td>{{ a.status }}</td>
+            <td>{{ a.id_grupo }}</td>
+            <td>
+            <a class="btn btn-warning" href="#">Editar</a>
+            <a class="btn btn-danger btn-delete" href="/eliminar_alumno/{{a.id}}">Eliminar</a>
           </tr>
           {% endfor %}
         </tbody>
       </table>
+    </div>
     </div>
   </div>
 </div>

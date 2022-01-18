@@ -76,11 +76,15 @@ class Modelo_materia():
             data = cursor.fetchall()
             materias = []
             for m in data:
-                materia = Materia(m[0], m[1], None, m[2], None)
+                materia = Materia(m[0], m[1], None, m[2], m[3])
                 materias.append(materia)
             return materias
         except Exception as e:
             raise Exception(e)
+
+   
+
+            
 
     @classmethod
     def alumnos_materia_id(self, db, id_materia):
@@ -103,13 +107,13 @@ class Modelo_materia():
     def materia_grupo(self, db, id_grupo):
         try:
             cursor = db.connection.cursor()
-            query = "SELECT nombre, id_grupo FROM materia WHERE id_grupo = '{0}'".format(
+            query = "SELECT nombre, id_grupo , CONCAT(nombres,' ',apellido_p,' ',apellido_m) as Docente FROM materia A JOIN docente B on B.id = A.id_docente WHERE id_grupo = '{0}'".format(
                 id_grupo)
             cursor.execute(query)
             data = cursor.fetchall()
             materias = []
             for m in data:
-                materia = Materia(None, m[0], None, m[1], None)
+                materia = Materia(None, m[0], None, m[1], m[2])
                 materias.append(materia)
             return materias
         except Exception as ex:
