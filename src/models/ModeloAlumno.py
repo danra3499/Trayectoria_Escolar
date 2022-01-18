@@ -17,13 +17,13 @@ class Modelo_alumno():
     def obtener_alumnos(self, db):
         try:
             cursor = db.connection.cursor()
-            query = """SELECT id, nombres, apellido_p, apellido_m, genero, status FROM alumno"""
+            query = """SELECT * FROM alumno"""
             cursor.execute(query)
             data = cursor.fetchall()
             alumnos = []
-            for alumno in data:
-                alum = Alumno(alumno[0], alumno[1], alumno[2],
-                              alumno[3], alumno[4], alumno[5], None)
+            for a in data:
+                alum = Alumno(a[0], a[1], a[2],
+                              a[3], a[4], a[5], a[6])
                 alumnos.append(alum)
             return alumnos
         except Exception as e:
@@ -36,5 +36,28 @@ class Modelo_alumno():
             query = "SELECT id, nombre, apellido_p, apellido_m FROM alumno WHERE id = {0}".format(
                 id)
             cursor.execute(query)
+        except Exception as ex:
+            raise Exception(ex)
+    
+   
+
+    @classmethod
+    def editar_alumno(self, db, id, nombres, apellido_p, apellido_m, genero, status ,id_grupo):
+        try:
+            cursor = db.connection.cursor()
+            query = """ UPDATE alumno SET id = '{0}', nombres = '{1}', apellido_p = '{2}', apellido_m = '{3}', genero = '{4}', status = '{5}', id_grupo = '{6}'
+            WHERE id = '{7}'""".format(id, nombres, apellido_p, apellido_m, genero, status, id_grupo, id)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
+    
+    @classmethod
+    def eliminar_alumno(self, db, id):
+        try:
+            cursor = db.connection.cursor()
+            query = "DELETE FROM alumno WHERE id = '{0}'".format(id)
+            cursor.execute(query)
+            db.connection.commit()
         except Exception as ex:
             raise Exception(ex)

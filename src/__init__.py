@@ -97,25 +97,25 @@ def agregar_usuario():
         return render_template('usuario.html')
 
 
-@app.route('/edit/<usuario>', methods=['POST', 'GET'])
+@app.route('/editar_usuario/<usuario>', methods=['POST', 'GET'])
 @login_required
-def edit(usuario):
+def editar_usuario(usuario):
     cursor = db.connection.cursor()
     query = """SELECT * FROM usuario WHERE usuario = '{0}'""".format(usuario)
     cursor.execute(query)
     data = cursor.fetchall()
-    return render_template('edit_usuario.html', usuarios=data[0])
+    return render_template('editar_usuario.html', usuarios=data[0])
 
 
-@app.route('/update/<usuario>', methods=['POST'])
+@app.route('/actualizar_usuario/<usuario>', methods=['POST'])
 @login_required
-def update(usuario):
+def actualizar_usuario(usuario):
     if request.method == 'POST':
         usuario = request.form['usuario']
         nombres = request.form['nombres']
         apellido_p = request.form['apellido_p']
         apellido_m = request.form['apellido_m']
-        # password = generate_password_hash(request.form['password'])
+        password = generate_password_hash(request.form['password'])
         tipo_usuario = request.form.get('tipo_usuario')
         ModeloUsuario.editar_usuario(
             db, usuario, nombres, apellido_p, apellido_m, tipo_usuario)
@@ -124,14 +124,19 @@ def update(usuario):
         return render_template('usuario.html')
 
 
-@app.route('/delete/<usuario>', methods=['POST', 'GET'])
+@app.route('/eliminar_usuario/<usuario>', methods=['POST', 'GET'])
 @login_required
-def delete(usuario):
+def eliminar(usuario):
     ModeloUsuario.eliminar_usuario(db, usuario)
     flash('Registro eliminado correctamente')
     return redirect(url_for('usuario'))
 
 """----------------------------------------------ALUMNO----------------------------------------------"""
+@app.route('/alumnos')
+@login_required
+def alumno():
+    data = Modelo_alumno.obtener_alumnos(db)
+    return render_template('alumnos.html', data=data)
 
 @app.route('/agregar_alumno', methods=['POST', 'GET'])
 @login_required
@@ -144,14 +149,46 @@ def agregar_alumno():
         apellido_m = request.form['apellido_m']
         genero = request.form.get('genero')
         status = request.form.get('status')
-        semestre = request.form['semestre']
         grupo = request.form['grupo']
 
         Modelo_alumno.add(db, numero_control, nombres, apellido_p,
-                          apellido_m, genero, status, semestre, grupo)
+                          apellido_m, genero, status, grupo)
         return redirect(url_for('agregar_alumno'))
     else:
         return render_template('alumnos.html', data=alumnos)
+
+@app.route('/editar_alumno/<id>', methods=['POST', 'GET'])
+@login_required
+def editar_alumno(id):
+    cursor = db.connection.cursor()
+    query = """SELECT * FROM alumno WHERE id = '{0}'""".format(id)
+    cursor.execute(query)
+    data = cursor.fetchall()
+    return render_template('editar_alumno.html', alumno=data[0])
+
+
+@app.route('/actualizar_alumno/<id>', methods=['POST'])
+@login_required
+def actualizar_alumno(id):
+    if request.method == 'POST':
+        numero_control = request.form['numero_control']
+        nombres = request.form['nombres']
+        apellido_p = request.form['apellido_p']
+        apellido_m = request.form['apellido_m']
+        genero = request.form.get('genero')
+        status = request.form.get('status')
+        grupo = request.form['grupo']
+        Modelo_alumno.editar_alumno(db, numero_control, nombres, apellido_p, apellido_m, genero, status, grupo)
+        return redirect(url_for('alumno'))
+    else:
+        return render_template('alumnos.html')
+
+@app.route('/eliminar_alumno/<id>', methods=['POST', 'GET'])
+@login_required
+def eliminar_alumno(id):
+    Modelo_alumno.eliminar_alumno(db, id)
+    flash('Registro eliminado correctamente')
+    return redirect(url_for('alumno'))
 
 """-----------------------------------------------DOCENTE-----------------------------------------------"""
 
