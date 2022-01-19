@@ -1,10 +1,11 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
+<!--link rel="stylesheet" href="{{url_for('static', filename='css/Mayuscula.css')}}"-->
 <div class="row">
   <div class="col-md-5">
     <div class="card card-body">
-      <h1 class="text-center mb-4">Registrar usuarios</h1>
+      <h1 class="text-center mb-4">Registrar Usuarios</h1>
       <form action="/agregar_usuario" method="POST">
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
@@ -27,9 +28,12 @@
           <input type="radio" value="1" name="tipo_usuario">Administrador<br>
           <input type="radio" value="2" name="tipo_usuario">Docente<br>
         </div>
-        <div class="mt-3 d-grid gap-2">
-          <input type="submit" value="Agregar" class="btn btn-primary mt-3">
-        </div>
+        <button class="btn btn-primary btn-block">
+          Guardar
+      </button>
+        <button class="btn btn-primary btn-block" type="reset">
+          Limpiar
+      </button>
       </form>
     </div>
   </div>
