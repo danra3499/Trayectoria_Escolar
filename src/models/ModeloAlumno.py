@@ -40,3 +40,24 @@ class Modelo_alumno():
             raise Exception(e)
 
  
+    
+    @classmethod
+    def editar_alumno(self, db, id, nombres, apellido_p, apellido_m, genero, status ,id_grupo):
+        try:
+            cursor = db.connection.cursor()
+            query = """ UPDATE alumno SET id = '{0}', nombres = '{1}', apellido_p = '{2}', apellido_m = '{3}', genero = '{4}', status = '{5}', id_grupo = '{6}'
+            WHERE id = '{7}'""".format(id, nombres, apellido_p, apellido_m, genero, status, id_grupo, id)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
+    
+    @classmethod
+    def eliminar_alumno(self, db, id):
+        try:
+            cursor = db.connection.cursor()
+            query = "DELETE FROM alumno WHERE id = '{0}'".format(id)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)

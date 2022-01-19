@@ -5,7 +5,7 @@
   <div class="col-md-4 offset-md-4">
     <div class="card card-body">
       <h3 class="text-center mb-4">Actualización de datos</h3>
-      <form action="/update/{{usuarios.1}}" method='POST'>
+      <form action="/actualizar_usuario/{{usuarios.1}}" method='POST'>
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
           <input type="text" name="usuario" placeholder="Numero de empleado" class="form-control"
