@@ -8,7 +8,7 @@
       <form action="/actualizar_materia/{{materia.0}}" method='POST'>
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input type="text" name="id" placeholder="Id" class="form-control"
+          <input type="text" name="id" readonly="readonly" placeholder="Id" class="form-control"
             value="{{materia.0}}">
         </div>
         <div class="form-group mb-2">

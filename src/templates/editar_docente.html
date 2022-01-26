@@ -8,7 +8,7 @@
       <form action="/actualizar_docente/{{docente.0}}" method='POST'>
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input type="text" name="n_control" placeholder="Numero de empleado" class="form-control"
+          <input type="text" name="n_control" readonly="readonly" placeholder="Numero de empleado" class="form-control"
             value="{{docente.0}}">
         </div>
         <div class="form-group mb-2">

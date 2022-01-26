@@ -6,6 +6,7 @@
     <tr>
       <td>Alumno</td>
       <td>No.Control</td>
+      <td>Calificación</td>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,7 @@
     <tr>
       <td>{{ a.nombre_completo() }}</td>
       <td>{{ a.id }}</td>
+      <td>{{ a.calificación }}</td>
       <td><a class="btn btn-success" href="/evaluar_alumno/{{a.id}}">Evaluar</a></td>
     </tr>
     {% endfor %}

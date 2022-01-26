@@ -8,6 +8,7 @@ from flask_mysqldb import MySQL
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash
 
+
 from .models.ModeloUsuario import ModeloUsuario
 from .models.ModeloAlumno import Modelo_alumno
 from .models.ModeloDocentes import Modelo_docente
@@ -15,7 +16,12 @@ from .models.ModeloEvaluacion import Modelo_evaluacion
 from .models.ModeloMateria import Modelo_materia
 from .models.ModeloGrupo import Modelo_grupo
 from .models.entities.Usuario import Usuario
-
+from .models.ModeloIndices import Modelo_indice
+from .models.ModeloIndices import Modelo_indiceIAC
+from .models.ModeloIndices import Modelo_indiceIPE
+from .models.ModeloIndices import Modelo_indiceIDE
+from .models.ModeloIndices import Modelo_indiceISE
+from .models.ModeloIndices import Modelo_indiceIRE
 from .consts import *
 from datetime import date
 
@@ -64,7 +70,7 @@ def home():
         alumnos = Modelo_alumno.obtener_alumnos(db)
         materias = Modelo_materia.materia_docente(db, current_user.usuario)
         data = []
-        for i in range(1, 9):
+        for i in range(1, 25):
             objeto = 'materia_semestre'+str(i)
             objeto = Modelo_materia.obtener_materias_por_semestre(db, i)
             data.append(objeto)
@@ -137,6 +143,8 @@ def eliminar(usuario):
 def alumno():
     data = Modelo_alumno.obtener_alumnos(db)
     return render_template('alumnos.html', data=data)
+
+
 
 @app.route('/agregar_alumno', methods=['POST', 'GET'])
 @login_required
@@ -333,6 +341,11 @@ def materia(grupo):
 #     alumnos = Modelo_alumno.obtener_alumnos(db)
 #     return render_template('evaluar.html', data=alumnos)
 
+@app.route('/lista/<grupo>')
+@login_required
+def lista(grupo):
+    listas = Modelo_alumno.obtener_alumnos_grupo(db,grupo)
+    return render_template('lista_grupos.html', data=listas)
 
 """---------------------------EVALUACIONES---------------------------"""
 
@@ -344,21 +357,21 @@ def evaluar(id):
     return render_template('evaluar.html', data=alumnos, fecha=fecha)
 
 
-""" Propuesta para solucionar el problema rederict a la tabla de los alumnos de la materia"""
-# @app.route('/evaluar_alumno/<id_alumno>/<id_materia>', methods=['POST', 'GET'])
-# @login_required
-# def evaluar_alumno(id_alumno, id_materia):
-#     hoy = date.today()
-#     cursor = db.connection.cursor()
-#     query = """SELECT * FROM alumno WHERE id = '{0}'""".format(id_alumno)
-#     cursor.execute(query)
-#     data = cursor.fetchall()
+#""" Propuesta para solucionar el problema rederict a la tabla de los alumnos de la materia"""
+#@app.route('/evaluar_alumno/<id_alumno>/<id_materia>', methods=['POST', 'GET'])
+#@login_required
+#def evaluar_alumno(id_alumno, id_materia):
+ #    hoy = date.today()
+  #   cursor = db.connection.cursor()
+   #  query = """SELECT * FROM alumno WHERE id = '{0}'""".format(id_alumno)
+    # cursor.execute(query)
+     #data = cursor.fetchall()
 
-#     query2 = """SELECT id FROM materia WHERE id = '{0}'""".format(id_materia)
-#     cursor.execute(query2)
-#     data2 = cursor.fetchall()
-#     return render_template('evaluar_alumno.html', data=data[0], materia=data2[0], fecha=hoy)
-"""-----------------------------------------------------------------------------------------"""
+    # query2 = """SELECT id FROM materia WHERE id = '{0}'""".format(id_materia)
+     #cursor.execute(query2)
+     #data2 = cursor.fetchall()
+     #return render_template('evaluar_alumno.html', data=data[0], materia=data2[0], fecha=hoy)
+#"""-----------------------------------------------------------------------------------------"""
 
 
 @app.route('/evaluar_alumno/<id_alumno>', methods=['POST', 'GET'])
@@ -372,7 +385,7 @@ def evaluar_alumno(id_alumno):
     return render_template('evaluar_alumno.html', data=data[0], fecha=hoy)
 
 
-@app.route('/capturar_evaluacion', methods=['POST'])
+app.route('/capturar_evaluacion', methods=['POST'])
 @login_required
 def capturar_evaluacion():
     if request.method == 'POST':
@@ -410,3 +423,18 @@ def start_app(config):
     app.register_error_handler(401, pagina_no_autorizada)
     app.register_error_handler(404, pagina_no_encontrada)
     return app
+
+"""---------------------------Indices-------------------------------------------"""
+
+@app.route('/indices')
+@login_required
+def indices():
+    data = Modelo_indice.obtener_indice(db)
+    IndicesIAC = Modelo_indiceIAC.obtener_indiceIAC(db)
+    IndicesIPE = Modelo_indiceIPE.obtener_indiceIPE(db)
+    IndicesIDE = Modelo_indiceIDE.obtener_indiceIDE(db)
+    IndicesISE = Modelo_indiceISE.obtener_indiceISE(db)
+    IndicesIRE = Modelo_indiceIRE.obtener_indiceIRE(db)
+    return render_template('indices.html',  data=data, IndicesIAC=IndicesIAC, IndicesIPE=IndicesIPE, IndicesIDE = IndicesIDE, IndicesISE = IndicesISE, IndicesIRE = IndicesIRE)
+
+    

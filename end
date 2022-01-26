@@ -1,0 +1,362 @@
+[33mcommit 92d7dbd2e49534173d97433d01ef0f0892eb7441[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: 4551968 bfa5f64
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Mon Jan 17 22:31:25 2022 -0600
+
+    Corregir error al registrar materias y alumnos
+
+[33mcommit bfa5f64cf0fc0f8bddf7eb51f661c5d31e329570[m[33m ([m[1;32mmaterias[m[33m)[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Mon Jan 17 22:30:13 2022 -0600
+
+    Corregir error al registrar materias y alumnos
+
+[33mcommit 4551968cc5c337b8ce2fd5ae10336fb2c39f5249[m
+Merge: e1876b2 b711e38
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Mon Jan 17 20:27:07 2022 -0600
+
+    Agregar docente a materias en grupos
+
+[33mcommit b711e388f2ef3baa88e7de50ed852e54c5ecddfa[m
+Merge: 27e7b89 5094fb1
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Mon Jan 17 20:24:53 2022 -0600
+
+    Agregar docente a materias en grupos
+
+[33mcommit 27e7b891c130a3c40a6eb5869cb4eb72ad7b521e[m
+Merge: e9cf469 f2873e1
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Mon Jan 17 20:21:57 2022 -0600
+
+    Merge branch 'evaluar' into materias
+
+[33mcommit e1876b2699990f59a918d3b5974dd5f32ecb2a6b[m
+Merge: 8111ad0 5990d43
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Mon Jan 17 20:18:07 2022 -0600
+
+    Actualización de materias
+
+[33mcommit 5094fb11f18d9fd591d6db15e616f947e676581a[m
+Author: danra3499 <ramirez99ad@gmail.com>
+Date:   Mon Jan 17 15:12:05 2022 -0600
+
+    Botones Usuarios
+
+[33mcommit 8111ad07e7415d7d0227e1bf25636f6308aff2c3[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Thu Jan 13 23:59:32 2022 -0600
+
+    Actualización de materias
+
+[33mcommit 5990d4387b6092a30aab78e025bb4357c6e9f601[m
+Author: danra3499 <ramirez99ad@gmail.com>
+Date:   Wed Jan 12 14:51:30 2022 -0600
+
+    Correcion nombre de docentes en grupos
+
+[33mcommit 4fc9f2727c75ee85e8269191d9be7e98738004f6[m
+Author: danra3499 <ramirez99ad@gmail.com>
+Date:   Tue Jan 11 12:06:25 2022 -0600
+
+    Se jalo el nombre de docentes en grupos, se agrego scroll en tablas
+
+[33mcommit 11a5aea9f3bb6ab8d99a79744e8ffbb2f3c01910[m
+Merge: e9cf469 f2873e1
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Wed Jan 5 17:53:18 2022 -0600
+
+    Merge branch 'evaluar'
+
+[33mcommit f2873e1a07b5bb5ee37c1087d142a8fd49784aaf[m[33m ([m[1;32mevaluar[m[33m)[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Wed Jan 5 17:52:48 2022 -0600
+
+    Actualización de materias
+
+[33mcommit e9cf46905407582bbdba332e8d2aeaf023313e9a[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Wed Jan 5 17:28:24 2022 -0600
+
+    Actualización de materias
+
+[33mcommit 11d5412db23f4b631ed757f9e30468d44b897462[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Wed Dec 22 17:54:03 2021 -0600
+
+    correxion de ortografia
+
+[33mcommit d714e6fdbefcd7a09b175abad83783e974b8da6a[m
+Author: danra3499 <ramirez99ad@gmail.com>
+Date:   Wed Nov 3 15:11:59 2021 -0600
+
+    Creacion de CRUD para materias
+
+[33mcommit 3b03fca1bc294d8560f78a20e4b3b77d6abd1465[m[33m ([m[1;31morigin/CRUD_materias[m[33m)[m
+Author: danra3499 <ramirez99ad@gmail.com>
+Date:   Sun Oct 31 17:09:18 2021 -0600
+
+    Creacion de CRUD para materias
+
+[33mcommit 4630d82bcad9d1b3209e6b1e09c4a8270267033d[m[33m ([m[1;31morigin/evaluacion[m[33m)[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Fri Aug 27 11:14:32 2021 -0500
+
+    Evaluacion de alumnos, aun falta el correcto redireccionamiento a la tabla de alumnos que tomar la materia que se esta evaluando
+
+[33mcommit f5cf389b287d292bfcdcd44e596be345d428b70a[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Thu Aug 26 23:24:39 2021 -0500
+
+    Formulario para capturar evaluaciones (aun no funciona revisar la ruta /capturar_calificacion)
+
+[33mcommit 5f5cc4b38946075f14e1f7ddd9334e8551dacbc5[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Wed Aug 25 11:22:13 2021 -0500
+
+    Renderizando los nombres de las materias por grupo
+
+[33mcommit 97c2d405b72437d6ea5764bf82282fc1ced3a750[m[33m ([m[1;31morigin/detalles[m[33m)[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Tue Aug 24 23:51:04 2021 -0500
+
+    Solucion a los errores de demasiado codigo html en las vistas grupos e index
+
+[33mcommit 4941c41194779021d80b454bbfa636086c70f194[m[33m ([m[1;31morigin/eliminacion[m[33m)[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Sat Aug 21 11:11:35 2021 -0500
+
+    Alert para confirmar la eliminacion de algun dato, loginrequired en las nuevas rutas
+
+[33mcommit 605bac65106c3a632a20fc3e924891bf4288f7ff[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Fri Aug 20 22:01:49 2021 -0500
+
+    Operaciones crud sobre docentes
+
+[33mcommit 64da912c7cf109bd3417900eadc79d7946408350[m
+Merge: 38f4324 962bec9
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Thu Aug 19 14:13:20 2021 -0500
+
+    Resolviendo docentes
+
+[33mcommit 38f4324bfbd026f0c448675754c93e4df5a3c3c6[m[33m ([m[1;31morigin/usuarios[m[33m)[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Thu Aug 19 12:48:32 2021 -0500
+
+    Acciones CRUD sobre usuarios
+
+[33mcommit e705a21243c3ccfda9d9b9698ae69b2936fb9344[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Wed Aug 18 17:55:36 2021 -0500
+
+    Operaciones sobre usuarios
+
+[33mcommit 6be6fd25133220e389e3c2022776e4e0c1d79787[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Wed Aug 18 17:38:40 2021 -0500
+
+    Avance de boton actualizar en sección de usuarios
+
+[33mcommit acca6b45d2d520a13db2342a24e692b01858c4a3[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Tue Aug 17 20:48:49 2021 -0500
+
+    Terminación de botones editar y eliminar, pendiente boton actualizar
+
+[33mcommit 944ddfe069aae7862e42d3b5fa9e8068eae53d58[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Sun Aug 15 21:50:40 2021 -0500
+
+    Elaboración de formulario para editar usuarios y codificación de boton eliminar
+
+[33mcommit 962bec95089fbc0196cf9bd5137b552aa012ec10[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Sun Aug 15 17:57:09 2021 -0500
+
+    Estandarizar y modificar los valores del segmento de docentes en entidad, modelo, plantilla e init.py
+
+[33mcommit d8f5ec2c4620a3365c14628db287c1db77963286[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Sun Aug 15 02:21:43 2021 -0500
+
+    Estandarizar y modificar los valores del segmento de docentes en entidad, modelo, plantilla e init.py
+
+[33mcommit 7b724f6192044218ad9f142fe36d99bf14a2cc78[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Fri Aug 13 20:30:39 2021 -0500
+
+    Desarrollando pagina usuarios
+
+[33mcommit 0dd158b9cd555e93a6ed543bbdf3ba06e6db4a52[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Fri Aug 13 15:56:45 2021 -0500
+
+    Funciones para administrar usuarios
+
+[33mcommit 947c998b2b1453bd896dbce4f67a855dd9d271fd[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Fri Aug 13 12:35:21 2021 -0500
+
+    Modificaciones en el login y en la navbar
+
+[33mcommit 506c7c47b9b78ab559b4c2e5c088c750c1fcb6f3[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Fri Aug 13 10:32:53 2021 -0500
+
+    Se agregaron la paginas de error y se coloco el decorador @login_required
+
+[33mcommit 04ea7fc2a31c6a429bf7493023f366e5bec9e801[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Fri Aug 13 06:12:28 2021 -0500
+
+    Estandarizar y modificar los valores del segmento de docentes en entidad, modelo, plantilla e init.py
+
+[33mcommit 8f3285d52d22a1dcf1d0bdc087fbf604d9da1ab5[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Fri Aug 13 04:19:14 2021 -0500
+
+    Estandarizar y modificar los valores del segmento de docentes en entidad, modelo, plantilla e init.py
+
+[33mcommit 9952b492e8141000d5094a5ffda9328ff2db703c[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Fri Aug 13 03:44:45 2021 -0500
+
+    Editar codigo
+
+[33mcommit 78ab0bcf46d0faa6dbbe2d7d7e93f90ebf4b8751[m
+Merge: a79336c a2d8120
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Fri Aug 13 03:12:25 2021 -0500
+
+    Merge branch 'main' of https://github.com/JorgeGarcia20/proyecto_trayectoria_escolar
+
+[33mcommit a79336ca4b67273907b3bb0bd8fe7f598a3fef3f[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Fri Aug 13 03:12:05 2021 -0500
+
+    Editar codigo
+
+[33mcommit a2d812051921d1c3240cf13231ce45e8432720ff[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Thu Aug 12 22:08:04 2021 -0500
+
+    modificando la funcion materia_docente para seleccionar el grupo y mostrarlo en el card de materias
+
+[33mcommit af1f6c41025a05330c6a1d6791c09798cffdd18e[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Thu Aug 12 13:39:06 2021 -0500
+
+    Vista de administrador y vista de docentes, modificacion a las  entidades y los modelos
+
+[33mcommit ff54703777dd48a5d837cde324f66c0336744c69[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Wed Aug 11 23:41:35 2021 -0500
+
+    trabajando en mejoras de inicio de sesion dependiendo el usuario y modificaciones a la base de datos
+
+[33mcommit 700fa287f7c2190798c68b4fd0cbc8a1434ea014[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Sun Aug 8 12:35:33 2021 -0500
+
+    Correccion de variables, arreglo de codigo mal ubicado y mejoras en la vista de docentes
+
+[33mcommit 1ecd7d729b3f11a3fd8387ca1003a16eaf291090[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Sun Aug 8 10:52:29 2021 -0500
+
+    Agregar, eliminar y editar docentes
+
+[33mcommit 254b1a2ce287a2bf4c21deda3acee84c2b48c461[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Sun Aug 8 10:34:27 2021 -0500
+
+    Eliminación de __init1__.py e introducción de código en init.py
+
+[33mcommit 4ee68c02015b9eddf1cd8d6fd61dcd9dc0c6b9bc[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Fri Aug 6 21:59:50 2021 -0500
+
+    commit de prueba
+
+[33mcommit 68da40e09c80cc7a7b4950ec53021482e263a433[m
+Merge: 93ac573 d2f2ba3
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Fri Aug 6 21:29:05 2021 -0500
+
+    Merge branch 'Docentes'
+
+[33mcommit d2f2ba3c77235faa6da2046bad605a94b9efe3a1[m
+Author: Gabriel Vazquez <pollo1051@outlook.com>
+Date:   Fri Aug 6 21:21:31 2021 -0500
+
+    Agregamos una entidad y un modelo
+
+[33mcommit 93ac573532f1e391cceca19931a70cc5fb2c0fef[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Tue Jul 27 20:10:06 2021 -0500
+
+    Trabajando en la evaluación
+
+[33mcommit 0f707a20a755a7f2e49ef5e1c8edaa5caf7fa16e[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Tue Jul 27 15:53:19 2021 -0500
+
+    Trabajando en las materias
+
+[33mcommit a65f00e52c981891993246a79e3d91a5d0e85608[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Mon Jul 26 17:56:30 2021 -0500
+
+    Insertando mas alumnos, creacion de nuevas rutas, template de grupos
+
+[33mcommit 89b5b8aed33fb56fad4da8305063d42727037c92[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Mon Jul 26 10:32:09 2021 -0500
+
+    base de datos
+
+[33mcommit ff7bdfbb3c9dd743bb5d258f733c67f90505883e[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Fri Jul 23 22:45:59 2021 -0500
+
+    Mejoras de GUI, funcion para mostrar las materias de cada semestre y adicion de las materias desde un query
+
+[33mcommit eea564ae90af96f88debf9b56e589999879c889f[m[33m ([m[1;31morigin/crud[m[33m)[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Wed Jul 21 22:36:52 2021 -0500
+
+    Mejoras en las rutas
+
+[33mcommit 1087e4206dd3d44b7766f03b1e551bc21355dbac[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Wed Jul 21 00:45:48 2021 -0500
+
+    Funciones crud, configuracion de nuevos modelos, creacion de nuevas tablas y mejoras visuales
+
+[33mcommit 02c7b29a1902fcc2c80d4c7823e16172f06f4211[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Mon Jul 19 23:44:24 2021 -0500
+
+    pendiente: normalizar el campo apellidos
+
+[33mcommit 9e67cbbc6c289c25b4cd6c80d65559a42101404d[m
+Author: JorgeGarcia20 <alberto-garcia20@outlook.com>
+Date:   Fri Jul 9 11:33:16 2021 -0500
+
+    agregando cards
+
+[33mcommit e1286c83992aa08f2da524accace80133b05d2c2[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Fri Jun 25 16:33:25 2021 -0500
+
+    README.md
+
+[33mcommit 8cac695d1f5c760be351b97eeaf0b1d5fe843d3e[m
+Author: TheJorch <albertogarcia201099@gmail.com>
+Date:   Fri Jun 25 16:29:00 2021 -0500
+
+    Proyecto trayectoria escolar - login

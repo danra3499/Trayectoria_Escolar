@@ -1,0 +1,166 @@
+{% extends 'body.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block body %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h1 class="text-center">Índice de aprobación en ordinario (IAO)</h1>
+            <table class="table table-striped table-hover table-bordered table-sm bg-white">
+                <thead>
+                    <tr>
+                        <td><b>ID</td></b>
+                        <td><b>Nivel</td></b>
+                        <td><b>Categoria</td></b>
+                        <td><b>Acciones</td></b>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data %}
+                    <tr>
+                        <td>{{ i.id_IAO}}</td>
+                        <td>{{ i.nivel_IAO}}</td>
+                        <td>{{ i.categoria_IAO}}</td>
+                        <td><a class="btn btn-warning" href="#">Editar</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-body">
+                <h1 class="text-center">Índice de acreditacion (IAC)</h1>
+                <table class="table table-striped table-hover table-bordered table-sm bg-white">
+                    <thead>
+                        <tr>
+                            <td><b>ID</td></b>
+                            <td><b>Nivel</td></b>
+                            <td><b>Categoria</td></b>
+                            <td><b>Acciones</td></b>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for p in IndicesIAC %}
+                        <tr>
+                            <td>{{ p.id_IAC}}</td>
+                            <td>{{ p.nivel_IAC}}</td>
+                            <td>{{ p.categoria_IAC}}</td>
+                            <td><a class="btn btn-warning" href="#">Editar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-body">
+                <h1 class="text-center">Índice de promedio escolar (IPE)</h1>
+                <table class="table table-striped table-hover table-bordered table-sm bg-white">
+                    <thead>
+                        <tr>
+                            <td><b>ID</td></b>
+                            <td><b>Nivel</td></b>
+                            <td><b>Categoria</td></b>
+                            <td><b>Acciones</td></b>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ipe in IndicesIPE %}
+                        <tr>
+                            <td>{{ ipe.id_IPE}}</td>
+                            <td>{{ ipe.nivel_IPE}}</td>
+                            <td>{{ ipe.categoria_IPE}}</td>
+                            <td><a class="btn btn-warning" href="#">Editar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-body">
+                <h1 class="text-center">Índice de situacion escolar (ISE)</h1>
+                <table class="table table-striped table-hover table-bordered table-sm bg-white">
+                    <thead>
+                        <tr>
+                            <td><b>ID</td></b>
+                            <td><b>Nivel</td></b>
+                            <td><b>Categoria</td></b>
+                            <td><b>Acciones</td></b>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ise in IndicesISE %}
+                        <tr>
+                            <td>{{ ise.id_ISE}}</td>
+                            <td>{{ ise.nivel_ISE}}</td>
+                            <td>{{ ise.categoria_ISE}}</td>
+                            <td><a class="btn btn-warning" href="#">Editar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-body">
+                <h1 class="text-center">Índice de desempeño escolar (IDE)</h1>
+                <div style = "overflow: scroll; height: 400px;">
+                <table class="table table-striped table-hover table-bordered table-sm bg-white">
+                    <thead>
+                        <tr>
+                            <td><b>ID</td></b>
+                            <td><b>Categoria IDE</td></b>
+                            <td><b>Categoria IAO</td></b>
+                            <td><b>Categoria IAC</td></b>
+                            <td><b>Categoria IPE</td></b>
+                            <td><b>Acciones</td></b>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ide in IndicesIDE %}
+                        <tr>
+                            <td>{{ ide.id_IDE}}</td>
+                            <td>{{ ide.categoria_IDE}}</td>
+                            <td>{{ ide.categoria_IAO}}</td>
+                            <td>{{ ide.categoria_IAC}}</td>
+                            <td>{{ ide.categoria_IPE}}</td>
+                            <td><a class="btn btn-warning" href="#">Editar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div> 
+        <div class="col-md-6">
+            <div class="card card-body">
+                <h1 class="text-center">Índice de riesgo escolar (IRE)</h1>
+                <table class="table table-striped table-hover table-bordered table-sm bg-white">
+                    <thead>
+                        <tr>
+                            <td><b>ID</td></b>
+                            <td><b>categoria IRE</td></b>
+                            <td><b>categoria IDE</td></b>
+                            <td><b>categoria ISE</td></b>
+                            <td><b>Acciones</td></b>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ire in IndicesIRE %}
+                        <tr>
+                            <td>{{ ire.id_IRE}}</td>
+                            <td>{{ ire.categoria_IRE}}</td>
+                            <td>{{ ire.categoria_IDE}}</td>
+                            <td>{{ ire.categoria_ISE}}</td>
+                            <td><a class="btn btn-warning" href="#">Editar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

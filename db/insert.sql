@@ -63,6 +63,72 @@ INSERT INTO materia(nombre, n_creditos, id_grupo, id_docente) VALUES
 
 INSERT INTO tipo_evaluacion(nombre) VALUES ('Curso normal'), ('Segunda oportunidad'), ('Recurse'), ('Especial');
 
+-- INDICES
+--IAO
+INSERT INTO `iao` (`id_IAO`, `nivel_IAO`, `categoria_IAO`) VALUES
+(1, '>=0,<=80', 'BAJO'),
+(2, '>=80,<90', 'REGULAR'),
+(3, '>=100', 'ALTO');
+
+--IAC
+INSERT INTO `iac` (`id_IAC`, `nivel_IAC`, `categoria_IAC`) VALUES
+(1, '>=0,<85', 'BAJO'),
+(2, '>=85,<100', 'REGULAR'),
+(3, '>=100', 'ALTO');
+
+--IPE
+INSERT INTO `ipe` (`id_IPE`, `nivel_IPE`, `categoria_IPE`) VALUES
+(1, '>=0,<80', 'BAJO'),
+(2, '>=80,<90', 'REGULAR'),
+(3, '>=90,<=100', 'ALTO');
+
+--IDE
+INSERT INTO `ide` (`id`, `id_IDE`, `categoria_IDE`, `categoria_IAO`, `categoria_IAC`, `categoria_IPE`) VALUES
+(1, 1, 'BAJO', 1, 1, 1),
+(2, 1, 'BAJO', 1, 1, 2),
+(3, 1, 'BAJO', 1, 1, 3),
+(4, 1, 'BAJO', 1, 2, 1),
+(5, 1, 'BAJO', 1, 2, 2),
+(6, 1, 'BAJO', 1, 2, 3),
+(7, 1, 'BAJO', 1, 3, 1),
+(8, 1, 'BAJO', 2, 1, 1),
+(9, 1, 'BAJO', 2, 1, 2),
+(10, 1, 'BAJO', 2, 2, 1),
+(11, 1, 'BAJO', 3, 1, 1),
+(12, 2, 'REGULAR', 2, 1, 3),
+(13, 2, 'REGULAR', 1, 3, 2),
+(14, 2, 'REGULAR', 1, 3, 3),
+(15, 2, 'REGULAR', 2, 2, 2),
+(16, 2, 'REGULAR', 2, 2, 3),
+(17, 2, 'REGULAR', 2, 3, 1),
+(18, 2, 'REGULAR', 3, 1, 2),
+(19, 2, 'REGULAR', 3, 1, 3),
+(20, 2, 'REGULAR', 3, 2, 1),
+(21, 2, 'REGULAR', 3, 2, 2),
+(22, 2, 'REGULAR', 3, 3, 1),
+(23, 2, 'REGULAR', 2, 3, 2),
+(24, 3, 'ALTO', 2, 3, 3),
+(25, 3, 'ALTO', 3, 2, 3),
+(26, 3, 'ALTO', 3, 3, 2),
+(27, 3, 'ALTO', 3, 3, 3);
+
+-- ISE
+INSERT INTO `ise` (`id_ISE`, `nivel_ISE`, `categoria_ISE`) VALUES
+(1, '>=0,<85', 'REZAGO'),
+(2, '>=85,<100', 'IRREGULAR'),
+(3, '>=100', 'ÓPTIMO');
+
+--IRE
+INSERT INTO `ire` (`id`, `id_IRE`, `categoria_IRE`, `categoria_IDE`, `categoria_ISE`) VALUES
+('1', '1', 'RIESGO ALTO', '1', '1'),
+('2', '1', 'RIESGO ALTO', '12', '1'),
+('3', '1', 'RIESGO ALTO', '1','2'),
+('4', '2', 'RIESGO MODERADO', '24', '1'),
+('5', '2', 'RIESGO MODERADO', '12', '2'),
+('6', '2', 'RIESGO MODERADO', '24', '2'),
+('7', '2', 'RIESGO MODERADO', '1', '3'),
+('8', '3', 'SIN RIESGO', '12', '3'),
+('9', '3', 'SIN RIESGO', '24', '3');
 
 -- -- MATERIAS
 -- insert into materia(nombre, n_creditos, id_semestre) values

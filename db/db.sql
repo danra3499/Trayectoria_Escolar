@@ -84,6 +84,58 @@ CREATE TABLE evaluacion(
   PRIMARY KEY(id)
 );
 
+CREATE TABLE iao(
+id_IAO INT NOT NULL,
+nivel_IAO VARCHAR (35) NOT NULL,
+categoria_IAO VARCHAR (25) NOT NULL,
+PRIMARY KEY(id_IAO)
+);
+
+CREATE TABLE iac(
+id_IAC INT NOT NULL,
+nivel VARCHAR (35) NOT NULL,
+categoria VARCHAR (25) NOT NULL,
+PRIMARY KEY(id_IAC)
+);
+
+CREATE TABLE ipe(
+id_IPE INT NOT NULL,
+nivel_IPE VARCHAR (35) NOT NULL,
+categoria_IPE VARCHAR (25) NOT NULL,
+PRIMARY KEY(id_IPE)
+);
+
+CREATE TABLE ide(
+id INT NOT NULL,
+id_IDE INT(3) NOT NULL,
+categoria_IDE VARCHAR (25) NOT NULL,
+categoria_IAO INT NOT NULL,
+categoria_IAC INT NOT NULL,
+categoria_IPE INT NOT NULL,
+FOREIGN KEY(categoria_IAO) REFERENCES iao(id_IAO),
+FOREIGN KEY(categoria_IAC) REFERENCES iac(id_IAC),
+FOREIGN KEY(categoria_IPE) REFERENCES ipe(id_IPE),
+PRIMARY KEY(id)
+);
+
+CREATE TABLE ise(
+id_ISE int not null,
+nivel_ISE varchar (35) not null,
+categoria_ISE varchar (25) not null,
+primary key(id_ISE)
+);
+
+CREATE TABLE ire(
+id int(11) not null,
+id_IRE int(3) not null,
+categoria_IRE varchar(25)NOT NULL,
+categoria_IDE int(11) NOT NULL,
+categoria_ISE int(11) NOT NULL,
+FOREIGN KEY(categoria_IDE) REFERENCES ide(id_IDE),
+FOREIGN KEY(categoria_ISE) REFERENCES ise(id_ISE),
+PRIMARY KEY(id)
+);
+
 -- CREATE TABLE docentes(
 --   id int not null auto_increment,
 --   Profesión varchar(150) not null,
