@@ -1,7 +1,6 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
-<!--link rel="stylesheet" href="{{url_for('static', filename='css/Mayuscula.css')}}"-->
 <div class="row">
   <div class="col-md-5">
     <div class="card card-body">
@@ -9,9 +8,9 @@
       <form action="/agregar_usuario" method="POST">
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="usuario" placeholder="Numero de empleado">
+          <input type="number" class="form-control" name="usuario" placeholder="Numero de empleado">
         </div>
-        <div class="form-group mb-2">
+        <div class="tuInput">
           <input type="text" class="form-control" name="nombres" placeholder="Nombres">
         </div>
         <div class="form-group mb-2">

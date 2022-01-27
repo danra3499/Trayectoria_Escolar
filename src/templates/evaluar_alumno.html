@@ -10,8 +10,12 @@
           <input type="text" name="n_control" class="form-control" value="{{data.0}}">
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="parcial" placeholder="Parcial">
-        </div>
+          <!--input type="text" class="form-control" name="parcial" placeholder="Parcial"-->
+          <label for="parcial">Parcial</label><br>
+          <input type="radio" value="1" name="parcial">Primero<br>
+          <input type="radio" value="2" name="parcial">Segundo<br>
+          <input type="radio" value="3" name="parcial">Tercero<br>
+        </div> 
         <div class="form-group mb-2">
           <input type="text" class="form-control" name="fecha" value="{{fecha}}">
         </div>
@@ -29,9 +33,12 @@
           <input type="text" class="form-control" name="materia" placeholder="Materia">
         </div>
         <div class="mt-3 d-grid gap-2">
-          <button type="submit" class="btn btn-primary btn-block">
+          <button class="btn btn-primary btn-block">
             Calificar
-          </button>
+        </button>
+          <button class="btn btn-primary btn-block" type="reset">
+            Limpiar
+        </button>
         </div>
       </form>
     </div>
