@@ -39,7 +39,22 @@ class Modelo_alumno():
         except Exception as e:
             raise Exception(e)
 
- 
+    @classmethod
+    def obtener_alumnos_grupo(self, db, id_grupo):
+        try:
+            cursor = db.connection.cursor()
+            query = """SELECT id,CONCAT(nombres,' ',apellido_p,' ',apellido_m) as nombres, status,id_grupo from alumno 
+                    WHERE id_grupo = {0}""".format(
+                id_grupo)
+            cursor.execute(query)
+            data = cursor.fetchall()
+            alumnos_g = []
+            for ag in data:
+                alum = Alumno(ag[0],ag[1],None,None,None,ag[2],ag[3])
+                alumnos_g.append(alum)
+            return alumnos_g    
+        except Exception as e:
+            raise Exception(e)
     
     @classmethod
     def editar_alumno(self, db, id, nombres, apellido_p, apellido_m, genero, status ,id_grupo):

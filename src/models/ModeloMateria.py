@@ -29,7 +29,6 @@ class Modelo_materia():
         except Exception as ex:
             raise Exception(ex)
 
-
     @classmethod
     def obtener_materias_por_semestre(self, db, id_semestre):
         try:
@@ -38,7 +37,7 @@ class Modelo_materia():
             FROM materia 
             JOIN grupo ON materia.id_grupo = grupo.id 
             JOIN semestre ON grupo.semestre = semestre.id 
-            WHERE semestre.id = {0}""".format(
+            WHERE grupo.num_g = {0}""".format(
                 id_semestre)
             cursor.execute(query)
             data = cursor.fetchall()
@@ -49,6 +48,9 @@ class Modelo_materia():
             return materias_por_semestre
         except Exception as e:
             raise Exception(e)
+
+    
+       
 
     @classmethod
     def obtener_nombre_materia(self, db, semestre):

@@ -3,7 +3,7 @@
 {% block body %}
 <!--link rel="stylesheet" href="{{url_for('static', filename='css/Mayuscula.css')}}"-->
 <div class="row">
-  <div class="col-md-5">
+  <div class="col-md-4">
     <div class="card card-body">
       <h1 class="text-center mb-4">Registrar Usuarios</h1>
       <form action="/agregar_usuario" method="POST">
@@ -30,14 +30,14 @@
         </div>
         <button class="btn btn-primary btn-block">
           Guardar
-      </button>
+        </button>
         <button class="btn btn-primary btn-block" type="reset">
           Limpiar
       </button>
       </form>
     </div>
   </div>
-  <div class="col-md-7">
+  <div class="col-md-8">
     <div class="card card-body">
       <h1 class="text-center">Lista de Usuarios</h1>
       <div style = "overflow: scroll; height: 500px; ">
