@@ -269,11 +269,12 @@ def materias():
 def agregar_materia():
     if request.method == 'POST':
         id = request.form['id']
+        clave = request.form['clave']
         nombre = request.form['nombre']
         creditos = request.form['n_creditos']
         grupo = request.form['id_grupo']
         docente = request.form['id_docente']
-        Modelo_materia.agregar_materia(db, id, nombre, creditos, grupo, docente)
+        Modelo_materia.agregar_materia(db, id, clave, nombre, creditos, grupo, docente)
         return redirect(url_for('materias'))
     else:
         return render_template('materia_ventana.html')
@@ -293,12 +294,13 @@ def editar_materia(id):
 def actualizar_materia(id):
     if request.method == 'POST':
         id = request.form['id']
+        clave = request.form['clave']
         nombre = request.form['nombre']
         creditos = request.form['n_creditos']
         grupo = request.form['id_grupo']
         docente = request.form.get('id_docente')
         Modelo_materia.editar_materia(
-            db, id, nombre, creditos, grupo, docente)
+            db, id, clave, nombre, creditos, grupo, docente)
         return redirect(url_for('materias'))
     else:
         return render_template('materia_ventana.html')
@@ -397,13 +399,9 @@ def capturar_evaluacion():
         id_alumno = request.form['n_control']
         Modelo_evaluacion.evaluar(
             db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
-        """
-        Al finalizar la captura de calificacion debera regresar a la lista de alumnos 
-        sin el alumno que ya ha sido calificado
-        """
-        return render_template('evaluar.html')
+        return render_template('evaluar')
     else:
-        return render_template('evaluar.html')
+        return render_template('evaluar.html', data=evaluar)
 
 
 """---------------------------FIN DE EVALUACIONES---------------------------"""

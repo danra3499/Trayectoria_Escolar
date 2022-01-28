@@ -43,6 +43,7 @@ CREATE TABLE docente(
 
 CREATE TABLE materia(
   id INT NOT NULL AUTO_INCREMENT,
+  clave VARCHAR(50) NOT NULL,
   nombre VARCHAR(50) NOT NULL,
   n_creditos INT NOT NULL,
   id_grupo INT NOT NULL,

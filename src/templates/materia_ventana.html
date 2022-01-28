@@ -1,7 +1,6 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
-
 <div class="row">
     <div class="col-md-4">
         <div class="card card-body">
@@ -9,8 +8,10 @@
             <form action="/agregar_materia" method='POST'>
                 <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
                 <div class="form-group mb-2">
-                    <input class="form-control" type="number" name="id" placeholder="id_materia">
-
+                    <input class="form-control" type="text" name="id" placeholder="id_materia">
+                </div>
+                <div class="form-group mb-2">
+                    <input class="form-control" type="text" name="clave" placeholder="Clave">
                 </div>
                 <div class="form-group mb-2">
                     <input class="form-control" type="text" name="nombre" placeholder="Nombre">
@@ -46,7 +47,8 @@
                 <table class="table table-striped table-hover table-bordered table-sm bg-white">
                 <thead>
                     <tr>
-                        <td><b>ID</td></b>
+                        <!--td><b>ID</td></b-->
+                        <td><b>Clave</td></b>
                         <td><b>Nombre</td></b>
                         <td><b>Creditos</b>
                         <td><b>Grupo</td></b>
@@ -57,7 +59,8 @@
                 <tbody>
                     {% for m in data %}
                     <tr>
-                        <td>{{ m.id}}</td> 
+                        <!--td>{{ m.id}}</td--> 
+                        <td>{{ m.clave}}</td> 
                         <td>{{ m.nombre}}</td>
                         <td>{{ m.n_creditos}}</td>
                         <td>{{ m.id_grupo}}</td>
