@@ -5,7 +5,7 @@ class Evaluacion():
         self.fecha = fecha
         self.calificacion = calificacion
         self.id_tipo_evaluacion = id_tipo_evaluacion
-        self.id_meteria = id_materia
+        self.id_materia = id_materia
         self.id_alumno = id_alumno
 
         """

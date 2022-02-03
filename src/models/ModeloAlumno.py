@@ -44,8 +44,7 @@ class Modelo_alumno():
         try:
             cursor = db.connection.cursor()
             query = """SELECT id,CONCAT(nombres,' ',apellido_p,' ',apellido_m) as nombres, status,id_grupo from alumno 
-                    WHERE id_grupo = {0}""".format(
-                id_grupo)
+                    WHERE id_grupo = '{0}'""".format(id_grupo)
             cursor.execute(query)
             data = cursor.fetchall()
             alumnos_g = []

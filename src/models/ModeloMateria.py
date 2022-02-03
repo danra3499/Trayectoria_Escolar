@@ -4,11 +4,11 @@ from .entities.Alumno import Alumno
 
 class Modelo_materia():
     @classmethod
-    def agregar_materia(self, db, id, nombre, n_creditos, id_grupo, id_docente):
+    def agregar_materia(self, db, id, clave, nombre, n_creditos, id_grupo, id_docente):
         try:
             cursor = db.connection.cursor()
-            query = """INSERT INTO materia(id, nombre, n_creditos, id_grupo, id_docente)
-            VALUES('{0}','{1}','{2}','{3}', '{4}')""".format(id, nombre, n_creditos, id_grupo, id_docente)
+            query = """INSERT INTO materia(id, clave, nombre, n_creditos, id_grupo, id_docente)
+            VALUES('{0}','{1}','{2}','{3}','{4}','{5}')""".format(id, clave, nombre, n_creditos, id_grupo, id_docente)
             cursor.execute(query)
             db.connection.commit()
         except Exception as e:
@@ -18,12 +18,12 @@ class Modelo_materia():
     def obtener_materias(self, db):
         try:
             cursor = db.connection.cursor()
-            query = """SELECT id, nombre, n_creditos, id_grupo, id_docente FROM materia"""
+            query = """SELECT id, clave, nombre, n_creditos, id_grupo, id_docente FROM materia"""
             cursor.execute(query)
             data = cursor.fetchall()
             vista_materias = []
             for m in data:
-                materias = Materia(m[0], m[1], m[2], m[3], m[4])
+                materias = Materia(m[0], m[1], m[2], m[3], m[4], m[5])
                 vista_materias.append(materias)
             return vista_materias
         except Exception as ex:
@@ -43,7 +43,7 @@ class Modelo_materia():
             data = cursor.fetchall()
             materias_por_semestre = []
             for materia in data:
-                materias = Materia(None, materia[0], materia[1], None, None)
+                materias = Materia(None, None, materia[0], materia[1], None, None)
                 materias_por_semestre.append(materias)
             return materias_por_semestre
         except Exception as e:
@@ -78,7 +78,7 @@ class Modelo_materia():
             data = cursor.fetchall()
             materias = []
             for m in data:
-                materia = Materia(m[0], m[1], None, m[2], None)
+                materia = Materia(m[0], None, m[1], None, m[2], None)
                 materias.append(materia)
             return materias
         except Exception as e:
@@ -89,7 +89,10 @@ class Modelo_materia():
         """Funcion para consultar a los alumnos que cursan una materia"""
         try:
             cursor = db.connection.cursor()
-            query = "SELECT alumno.id, alumno.nombres, alumno.apellido_p, alumno.apellido_m FROM materia JOIN grupo ON materia.id_grupo = grupo.id JOIN alumno ON alumno.id_grupo = grupo.id WHERE materia.id = {0}".format(
+            query = """SELECT alumno.id, alumno.nombres, alumno.apellido_p, alumno.apellido_m 
+                    FROM materia JOIN grupo ON materia.id_grupo = grupo.id 
+                    JOIN alumno ON alumno.id_grupo = grupo.id 
+                    WHERE materia.id = '{0}'""".format(
                 id_materia)
             cursor.execute(query)
             data = cursor.fetchall()
@@ -105,7 +108,7 @@ class Modelo_materia():
     def materia_grupo(self, db, id_grupo):
         try:
             cursor = db.connection.cursor()
-            query = """SELECT nombre, id_grupo , CONCAT(nombres,' ',apellido_p,' ',apellido_m)as nombre_docente from docente
+            query = """SELECT nombre,n_creditos, id_grupo , CONCAT(nombres,' ',apellido_p,' ',apellido_m)as nombre_docente from docente
               INNER JOIN materia
               ON docente.id = materia.id_docente
               WHERE id_grupo = '{0}'""".format(
@@ -114,18 +117,18 @@ class Modelo_materia():
             data = cursor.fetchall()
             materias = []
             for m in data:
-                materia = Materia(None, m[0], None, m[1], m[2])
+                materia = Materia(None, None, m[0], m[1], m[2], m[3])
                 materias.append(materia)
             return materias
         except Exception as ex:
             raise Exception(ex)
     
     @classmethod
-    def editar_materia(self, db, id, nombre, n_creditos, id_grupo, id_docente):
+    def editar_materia(self, db, id, clave, nombre, n_creditos, id_grupo, id_docente):
         try:
             cursor = db.connection.cursor()
-            query = """ UPDATE materia SET id = '{0}', nombre = '{1}', n_creditos = '{2}', id_grupo = '{3}', id_docente = '{4}'
-            WHERE id = '{5}'""".format(id, nombre, n_creditos, id_grupo, id_docente, id)
+            query = """ UPDATE materia SET id = '{0}', clave = '{1}', nombre = '{2}', n_creditos = '{3}', id_grupo = '{4}', id_docente = '{5}'
+            WHERE id = '{6}'""".format(id, clave, nombre, n_creditos, id_grupo, id_docente, id)
             cursor.execute(query)
             db.connection.commit()
         except Exception as ex:

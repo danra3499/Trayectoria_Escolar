@@ -43,6 +43,7 @@ CREATE TABLE docente(
 
 CREATE TABLE materia(
   id INT NOT NULL AUTO_INCREMENT,
+  clave VARCHAR(50) NOT NULL,
   nombre VARCHAR(50) NOT NULL,
   n_creditos INT NOT NULL,
   id_grupo INT NOT NULL,
@@ -93,8 +94,8 @@ PRIMARY KEY(id_IAO)
 
 CREATE TABLE iac(
 id_IAC INT NOT NULL,
-nivel VARCHAR (35) NOT NULL,
-categoria VARCHAR (25) NOT NULL,
+nivel_IAC VARCHAR (35) NOT NULL,
+categoria_IAC VARCHAR (25) NOT NULL,
 PRIMARY KEY(id_IAC)
 );
 
