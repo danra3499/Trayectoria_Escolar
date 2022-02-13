@@ -5,7 +5,7 @@ from src.models.entities.Evaluacion import Evaluacion
 class Modelo_evaluacion():
 
     @classmethod
-    def evaluar(self, db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno):
+    def capturar_evaluacion(self, db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno):
         try:
             cursor = db.connection.cursor()
             query = """INSERT INTO evaluacion(parcial, fecha, calificacion, id_tipo_evaluacion, id_materia, id_alumno) 

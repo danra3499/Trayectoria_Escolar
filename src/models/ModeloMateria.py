@@ -43,7 +43,7 @@ class Modelo_materia():
                 vista_materias.append(materias)
             return vista_materias
         except Exception as ex:
-            raise Exception(ex)
+            raise Exception(ex) 
 
     @classmethod
     def obtener_materias_por_semestre(self, db, id_semestre):
