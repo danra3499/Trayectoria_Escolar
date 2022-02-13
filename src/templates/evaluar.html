@@ -4,6 +4,23 @@
 <table class="table table-striped table-bordered bg-white table-sm">
   <thead>
     <tr>
+      <td>Materia</td>
+      <td>Grupo</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for m in materias %}
+    <tr>
+      <td>{{ m.nombre }}</td>
+      <td>{{ m.id_grupo }}</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<table class="table table-striped table-bordered bg-white table-sm">
+  <thead>
+    <tr>
       <td>Alumno</td>
       <td>No.Control</td>
       <td>Calificación</td>
@@ -14,10 +31,13 @@
     <tr>
       <td>{{ a.nombre_completo() }}</td>
       <td>{{ a.id }}</td>
-      <td>{{ a.calificación }}</td>
-      <td><a class="btn btn-success" href="/evaluar_alumno/{{a.id}}">Evaluar</a></td>
+      <td>{{ a.calificaion }}</td>
+      
+      <td><a class="btn btn-success" href="/evaluar/{{m.id}}/evaluar_alumno/{{a.id}}">Evaluar</a></td>
     </tr>
+    {% endfor %}
     {% endfor %}
   </tbody>
 </table>
+
 {% endblock %}
