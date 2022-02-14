@@ -381,7 +381,7 @@ def capturar_evaluacion():
         tipo_evaluacion = request.form.get('tipo_evaluacion')
         id_materia = request.form['materia']
         id_alumno = request.form['id_alumno']
-        Modelo_evaluacion.capturar_evaluacion(
+        Modelo_evaluacion.capturar_evaluaciones(
             db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
         return render_template('evaluar')
     else:
