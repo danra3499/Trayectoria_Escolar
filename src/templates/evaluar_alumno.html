@@ -8,9 +8,6 @@
       <h3 class="text-center mb-4">Evaluar alumno</h3>
       <form action="/capturar_evaluacion" method='POST'>
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-        <div class="form-group mb-2">
-          <input type="text" name="n_control"  readonly="readonly" class="form-control" value="{{a.id}}">
-        </div>
         <select class="form-control mb-2" for="parcial" name="parcial">
           <option value="0" >Parcial</option>
           <option value="1">Primero</option>
@@ -47,6 +44,9 @@
         {% for m in materias %}
         <div class="form-group mb-2">
           <input type="text" class="form-control" readonly="readonly" name="materia" placeholder="Materia" value="{{m.nombre}}">
+        </div>
+        <div class="form-group mb-2">
+          <input type="text" name="n_control"  readonly="readonly" class="form-control" value="{{a.id}}">
         </div>
         <div class="mt-3 d-grid gap-2">
           <button class="btn btn-primary btn-block">

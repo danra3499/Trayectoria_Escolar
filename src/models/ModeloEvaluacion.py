@@ -15,22 +15,3 @@ class Modelo_evaluacion():
             db.connection.commit()
         except Exception as e:
             raise Exception(e)
-
-    #@classmethod
-    #def evaluar_materia(self, db, id_evaluar):
-     #   try:
-      #      cursor = db.connection.cursor()
-       #     query = """SELECT nombre, id_grupo , CONCAT(nombre)as nombre_materia from Materia
-        #      INNER JOIN evaluar
-         #     ON materia.id = materia.id_materia
-          #    WHERE id_evaluar = '{0}'""".format(
-           #     id_evaluar)
-            #cursor.execute(query)
-            #data = cursor.fetchall()
-            #evaluar = []
-            #for m in data:
-             #   materia = Materia(None, m[0], None, m[1], m[2])
-              #  materias.append(materia)
-            #return materias
-        #except Exception as ex:
-         #   raise Exception(ex)
