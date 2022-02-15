@@ -356,38 +356,22 @@ def lista(grupo):
 @login_required
 def evaluar(id):
     alumnos = Modelo_materia.alumnos_materia_id(db, id)
-    return render_template('evaluar.html', data=alumnos, fecha=fecha)
+    materias = Modelo_materia.obtener_materias_id(db, id)
+    return render_template('evaluar.html', data=alumnos, materias=materias, fecha=fecha)
 
 
-#""" Propuesta para solucionar el problema rederict a la tabla de los alumnos de la materia"""
-#@app.route('/evaluar_alumno/<id_alumno>/<id_materia>', methods=['POST', 'GET'])
-#@login_required
-#def evaluar_alumno(id_alumno, id_materia):
- #    hoy = date.today()
-  #   cursor = db.connection.cursor()
-   #  query = """SELECT * FROM alumno WHERE id = '{0}'""".format(id_alumno)
-    # cursor.execute(query)
-     #data = cursor.fetchall()
-
-    # query2 = """SELECT id FROM materia WHERE id = '{0}'""".format(id_materia)
-     #cursor.execute(query2)
-     #data2 = cursor.fetchall()
-     #return render_template('evaluar_alumno.html', data=data[0], materia=data2[0], fecha=hoy)
-#"""-----------------------------------------------------------------------------------------"""
-
-
-@app.route('/evaluar_alumno/<id_alumno>', methods=['POST', 'GET'])
+@app.route('/evaluar/<id>/evaluar_alumno/<id_alumno>', methods=['POST', 'GET'])
 @login_required
-def evaluar_alumno(id_alumno):
+def evaluar_alumno(id,id_alumno):
     hoy = date.today()
-    cursor = db.connection.cursor()
-    query = """SELECT * FROM alumno WHERE id = '{0}'""".format(id_alumno)
-    cursor.execute(query)
-    data = cursor.fetchall()
-    return render_template('evaluar_alumno.html', data=data[0], fecha=hoy)
+    materias = Modelo_materia.obtener_materias_id(db, id)
+    alumnos = Modelo_alumno.obtener_alumno_id(db,id_alumno)
+
+    return render_template('evaluar_alumno.html', data=alumnos,materias=materias, fecha=hoy)
 
 
-app.route('/capturar_evaluacion', methods=['POST'])
+
+app.route('/capturar_evaluacion', methods=['POST', 'GET'])
 @login_required
 def capturar_evaluacion():
     if request.method == 'POST':
@@ -396,8 +380,8 @@ def capturar_evaluacion():
         calificacion = request.form['calificacion']
         tipo_evaluacion = request.form.get('tipo_evaluacion')
         id_materia = request.form['materia']
-        id_alumno = request.form['n_control']
-        Modelo_evaluacion.evaluar(
+        id_alumno = request.form['id_alumno']
+        Modelo_evaluacion.capturar_evaluaciones(
             db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
         return render_template('evaluar')
     else:

@@ -28,6 +28,22 @@ class Modelo_materia():
             return vista_materias
         except Exception as ex:
             raise Exception(ex)
+    
+    @classmethod
+    def obtener_materias_id(self, db, id_materia):
+        try:
+            cursor = db.connection.cursor()
+            query = """SELECT id, clave, nombre, n_creditos, id_grupo, id_docente 
+                       FROM materia WHERE id ='{0}'""".format(id_materia)
+            cursor.execute(query)
+            data = cursor.fetchall()
+            vista_materias = []
+            for m in data:
+                materias = Materia(m[0], m[1], m[2], m[3], m[4], m[5])
+                vista_materias.append(materias)
+            return vista_materias
+        except Exception as ex:
+            raise Exception(ex) 
 
     @classmethod
     def obtener_materias_por_semestre(self, db, id_semestre):
@@ -89,7 +105,7 @@ class Modelo_materia():
         """Funcion para consultar a los alumnos que cursan una materia"""
         try:
             cursor = db.connection.cursor()
-            query = """SELECT alumno.id, alumno.nombres, alumno.apellido_p, alumno.apellido_m 
+            query = """SELECT alumno.id, alumno.nombres, alumno.apellido_p, alumno.apellido_m,alumno.status, alumno.id_grupo 
                     FROM materia JOIN grupo ON materia.id_grupo = grupo.id 
                     JOIN alumno ON alumno.id_grupo = grupo.id 
                     WHERE materia.id = '{0}'""".format(
@@ -98,11 +114,31 @@ class Modelo_materia():
             data = cursor.fetchall()
             alumnos = []
             for a in data:
-                alumno = Alumno(a[0], a[1], a[2], a[3], None, None, None)
+                alumno = Alumno(a[0], a[1], a[2], a[3], None, a[4], a[5])
                 alumnos.append(alumno)
             return alumnos
         except Exception as ex:
             raise Exception(ex)
+    
+    @classmethod
+    def jalar_materia_alumno(self,db,id_materia, id_alumno):
+        try:
+            cursor = db.connection.cursor()
+            query = """SELECT alumno.id as id_alumno, materia.nombre, materia.id as id_materia, grupo.id as id_grupo
+                       FROM materia 
+                       JOIN grupo ON materia.id_grupo = grupo.id
+                       JOIN alumno ON alumno.id_grupo = grupo.id 
+                       WHERE materia.id='{0}' and alumno.id='{0}';""".format(id_materia,id_alumno)
+            cursor.execute(quey)
+            data = cursor.fetchall()
+            materias = []
+            for am in data:
+                materia = Materia(am[0], None, am[1], None, am[2], None)
+                materias.append(materia)
+            return materias
+        except Exception as ex:
+            raise Exception(ex)           
+
 
     @classmethod
     def materia_grupo(self, db, id_grupo):
@@ -122,6 +158,8 @@ class Modelo_materia():
             return materias
         except Exception as ex:
             raise Exception(ex)
+
+  
     
     @classmethod
     def editar_materia(self, db, id, clave, nombre, n_creditos, id_grupo, id_docente):

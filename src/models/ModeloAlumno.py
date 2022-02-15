@@ -30,12 +30,18 @@ class Modelo_alumno():
             raise Exception(e)
 
     @classmethod
-    def obtener_alumno_id(self, db, id):
+    def obtener_alumno_id(self, db, id_alumno):
         try:
             cursor = db.connection.cursor()
-            query = "SELECT id, nombre, apellido_p, apellido_m FROM alumno WHERE id = {0}".format(
-                id)
+            query = """SELECT id, nombres 
+            FROM alumno WHERE id = {0}""".format(id_alumno)
             cursor.execute(query)
+            data = cursor.fetchall()
+            vista_alumnos = []
+            for a in data:
+                alumnos = Alumno(a[0], a[1], None, None, None, None,None)
+                vista_alumnos.append(alumnos)
+            return vista_alumnos
         except Exception as e:
             raise Exception(e)
 
