@@ -371,7 +371,7 @@ def evaluar_alumno(id,id_alumno):
 
 
 
-app.route('/capturar_evaluacion', methods=['POST', 'GET'])
+@app.route('/capturar_evaluacion', methods=['POST', 'GET'])
 @login_required
 def capturar_evaluacion():
     if request.method == 'POST':
