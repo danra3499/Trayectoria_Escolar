@@ -357,7 +357,9 @@ def lista(grupo):
 def evaluar(id):
     alumnos = Modelo_materia.alumnos_materia_id(db, id)
     materias = Modelo_materia.obtener_materias_id(db, id)
-    return render_template('evaluar.html', data=alumnos, materias=materias, fecha=fecha)
+    evaluacion = Modelo_evaluacion.obtener_calificacion_grupos(db, id)
+
+    return render_template('evaluar.html', data=alumnos, materias=materias, evaluacion = evaluacion, fecha=fecha)
 
 
 @app.route('/evaluar/<id>/evaluar_alumno/<id_alumno>', methods=['POST', 'GET'])
@@ -366,12 +368,12 @@ def evaluar_alumno(id,id_alumno):
     hoy = date.today()
     materias = Modelo_materia.obtener_materias_id(db, id)
     alumnos = Modelo_alumno.obtener_alumno_id(db,id_alumno)
-
+    
     return render_template('evaluar_alumno.html', data=alumnos,materias=materias, fecha=hoy)
 
 
 
-app.route('/capturar_evaluacion', methods=['POST', 'GET'])
+@app.route('/capturar_evaluacion', methods=['POST', 'GET'])
 @login_required
 def capturar_evaluacion():
     if request.method == 'POST':
@@ -383,7 +385,7 @@ def capturar_evaluacion():
         id_alumno = request.form['id_alumno']
         Modelo_evaluacion.capturar_evaluaciones(
             db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
-        return render_template('evaluar')
+        return redirect(url_for('evaluar', id=id_materia))
     else:
         return render_template('evaluar.html', data=evaluar)
 

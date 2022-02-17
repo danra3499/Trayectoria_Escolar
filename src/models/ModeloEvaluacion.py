@@ -15,3 +15,19 @@ class Modelo_evaluacion():
             db.connection.commit()
         except Exception as e:
             raise Exception(e)
+
+    @classmethod
+    def obtener_calificacion_grupos(self, db, id_materia):
+        try:
+            cursor = db.connection.cursor()
+            query = """SELECT avg(calificacion),id_materia,id_alumno
+                       FROM evaluacion WHERE id_materia = '{0}'""".format(id_materia)
+            cursor.execute(query)
+            data = cursor.fetchall()
+            calificacion_vista= []
+            for c in data:
+                evaluacion = Evaluacion(None, None, None , c[0], None, c[1], c[2]) 
+                calificacion_vista.append(evaluacion)
+            return calificacion_vista
+        except Exception as ex:
+            raise Exception(ex) 
