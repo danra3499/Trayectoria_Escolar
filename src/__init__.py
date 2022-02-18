@@ -358,8 +358,9 @@ def evaluar(id):
     alumnos = Modelo_materia.alumnos_materia_id(db, id)
     materias = Modelo_materia.obtener_materias_id(db, id)
     evaluacion = Modelo_evaluacion.obtener_calificacion_grupos(db, id)
+    alumn = Modelo_evaluacion.obtener_promedio_alumnos(db,id)
 
-    return render_template('evaluar.html', data=alumnos, materias=materias, evaluacion = evaluacion, fecha=fecha)
+    return render_template('evaluar.html', data=alumnos, materias=materias, evaluacion = evaluacion,alumn=alumn, fecha=fecha)
 
 
 @app.route('/evaluar/<id>/evaluar_alumno/<id_alumno>', methods=['POST', 'GET'])
@@ -368,8 +369,9 @@ def evaluar_alumno(id,id_alumno):
     hoy = date.today()
     materias = Modelo_materia.obtener_materias_id(db, id)
     alumnos = Modelo_alumno.obtener_alumno_id(db,id_alumno)
+    alumcal = Modelo_evaluacion.obtener_calificacion_por_alumnos(db,id_alumno)
     
-    return render_template('evaluar_alumno.html', data=alumnos,materias=materias, fecha=hoy)
+    return render_template('evaluar_alumno.html', data=alumnos,materias=materias,alumcal=alumcal, fecha=hoy)
 
 
 
