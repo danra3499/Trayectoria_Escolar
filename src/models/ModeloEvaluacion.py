@@ -33,8 +33,9 @@ class Modelo_evaluacion():
         except Exception as ex:
             raise Exception(ex)
 
+
     @classmethod
-    def obtener_calificacion_alumnos(self, db, id_materia):
+    def obtener_promedio_alumnos(self, db, id_materia):
         try:
             cursor = db.connection.cursor()
             query = """SELECT concat(a.nombres,' ',a.apellido_p,' ',a.apellido_m) as nombre,
@@ -52,11 +53,11 @@ class Modelo_evaluacion():
         except Exception as ex:
             raise Exception(ex)
 
-    @classmethod 
-    def obtener_calificacion_por_alumno(self, db, id_alumno):
+    @classmethod
+    def obtener_calificacion_por_alumnos(self, db, id_alumno):
         try:
             cursor = db.connection.cursor()
-            query = """SELECT parcial,calificacion FROM evaluacion WHERE id_alumno='{0}' ORDER BY parcial""".format(id_alumno)
+            query = "SELECT parcial,calificacion FROM evaluacion WHERE id_alumno='{0}' order by id_alumno".format(id_alumno)
             cursor.execute(query)
             data = cursor.fetchall()
             calificacion_por_alumno= []
@@ -66,5 +67,3 @@ class Modelo_evaluacion():
             return calificacion_por_alumno
         except Exception as ex:
             raise Exception(ex)
-
-   
