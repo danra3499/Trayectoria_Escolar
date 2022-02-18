@@ -60,6 +60,8 @@ class Modelo_alumno():
             return alumnos_g    
         except Exception as e:
             raise Exception(e)
+
+    
     
     @classmethod
     def editar_alumno(self, db, id, nombres, apellido_p, apellido_m, genero, status ,id_grupo):

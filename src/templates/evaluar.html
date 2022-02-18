@@ -22,7 +22,7 @@
 <table class="table table-striped table-bordered bg-white table-sm">
   <thead>
     <tr>
-      <td>Calificacion grupal</td>
+      <td>Promedio grupal</td>
     </tr>
   </thead>
   <tbody>
@@ -31,11 +31,35 @@
     <tr>
       <td>{{ c.calificacion }}</td>
     </tr>
-    
+    {% endfor %}
   </tbody>
 </table>
 
+<table class="table table-striped table-bordered bg-white table-sm">
+  <thead>
+    <tr>
+      <td>Alumno</td>
+      <td>N. Control</td>
+      <td>Calificacion(Promedio)</td>
+      <td>Acción</td>
+    </tr>
+  </thead>
+  <tbody>
+    
+    {% for calu in alumn %}
+    <tr>
+      <td>{{ calu.fecha }}</td>
+      <td>{{ calu.id_alumno }}</td>
+      <td>{{ calu.calificacion }}</td>
+      <td><a class="btn btn-success" href="/evaluar/{{m.id}}/evaluar_alumno/{{calu.id_alumno}}">Evaluar</a></td>
+    </tr>
+    </tr>
+    
+    {% endfor %}
+  </tbody>
+</table>
 
+<!--
 <table class="table table-striped table-bordered bg-white table-sm">
   <thead>
     <tr>
@@ -49,15 +73,16 @@
     <tr>
       <td>{{ a.nombre_completo() }}</td>
       <td>{{ a.id }}</td>
-      <td>{{ a.calificacion }}</td>
+      <td>{{ a.id_materia }}</td>
       
       <td><a class="btn btn-success" href="/evaluar/{{m.id}}/evaluar_alumno/{{a.id}}">Evaluar</a></td>
     </tr>
+    
     {% endfor %}
     {% endfor %}
-    {% endfor %}
+    
   </tbody>
   
-</table>
+</table>-->
 
 {% endblock %}
