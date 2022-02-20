@@ -1,0 +1,17 @@
+{% extends 'body.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block body %}
+<div class="row">
+  {% for g in data%}
+  <div class="col-sm-12 col-md-4 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h3>Lista de Calificaciones</h3>
+        <h2 class="card-title">Grupo: {{g.id}}</h2>
+        <a href="/materia2/{{g.id}}" class="btn btn-primary">Materias</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
