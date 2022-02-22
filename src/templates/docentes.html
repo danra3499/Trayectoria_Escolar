@@ -25,16 +25,16 @@
             <form action="/agregar_docentes" method='POST'>
                 <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
                 <div class="form-group mb-2">
-                    <input class="form-control" type="number" name="n_control" placeholder="Numero de empleado">
+                    <input class="form-control" type="number" name="n_control" placeholder="Numero de empleado" required> 
                 </div>
                 <div class="form-group mb-2">
-                    <input class="form-control" type="text" name="nombres" placeholder="Nombre(s)">
+                    <input class="form-control" type="text" name="nombres" placeholder="Nombre(s)" required>
                 </div>
                 <div class="form-group mb-2">
-                    <input class="form-control" type="text" name="apellido_p" placeholder="Apellido paterno">
+                    <input class="form-control" type="text" name="apellido_p" placeholder="Apellido paterno" required>
                 </div>
                 <div class="form-group mb-2">
-                    <input class="form-control" type="text" name="apellido_m" placeholder="Apellido materno">
+                    <input class="form-control" type="text" name="apellido_m" placeholder="Apellido materno" required>
                 </div>
                 <button class="btn btn-primary btn-block">
                     Guardar

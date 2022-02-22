@@ -1,6 +1,7 @@
 from datetime import date
 from src.models.entities.Evaluacion import Evaluacion
 from .entities.Alumno import Alumno
+from .entities.Materia import Materia
 
 
 class Modelo_evaluacion():
@@ -54,10 +55,10 @@ class Modelo_evaluacion():
             raise Exception(ex)
 
     @classmethod
-    def obtener_calificacion_por_alumnos(self, db, id_alumno):
+    def obtener_calificacion_por_alumnos(self, db, id_materia, id_alumno):
         try:
             cursor = db.connection.cursor()
-            query = "SELECT parcial,calificacion FROM evaluacion WHERE id_alumno='{0}' order by id_alumno".format(id_alumno)
+            query = "SELECT parcial,calificacion FROM evaluacion WHERE id_materia='{0}' and id_alumno='{1}'".format(id_materia,id_alumno)
             cursor.execute(query)
             data = cursor.fetchall()
             calificacion_por_alumno= []

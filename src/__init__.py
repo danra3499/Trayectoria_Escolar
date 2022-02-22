@@ -371,9 +371,9 @@ def evaluar_alumno(id,id_alumno):
     hoy = date.today()
     materias = Modelo_materia.obtener_materias_id(db, id)
     alumnos = Modelo_alumno.obtener_alumno_id(db,id_alumno)
-    alumcal = Modelo_evaluacion.obtener_calificacion_por_alumnos(db,id_alumno)
+    alumcal = Modelo_evaluacion.obtener_calificacion_por_alumnos(db, id, id_alumno)
     
-    return render_template('evaluar_alumno.html', data=alumnos,materias=materias,alumcal=alumcal, fecha=hoy)
+    return render_template('evaluar_alumno.html', data=alumnos,materias=materias,alumcal=alumcal,fecha=hoy)
 
 
 

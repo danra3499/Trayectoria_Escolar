@@ -8,25 +8,30 @@
       <form action="/agregar_usuario" method="POST">
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input type="number" class="form-control" name="usuario" placeholder="Numero de empleado">
+          <input type="number" class="form-control" name="usuario"  placeholder="Numero de empleado" required>
         </div>
         <div class="tuInput">
-          <input type="text" class="form-control" name="nombres" placeholder="Nombres">
+          <input type="text" class="form-control" name="nombres" placeholder="Nombres" required>
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="apellido_p" placeholder="Apellido paterno">
+          <input type="text" class="form-control" name="apellido_p" placeholder="Apellido paterno" required>
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="apellido_m" placeholder="Apellido meterno">
+          <input type="text" class="form-control" name="apellido_m" placeholder="Apellido meterno" required>
         </div>
         <div class="form-group mb-2">
-          <input type="password" class="form-control" name="password" placeholder="Contraseña">
+          <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
         </div>
-        <div class="form-group mb-2">
+        <select class="form-control mb-2" for="tipo_usuario" name="tipo_usuario" required>
+          <option value="">Tipo Usuario</option>
+          <option value="1">Administrador</option>
+          <option value="2">Docente</option>
+        </select>
+      <!-- <div class="form-group mb-2">
           <label for="tipo_usuario">Tipo de usuario</label><br>
           <input type="radio" value="1" name="tipo_usuario">Administrador<br>
           <input type="radio" value="2" name="tipo_usuario">Docente<br>
-        </div>
+        </div>--> 
         <button class="btn btn-primary btn-block">
           Guardar
         </button>
