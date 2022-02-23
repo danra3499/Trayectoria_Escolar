@@ -164,6 +164,7 @@ def agregar_alumno():
         return redirect(url_for('agregar_alumno'))
     else:
         return render_template('alumnos.html', data=alumnos)
+        
 
 @app.route('/editar_alumno/<id>', methods=['POST', 'GET'])
 @login_required
@@ -337,6 +338,13 @@ def materia(grupo):
     materias = Modelo_materia.materia_grupo(db, grupo)
     return render_template('materias.html', data=materias)
 
+@app.route('/materia2/<grupo>')
+@login_required
+def materia2(grupo):
+    # materias = Modelo_materia.obtener_nombre_materia(db, 1)
+    materias = Modelo_materia.materia_grupo(db, grupo)
+    return render_template('materias2.html', data=materias)
+
 # @app.route('/materia')
 # @login_required
 # def materia():
@@ -348,6 +356,12 @@ def materia(grupo):
 def lista(grupo):
     listas = Modelo_alumno.obtener_alumnos_grupo(db,grupo)
     return render_template('lista_grupos.html', data=listas)
+
+@app.route('/lista2/<grupo>')
+@login_required
+def lista2(grupo):
+    listas = Modelo_alumno.obtener_alumnos_grupo(db,grupo)
+    return render_template('lista_calificaciones.html', data=listas)
 
 """---------------------------EVALUACIONES---------------------------"""
 
@@ -425,4 +439,12 @@ def indices():
     IndicesIRE = Modelo_indiceIRE.obtener_indiceIRE(db)
     return render_template('indices.html',  data=data, IndicesIAC=IndicesIAC, IndicesIPE=IndicesIPE, IndicesIDE = IndicesIDE, IndicesISE = IndicesISE, IndicesIRE = IndicesIRE)
 
-    
+
+"""----------------------------------Calificaciones-------------------------------"""
+
+@app.route('/calificaciones')
+@login_required
+def calificaciones():
+    grupos = Modelo_grupo.obtener_grupos(db)
+    return render_template('calificaciones.html', data=grupos)
+
