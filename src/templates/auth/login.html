@@ -5,12 +5,12 @@
 {% endblock %}
 {% block body %}
 <div class="col-md-6 offset-md-3">
-  <h1 class="text-center mb-4">Login</h1>
+  <h1 class="text-center mb-4">Inicia Sesión</h1>
   <div class="card card-body">
     <form action="/" method="POST">
       <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
       <div class="form-group mb-2">
-        <label for="usuario" class="form-label">Número de empleado</label>
+        <label for="usuario" class="form-label">Número de Matrícula</label>
         <input type="text" class="form-control" id="usuario" name="usuario">
       </div>
       <div class="form-group mb-2">
