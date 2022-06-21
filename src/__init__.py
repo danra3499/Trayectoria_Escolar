@@ -342,7 +342,7 @@ def materia(grupo):
 @login_required
 def materia2(grupo):
     # materias = Modelo_materia.obtener_nombre_materia(db, 1)
-    materias = Modelo_materia.materia_grupo(db, grupo)
+    materias = Modelo_materia.materia_por_grupo(db, grupo)
     return render_template('materias2.html', data=materias)
 
 # @app.route('/materia')
@@ -357,11 +357,12 @@ def lista(grupo):
     listas = Modelo_alumno.obtener_alumnos_grupo(db,grupo)
     return render_template('lista_grupos.html', data=listas)
 
-@app.route('/lista2/<grupo>')
+@app.route('/lista2/<id>')
 @login_required
-def lista2(grupo):
-    listas = Modelo_alumno.obtener_alumnos_grupo(db,grupo)
-    return render_template('lista_calificaciones.html', data=listas)
+def lista2(id):
+    alumn = Modelo_evaluacion.obtener_promedio_alumnos(db,id)
+    cmal = Modelo_evaluacion.calificacion_materia_alumnos(db,id)
+    return render_template('lista_calificaciones.html', alumn=alumn, cmal=cmal)
 
 """---------------------------EVALUACIONES---------------------------"""
 
@@ -439,7 +440,100 @@ def indices():
     IndicesIRE = Modelo_indiceIRE.obtener_indiceIRE(db)
     return render_template('indices.html',  data=data, IndicesIAC=IndicesIAC, IndicesIPE=IndicesIPE, IndicesIDE = IndicesIDE, IndicesISE = IndicesISE, IndicesIRE = IndicesIRE)
 
+"""------------------------------------------IAO------------------------------"""
+@app.route('/editar_indice_IAO/<id_IAO>', methods=['POST','GET'])
+@login_required
+def editar_indice_IAO(id_IAO):
+    cursor = db.connection.cursor()
+    query = """SELECT * FROM iao WHERE id_IAO = '{0}'""".format(id_IAO)
+    cursor.execute(query)
+    data = cursor.fetchall()
+    return render_template('editar_IAO.html', iao=data[0])
 
+
+@app.route('/actualizar_IAO/<id_IAO>', methods=['POST'])
+@login_required
+def actualizar_IAO(id_IAO):
+    if request.method == 'POST':
+        id_IAO = request.form['id_IAO']
+        nivel_IAO = request.form['nivel_IAO']
+        categoria_IAO = request.form['categoria_IAO']
+        Modelo_indice.editar_IAO(
+        db, id_IAO, nivel_IAO, categoria_IAO)
+        return redirect(url_for('indices'))
+    else:
+        return render_template('indices.html')
+
+"""-------------------------------------IAC----------------------------------------"""
+@app.route('/editar_indice_IAC/<id_IAC>', methods=['POST','GET'])
+@login_required
+def editar_indice_IAC(id_IAC):
+    cursor = db.connection.cursor()
+    query = """SELECT * FROM iac WHERE id_IAC = '{0}'""".format(id_IAC)
+    cursor.execute(query)
+    data = cursor.fetchall()
+    return render_template('editar_IAC.html', iac=data[0])
+
+@app.route('/actualizar_IAC/<id_IAC>', methods=['POST'])
+@login_required
+def actualizar_IAC(id_IAC):
+    if request.method == 'POST':
+        id_IAC = request.form['id_IAC']
+        nivel_IAC = request.form['nivel_IAC']
+        categoria_IAC = request.form['categoria_IAC']
+        Modelo_indiceIAC.editar_IAC(
+        db, id_IAC, nivel_IAC, categoria_IAC)
+        return redirect(url_for('indices'))
+    else:
+        return render_template('indices.html')
+
+"""------------------------------------IPE------------------------------------------"""
+@app.route('/editar_indice_IPE/<id_IPE>', methods=['POST', 'GET'])
+@login_required
+def editar_indice_IPE(id_IPE):
+    cursor = db.connection.cursor()
+    query = """SELECT * FROM ipe WHERE id_IPE = '{0}'""".format(id_IPE)
+    cursor.execute(query)
+    data = cursor.fetchall()
+    return render_template('editar_IPE.html', ipe=data[0])
+
+@app.route('/actualizar_IPE/<id_IPE>', methods=['POST'])
+@login_required
+def actualizar_IPE(id_IPE):
+    if request.method == 'POST':
+        id_IPE = request.form['id_IPE']
+        nivel_IPE = request.form['nivel_IPE']
+        categoria_IPE = request.form['categoria_IPE']
+        Modelo_indiceIPE.editar_IPE(
+        db, id_IPE, nivel_IPE, categoria_IPE)
+        return redirect(url_for('indices'))
+    else:
+        return render_template('indices.html')
+
+"""----------------------------------ISE-----------------------------------------------"""
+
+@app.route('/editar_indice_ISE/<id_ISE>', methods=['POST', 'GET'])
+@login_required
+def editar_indice_ISE(id_ISE):
+    cursor = db.connection.cursor()
+    query = "SELECT * FROM ise WHERE id_ISE = '{0}'".format(id_ISE)
+    cursor.execute(query)
+    data = cursor.fetchall()
+    return render_template('editar_ISE.html', ise=data[0])
+    
+@app.route('/actualizar_ISE/<id_ISE>' , methods=['POST'])
+@login_required
+def actualizar_ISE(id_ISE):
+    if request.method == 'POST':
+        id_ISE = request.form['id_ISE']
+        nivel_ISE = request.form['nivel_ISE']
+        categoria_ISE = request.form['categoria_ISE']
+        Modelo_indiceISE.editar_ISE(
+        db, id_ISE, nivel_ISE, categoria_ISE)
+        return redirect(url_for('indices'))
+    else:
+        return render_template('indices.html')
+        
 """----------------------------------Calificaciones-------------------------------"""
 
 @app.route('/calificaciones')

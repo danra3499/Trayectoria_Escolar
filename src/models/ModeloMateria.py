@@ -159,6 +159,22 @@ class Modelo_materia():
         except Exception as ex:
             raise Exception(ex)
 
+    @classmethod
+    def materia_por_grupo(self,db,id_grupo):
+        try:
+            cursor = db.connection.cursor()
+            query = "SELECT id, nombre, id_grupo FROM materia WHERE id_grupo='{0}'".format(id_grupo)
+            cursor.execute(query)
+            data = cursor.fetchall()
+            matg = []
+            for mg in data:
+                materia = Materia(mg[0],None,mg[1],None,mg[2],None)
+                matg.append(materia)
+            return matg
+        except Exception as ex:
+            raise Exception(ex)
+
+
   
     
     @classmethod

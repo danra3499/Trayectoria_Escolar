@@ -4,7 +4,7 @@ from .entities.Indices import IndicesIPE
 from .entities.Indices import IndicesIDE
 from .entities.Indices import IndicesISE
 from .entities.Indices import IndicesIRE
-
+"""-----------------IAO------------------------------"""
 class Modelo_indice():
     @classmethod
     def obtener_indice(self, db):
@@ -21,7 +21,18 @@ class Modelo_indice():
         except Exception as ex:
             raise Exception(ex)
 
-
+    @classmethod
+    def editar_IAO(self, db, id_IAO, nivel_IAO, categoria_IAO):
+        try:
+            cursor = db.connection.cursor()
+            query = """UPDATE iao SET id_IAO = '{0}', nivel_IAO = '{1}', categoria_IAO = '{2}'
+                       WHERE id_IAO = '{3}'""".format(id_IAO, nivel_IAO, categoria_IAO, id_IAO)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
+ 
+"""----------------IAC--------------------------------"""
 class Modelo_indiceIAC():
     @classmethod
     def obtener_indiceIAC(self, db):
@@ -38,6 +49,19 @@ class Modelo_indiceIAC():
         except Exception as ex:
             raise Exception(ex)
 
+    @classmethod
+    def editar_IAC(self, db, id_IAC, nivel_IAC, categoria_IAC):
+        try:
+            cursor = db.connection.cursor()
+            query = """UPDATE iac SET id_IAC = '{0}', nivel_IAC = '{1}', categoria_IAC = '{2}'
+                       WHERE id_IAC = '{3}'""".format(id_IAC, nivel_IAC, categoria_IAC, id_IAC)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
+            
+"""-----------------------IPE----------------------------------------------"""
+
 class Modelo_indiceIPE():
     @classmethod
     def obtener_indiceIPE(self, db):
@@ -53,6 +77,51 @@ class Modelo_indiceIPE():
             return indicesIPE
         except Exception as ex:
             raise Exception(ex)
+
+    @classmethod
+    def editar_IPE(self, db, id_IPE, nivel_IPE, categoria_IPE):
+        try:
+            cursor = db.connection.cursor()
+            query = """ UPDATE ipe SET id_IPE = '{0}', nivel_IPE = '{1}', categoria_IPE = '{2}'
+                        WHERE id_IPE = '{3}'""".format(id_IPE, nivel_IPE, categoria_IPE, id_IPE)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
+
+
+"""-------------------------------------ISE-------------------------------------------"""
+
+
+class Modelo_indiceISE():
+    @classmethod
+    def obtener_indiceISE(self, db):
+        try:
+            cursor = db.connection.cursor()
+            query = """SELECT id_ISE, nivel_ISE, categoria_ISE FROM ise"""
+            cursor.execute(query)
+            data = cursor.fetchall()
+            indicesISE = []
+            for ise in data:
+                indiceISE = IndicesISE(ise[0], ise[1], ise[2])
+                indicesISE.append(indiceISE)
+            return indicesISE
+        except Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def editar_ISE(self, db, id_ISE, nivel_ISE, categoria_ISE):
+        try:
+            cursor = db.connection.cursor()
+            query = """UPDATE ise SET id_ISE = '{0}', nivel_ISE = '{1}', categoria_ISE = '{2}'
+                       WHERE id_ISE = '{3}'""".format(id_ISE, nivel_ISE, categoria_ISE, id_ISE)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
+
+
+"""------------------------------IDE------------------------------------------"""
 
 class Modelo_indiceIDE():
     @classmethod
@@ -75,21 +144,10 @@ class Modelo_indiceIDE():
             raise Exception(ex)
 
 
-class Modelo_indiceISE():
-    @classmethod
-    def obtener_indiceISE(self, db):
-        try:
-            cursor = db.connection.cursor()
-            query = """SELECT id_ISE, nivel_ISE, categoria_ISE FROM ise"""
-            cursor.execute(query)
-            data = cursor.fetchall()
-            indicesISE = []
-            for ise in data:
-                indiceISE = IndicesISE(ise[0], ise[1], ise[2])
-                indicesISE.append(indiceISE)
-            return indicesISE
-        except Exception as ex:
-            raise Exception(ex)
+
+
+"""----------------------------------------------------------------------------"""
+
         
 class Modelo_indiceIRE():
     @classmethod
@@ -108,3 +166,4 @@ class Modelo_indiceIRE():
             return indicesIRE
         except Exception as ex:
             raise Exception(ex)
+

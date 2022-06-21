@@ -91,3 +91,9 @@ class ModeloUsuario():
             db.connection.commit()
         except Exception as ex:
             raise Exception(ex)
+
+
+
+
+
+

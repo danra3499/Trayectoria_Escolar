@@ -58,13 +58,35 @@ class Modelo_evaluacion():
     def obtener_calificacion_por_alumnos(self, db, id_materia, id_alumno):
         try:
             cursor = db.connection.cursor()
-            query = "SELECT parcial,calificacion FROM evaluacion WHERE id_materia='{0}' and id_alumno='{1}'".format(id_materia,id_alumno)
+            query = "SELECT id_alumno,parcial,calificacion FROM evaluacion WHERE id_materia='{0}' and id_alumno='{1}'".format(id_materia,id_alumno)
             cursor.execute(query)
             data = cursor.fetchall()
             calificacion_por_alumno= []
             for alumc in data:
-                alumcal = Evaluacion(None, alumc[0], None, alumc[1], None, None, None) 
+                alumcal = Evaluacion(alumc[0], alumc[1], None, alumc[2], None, None, None) 
                 calificacion_por_alumno.append(alumcal)
             return calificacion_por_alumno
         except Exception as ex:
             raise Exception(ex)
+    
+    @classmethod
+    def calificacion_materia_alumnos(self, db, id_materia):
+        try:
+            cursor = db.connection.cursor()
+            query = """SELECT  concat(a.nombres,' ',a.apellido_p,' ',a.apellido_m) as nombre,
+                       Sum(CASE WHEN parcial = '1' THEN calificacion ELSE 0 END) AS P1,
+                       Sum(CASE WHEN parcial = '2' THEN calificacion ELSE 0 END) AS P2,
+                       Sum(CASE WHEN parcial = '3' THEN calificacion ELSE 0 END) AS P3,
+                       cast(round(avg(calificacion),2) as dec(10,0)),id_alumno
+                       FROM evaluacion e
+                       INNER JOIN alumno a ON e.id_alumno = a.id WHERE id_materia='{0}' group by id_alumno""".format(id_materia)
+            cursor.execute(query)
+            data = cursor.fetchall()
+            califi_mat_alum = []
+            for cma in data:
+                cmal = Evaluacion(cma[0],cma[1],cma[2],cma[3],None,cma[4],cma[5])
+                califi_mat_alum.append(cmal)
+            return califi_mat_alum
+        except Exception as ex:
+            raise Exception(ex)
+    

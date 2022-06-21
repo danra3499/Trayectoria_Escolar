@@ -8,19 +8,23 @@
       <table class="table table-striped table-bordered bg-white table-sm">
         <thead>
           <tr>
-            <td><b>Num. Control</td></b>  
-            <td><b>Nombre</td></b>
-            <td><b>1er Parcial</td></b>
-            <td><b>2do Parcial</td></b>
-            <td><b>3er Parcial</td></b>
-            <td><b>Promedio</td></b>
+            <td><b>Nombre</b></td>
+            <td><b>Num. Control</td></b>
+            <td><b>Parcial 1</td></b>  
+            <td><b>Parcial 2</td></b>  
+            <td><b>Parcial 3</td></b>
+            <td><b>Promedio</td></b>     
           </tr>
         </thead>
         <tbody>
-          {% for ag in data %}
+          {% for cma in cmal %}
           <tr>
-            <td>{{ ag.id }}</td>
-            <td>{{ ag.nombres }}</td>
+            <td>{{ cma.id}}</td>
+            <td>{{ cma.id_alumno }}</td>
+            <td>{{ cma.parcial }}</td>
+            <td>{{ cma.fecha}}</td>
+            <td>{{ cma.calificacion }}</td>  
+            <td>{{ cma.id_materia }}</td>  
           </tr>
           {% endfor %}
         </tbody>
@@ -28,5 +32,4 @@
     </div>
     </div>
   </div>
-</div>
-{% endblock %}
+{% endblock %}|
