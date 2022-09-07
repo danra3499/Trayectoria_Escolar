@@ -8,7 +8,7 @@
       <form action="/agregar_alumno" method="POST">
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="numero_control" placeholder="Numero de control" required>
+          <input type="number" class="form-control" name="numero_control" placeholder="Numero de control" required>
         </div>
         <div class="form-group mb-2">
           <input type="text" class="form-control" name="nombres" placeholder="Nombres" required>
