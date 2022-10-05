@@ -90,3 +90,25 @@ class Modelo_evaluacion():
         except Exception as ex:
             raise Exception(ex)
     
+    @classmethod
+    def editar_cal(self, db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno):
+        try:
+            cursor = db.connection.cursor()
+            query = """ UPDATE evaluacion SET id = '{0}', fecha = '{1}', calificacion = '{2}', id_tipo_evaluacion = '{3}', id_materia = '{4}', id_alumno = '{5}'
+            WHERE id = '{6}'""".format(parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno, id)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def eliminar_cal(self, db, id):
+        try:
+            cursor = db.connection.cursor()
+            query = "DELETE FROM evaluacion WHERE id = '{0}'".format(id)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as ex:
+            raise Exception(ex)
+
+

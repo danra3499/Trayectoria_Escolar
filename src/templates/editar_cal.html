@@ -1,0 +1,49 @@
+{% extends 'body.html' %}
+{% block body %}
+
+  {% for a in data %}
+    <div class="row">
+      <div class="col-md-4 offset-md-3">
+         <div class="card card-body">
+          <h3 class="text-center mb-4">Evaluar alumno</h3>
+          <form action="/actualizar_cal" method='POST'>
+             <div class="form-group mb-2">
+               <input type="text" name="id_alumno"  readonly="readonly" class="form-control" value="{{a.id}}">
+             </div>
+            <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+             <select class="form-control mb-2" for="parcial" name="parcial" required> 
+              <option value="">Parcial</option>
+              <option value="1">Primero</option>
+              <option value="2">Segundo</option>
+             </select>
+              <div class="form-group mb-2">
+                <input type="text" class="form-control" readonly="readonly" name="fecha" value="{{fecha}}">
+              </div>
+              <div class="form-group mb-2">
+                <input type="text" class="form-control" name="calificacion" placeholder="Calificación" required>
+              </div>
+                <select class="form-control mb-2" for="tipo_evaluacion" name="tipo_evaluacion" required>
+                  <option value="">Tipo de evaluacion</option>
+                  <option value="1" name="tipo_evaluacion">Curso normal</option>
+                  <option value="2" name="tipo_evaluacion">Segunda oportunidad</option>
+                  <option value="3" name="tipo_evaluacion">Recurse</option>
+                  <option value="4" name="tipo_evaluacion">Especial</option>
+                </select>
+  {% endfor %}
+            {% for m in materias %}
+              <div class="form-group mb-2">
+                <input type="text" class="form-control" readonly="readonly" name="materia" placeholder="Materia" value="{{m.id}}">
+              </div>
+              <div class="form-group mb-2">
+               <input type="text" class="form-control" readonly="readonly" value="{{m.nombre}}">
+              </div>
+              <button class="btn btn-primary btn-block">
+                Actualizar
+              </button>
+            {% endfor %}
+          </form>
+        </div>
+    </div>
+  </div>
+
+{% endblock %}
