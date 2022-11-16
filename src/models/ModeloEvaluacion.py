@@ -7,12 +7,12 @@ from .entities.Materia import Materia
 class Modelo_evaluacion():
 
     @classmethod
-    def capturar_evaluaciones(self, db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno):
+    def capturar_evaluaciones(self, db, id, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno):
         try:
             cursor = db.connection.cursor()
-            query = """INSERT INTO evaluacion(parcial, fecha, calificacion, id_tipo_evaluacion, id_materia, id_alumno) 
-                       VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')""".format(
-                parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
+            query = """INSERT INTO evaluacion(id, parcial, fecha, calificacion, id_tipo_evaluacion, id_materia, id_alumno) 
+                       VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', '{6}')""".format(
+                id, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
             cursor.execute(query)
             db.connection.commit()
         except Exception as e:
