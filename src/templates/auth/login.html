@@ -2,7 +2,6 @@
 {% block title %}{{title}}{% endblock %}
 {% block customCSS %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
-<title>TESVG</title>
 {% endblock %}
 {% block body %}
 <div class="col-md-6 offset-md-3">
@@ -20,9 +19,6 @@
       </div>
       <div class="mt-3 d-grid gap-2">
         <button type="submit" class="btn btn-primary">Ingresar</button>
-      </div>
-      <div>
-        <p>¿No tienes una cuenta? <a class="link" href="usuarios.html">Registrate </a></p>
       </div>
     </form>
   </div>

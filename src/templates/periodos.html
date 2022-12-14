@@ -1,0 +1,18 @@
+{% extends 'body.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block body %}
+<div class="row">
+<h1 align="center">Periodos Escolares</h1>
+{% for p in data%}
+<div class="col-sm-12 col-md-6 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Periodo: {{p.periodo}}</h2>
+        <a href="/gruposper" class="btn btn-primary" >Grupos</a>
+      </div>
+    </div>
+  </div>
+{% endfor %} 
+</div>
+
+{% endblock %}
