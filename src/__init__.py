@@ -409,6 +409,37 @@ def capturar_evaluacion():
     else:
         return render_template('evaluar.html', data=evaluar)
 
+@app.route('/editar_cal/<id>', methods=['POST', 'GET'])
+@login_required
+def editar_cal(id):
+    cursor = db.connection.cursor()
+    query = """SELECT * FROM evaluacion WHERE id = '{0}'""".format(id)
+    cursor.execute(query)
+    data = cursor.fetchall()
+    return render_template('editar_cal.html')
+
+@app.route('/actualizar_cal/<id>', methods=['POST'])
+@login_required
+def actualizar_cal(id):
+    if request.method == 'POST':
+        parcial = request.form['parcial']
+        fecha = request.form['fecha']
+        calificacion = request.form['calificacion']
+        tipo_evaluacion = request.form.get('tipo_evaluacion')
+        id_materia = request.form['materia']
+        id_alumno = request.form['id_alumno']
+        Modelo_evaluacion.editar_cal(
+            db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
+        return redirect(url_for('evaluar'))
+    else:
+        return render_template('evaluar.html')
+
+@app.route('/eliminar_cal/<id>', methods=['POST', 'GET'])
+@login_required
+def eliminar_cal(id):
+    Modelo_evaluacion.eliminar_cal(db, id)
+    flash('Registro eliminado correctamente')
+    return redirect(url_for('evaluar'))
 
 """---------------------------FIN DE EVALUACIONES---------------------------"""
 
@@ -542,18 +573,4 @@ def actualizar_ISE(id_ISE):
 def calificaciones():
     grupos = Modelo_grupo.obtener_grupos(db)
     return render_template('calificaciones.html', data=grupos)
-
-"""-----------------------------------Periodos-----------------------------------"""
-
-@app.route('/periodos')
-@login_required
-def periodos():
-    periodo = Modelo_periodo.obtener_periodos(db)
-    return render_template('periodos.html', data=periodo)
-
-@app.route('/gruposper')
-@login_required
-def gruposper():
-    grupos = Modelo_grupo.obtener_grupos(db)
-    return render_template('gruposper.html', data=grupos)
 
