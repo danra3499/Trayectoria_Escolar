@@ -546,7 +546,7 @@ def calificaciones():
 """-----------------------------------Periodos-----------------------------------"""
 
 @app.route('/periodos')
-@login_required
+@login_required 
 def periodos():
     periodo = Modelo_periodo.obtener_periodos(db)
     return render_template('periodos.html', data=periodo)
