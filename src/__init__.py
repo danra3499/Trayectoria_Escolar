@@ -574,3 +574,18 @@ def calificaciones():
     grupos = Modelo_grupo.obtener_grupos(db)
     return render_template('calificaciones.html', data=grupos)
 
+
+"""-----------------------------------Periodos-----------------------------------"""
+
+@app.route('/periodos')
+@login_required 
+def periodos():
+    periodo = Modelo_periodo.obtener_periodos(db)
+    return render_template('periodos.html', data=periodo)
+
+@app.route('/gruposper')
+@login_required
+def gruposper():
+    grupos = Modelo_grupo.obtener_grupos(db)
+    return render_template('gruposper.html', data=grupos)
+

@@ -137,6 +137,11 @@ FOREIGN KEY(categoria_ISE) REFERENCES ise(id_ISE),
 PRIMARY KEY(id)
 );
 
+CREATE TABLE `periodos` (
+  `id_periodos` int(11) NOT NULL,
+  `periodo` varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- CREATE TABLE docentes(
 --   id int not null auto_increment,
 --   Profesión varchar(150) not null,

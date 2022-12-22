@@ -130,6 +130,13 @@ INSERT INTO `ire` (`id`, `id_IRE`, `categoria_IRE`, `categoria_IDE`, `categoria_
 ('8', '3', 'SIN RIESGO', '12', '3'),
 ('9', '3', 'SIN RIESGO', '24', '3');
 
+INSERT INTO `periodos` (`id_periodos`, `periodo`) VALUES
+(1, 'SEP2021-MAR2022'),
+(2, 'MAR2022-SEP2023'),
+(3, 'SEP2023-MAR2024'),
+(4, 'MAR2024-SEP2024');
+
+
 -- -- MATERIAS
 -- insert into materia(nombre, n_creditos, id_semestre) values
 -- -- SEMESTRE 1
