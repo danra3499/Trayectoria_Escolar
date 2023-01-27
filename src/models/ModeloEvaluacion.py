@@ -95,17 +95,17 @@ class Modelo_evaluacion():
         try:
             cursor = db.connection.cursor()
             query = """ UPDATE evaluacion SET id = '{0}', fecha = '{1}', calificacion = '{2}', id_tipo_evaluacion = '{3}', id_materia = '{4}', id_alumno = '{5}'
-            WHERE id = '{6}'""".format(id, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno, id)
+            WHERE id = '{6}'""".format(id, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
             cursor.execute(query)
             db.connection.commit()
         except Exception as ex:
             raise Exception(ex)
 
     @classmethod
-    def eliminar_cal(self, db, id):
+    def eliminar_cal(self, db, calificacion):
         try:
             cursor = db.connection.cursor()
-            query = "DELETE FROM evaluacion WHERE id = '{0}'".format(id)
+            query = "DELETE FROM evaluacion WHERE calificacion = '{0}'".format(calificacion)
             cursor.execute(query)
             db.connection.commit()
         except Exception as ex:
