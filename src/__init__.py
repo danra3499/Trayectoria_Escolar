@@ -416,7 +416,7 @@ def editar_cal(id):
     query = """SELECT * FROM evaluacion WHERE id = '{0}'""".format(id)
     cursor.execute(query)
     data = cursor.fetchall()
-    return render_template('editar_cal.html')
+    return render_template('editar_cal.html', data=evaluar)
 
 @app.route('/actualizar_cal/<id>', methods=['POST'])
 @login_required
@@ -430,16 +430,16 @@ def actualizar_cal(id):
         id_alumno = request.form['id_alumno']
         Modelo_evaluacion.editar_cal(
             db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
-        return redirect(url_for('evaluar'))
+        return redirect(url_for('evaluar', id=id_materia))
     else:
-        return render_template('evaluar.html')
+        return render_template('evaluar.html', data=evaluar)
 
-@app.route('/eliminar_cal/<id>', methods=['POST', 'GET'])
+@app.route('/eliminar_cal/<calificacion>', methods=['POST', 'GET'])
 @login_required
-def eliminar_cal(id):
-    Modelo_evaluacion.eliminar_cal(db, id)
+def eliminar_cal(calificacion):
+    Modelo_evaluacion.eliminar_cal(db, calificacion)
     flash('Registro eliminado correctamente')
-    return redirect(url_for('evaluar'))
+    return redirect(url_for('evaluar_alumno'))
 
 """---------------------------FIN DE EVALUACIONES---------------------------"""
 
