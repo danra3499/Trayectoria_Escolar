@@ -414,11 +414,11 @@ def capturar_evaluacion():
 
 
 def pagina_no_encontrada(error):
-    return render_template('error/404.html'), 404
+    return render_template('error/404.html'), 7
 
 
 def pagina_no_autorizada(error):
-    return render_template(url_for('login'))
+    return render_template(url_for('l ogin'))
 
 
 def start_app(config):
