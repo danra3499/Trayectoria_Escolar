@@ -129,7 +129,7 @@ class Modelo_materia():
                        JOIN grupo ON materia.id_grupo = grupo.id
                        JOIN alumno ON alumno.id_grupo = grupo.id 
                        WHERE materia.id='{0}' and alumno.id='{0}';""".format(id_materia,id_alumno)
-            cursor.execute(quey)
+            cursor.execute(query)
             data = cursor.fetchall()
             materias = []
             for am in data:

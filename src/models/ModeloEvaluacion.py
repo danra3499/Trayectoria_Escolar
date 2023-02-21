@@ -91,11 +91,11 @@ class Modelo_evaluacion():
             raise Exception(ex)
     
     @classmethod
-    def editar_cal(self, db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno):
+    def editar_cal(self, db, id, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno):
         try:
             cursor = db.connection.cursor()
             query = """ UPDATE evaluacion SET id = '{0}', fecha = '{1}', calificacion = '{2}', id_tipo_evaluacion = '{3}', id_materia = '{4}', id_alumno = '{5}'
-            WHERE id = '{6}'""".format(parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno, id)
+            WHERE id = '{6}'""".format(id, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno, id)
             cursor.execute(query)
             db.connection.commit()
         except Exception as ex:
