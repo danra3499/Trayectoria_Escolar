@@ -10,6 +10,7 @@ class Modelo_evaluacion():
     def capturar_evaluaciones(self, db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno):
         try:
             cursor = db.connection.cursor()
+
             query = """INSERT INTO evaluacion(parcial, fecha, calificacion, id_tipo_evaluacion, id_materia, id_alumno) 
                        VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')""".format(
                 parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
