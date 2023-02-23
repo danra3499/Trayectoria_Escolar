@@ -416,7 +416,7 @@ def editar_cal(id):
     query = """SELECT * FROM evaluacion WHERE id = '{0}'""".format(id)
     cursor.execute(query)
     data = cursor.fetchall()
-    return render_template('editar_cal.html', data=evaluar)
+    return render_template('editar_cal.html', evaluar=data)
 
 @app.route('/actualizar_cal/<id>', methods=['POST'])
 @login_required
@@ -432,7 +432,7 @@ def actualizar_cal(id):
             db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
         return redirect(url_for('evaluar', id=id_materia))
     else:
-        return render_template('evaluar.html', data=evaluar)
+        return render_template('evaluar.html')
 
 @app.route('/eliminar_cal/<calificacion>', methods=['POST', 'GET'])
 @login_required
