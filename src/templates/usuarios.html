@@ -1,43 +1,48 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/usuarios.css')}}">
 <div class="row">
   <div class="col-md-4">
-    <div class="card card-body">
+    <title>INGENIERIA EN SISTEMAS COMPUTACIONALES</title>
+    <div class="Registro">
       <h1 class="text-center mb-4">Registrar Usuarios</h1>
       <form action="/agregar_usuario" method="POST">
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input type="number" class="form-control" name="usuario"  placeholder="Numero de empleado" required>
+          <input type="number" class="form-control" name="usuario"  placeholder="Numero de Empleado" required>
         </div>
-        <div class="tuInput">
+        <!--div class="tuInput"-->
+        <div class="form-group mb-2">
           <input type="text" class="form-control" name="nombres" placeholder="Nombres" required>
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="apellido_p" placeholder="Apellido paterno" required>
+          <input type="text" class="form-control" name="apellido_p" placeholder="Apellido Paterno" required>
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="apellido_m" placeholder="Apellido meterno" required>
+          <input type="text" class="form-control" name="apellido_m" placeholder="Apellido Materno" required>
         </div>
         <div class="form-group mb-2">
           <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
         </div>
+        <div class="seleccion">
         <select class="form-control mb-2" for="tipo_usuario" name="tipo_usuario" required>
           <option value="">Tipo Usuario</option>
           <option value="1">Administrador</option>
           <option value="2">Docente</option>
-        </select>
-       <div class="form-group mb-2">
+        </select> </div>
+       <!--div class="form-group mb-2">
           <label for="tipo_usuario">Tipo de usuario</label><br>
           <input type="radio" value="1" name="tipo_usuario">Administrador<br>
           <input type="radio" value="2" name="tipo_usuario">Docente<br>
-        </div>
-        <button class="btn btn-primary btn-block">
+        </div-->
+        <button class="btn1 btn-primary btn-block">
           Guardar
         </button>
-        <button class="btn btn-primary btn-block" type="reset">
+        <button class="btn2 btn-primary btn-block" type="reset">
           Limpiar
-      </button>
+        </button>
+        <div class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div>
       </form>
     </div>
   </div>

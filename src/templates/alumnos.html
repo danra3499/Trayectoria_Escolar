@@ -1,24 +1,26 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/alumnos.css')}}">
 <div class="row">
   <div class="col-md-4">
-    <div class="card card-body">
+    <div class="Alum">
       <h1 class="text-center">Registrar Alumnos</h1>
       <form action="/agregar_alumno" method="POST">
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input type="number" class="form-control" name="numero_control" placeholder="Numero de control" required>
+          <input type="number" class="form-control" name="numero_control" placeholder="Numero de Control" required>
         </div>
         <div class="form-group mb-2">
           <input type="text" class="form-control" name="nombres" placeholder="Nombres" required>
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="apellido_p" placeholder="Apellido paterno" required>
+          <input type="text" class="form-control" name="apellido_p" placeholder="Apellido Paterno" required>
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="apellido_m" placeholder="Apellido meterno" required>
+          <input type="text" class="form-control" name="apellido_m" placeholder="Apellido Materno" required>
         </div>
+        <div class="seleccion">
         <select class="form-control mb-2" for="genero" name="genero" required>
           <option value="">Genero</option>
           <option value="M">Masculino</option>
@@ -33,7 +35,7 @@
           <option value="">Status</option>
           <option value="Activo">Activo</option>
           <option value="Baja">Baja</option>
-        </select>
+        </select> </div>
     <!--<div class="form-group mb-2">
           <label for="status">Status</label><br>
           <input type="radio" value="Activo" name="status">Activo <br>
@@ -43,7 +45,7 @@
           <input type="number" class="form-control" name="semestre" placeholder="Semestre example 2">
         </div>-->
         <div class="form-group mb-2">
-          <input type="number" class="form-control" name="grupo" placeholder="Grupo example 3801" required>
+          <input type="number" class="form-control" name="grupo" placeholder="Grupo example: 3801" required>
         </div> 
        <button class="btn btn-primary btn-block">
             Guardar
@@ -51,6 +53,7 @@
         <button class="btn btn-primary btn-block" type="reset">
           Limpiar
         </button>
+        <div class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div>
       </form>
     </div>
   </div>

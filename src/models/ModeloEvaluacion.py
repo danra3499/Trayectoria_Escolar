@@ -95,8 +95,8 @@ class Modelo_evaluacion():
     def editar_cal(self, db, id, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno):
         try:
             cursor = db.connection.cursor()
-            query = """ UPDATE evaluacion SET id = '{1}', fecha = '{2}', calificacion = '{3}', id_tipo_evaluacion = '{4}', id_materia = '{5}', id_alumno = '{6}'
-            WHERE id = '{0}'""".format(id, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno, id)
+            query = """ UPDATE evaluacion SET id = '{0}', fecha = '{1}', calificacion = '{2}', id_tipo_evaluacion = '{3}', id_materia = '{4}', id_alumno = '{5}'
+            WHERE id = '{6}'""".format(id, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno, id)
             cursor.execute(query)
             db.connection.commit()
         except Exception as ex:

@@ -1,6 +1,7 @@
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{url_for('home')}}">Trayectoria escolar</a>
+    <a class="navbar-brand" href="{{url_for('home')}}">Trayectoria Escolar</a> 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -40,7 +41,7 @@
             <strong>{{ current_user.usuario }}</strong>({{current_user.tipo_usuario.usuario }})
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="{{url_for('logout')}}">Cerrar sesión</a></li>
+            <li><a class="dropdown-item" href="{{url_for('logout')}}">Cerrar Sesión</a></li>
           </ul>
         </li>
       </ul>

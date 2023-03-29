@@ -1,9 +1,10 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/materia.css')}}">
 <div class="row">
     <div class="col-md-4">
-        <div class="card card-body">
+        <div class="Registro">
             <h1 class="text-center mb-4">Registrar Materia</h1> 
             <form action="/agregar_materia" method='POST'>
                 <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
@@ -31,6 +32,7 @@
                 <button class="btn btn-primary btn-block" type="reset">
                     Limpiar
                 </button>
+                <div class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div>
             </form>
         </div>
     </div>
