@@ -47,7 +47,7 @@ form .username{
   padding-left: 50px;
 }
 .username input[type="password"]{
-  background: url(http://i.imgur.com/Bmg6BFf.png)no-repeat;
+  background: url(http://i.imgur.com/Bmg6BFf.png)no-repeat left center;
   padding-left: 50px;
 }
 .username label{

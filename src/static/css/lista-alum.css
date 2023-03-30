@@ -1,0 +1,13 @@
+.lista-alum h1{
+  border: black 1px solid ;
+  background-color: rgba(26, 26, 248, 0.664);
+  color: white;
+  padding: 7px;
+}
+tr:hover td{
+  background-color: rgba(26, 26, 248, 0.664);
+  color: white;
+}
+.lista-alum{
+    border: none ;
+}
