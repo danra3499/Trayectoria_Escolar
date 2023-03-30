@@ -10,7 +10,7 @@
       <form action="/agregar_usuario" method="POST">
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input type="number" class="form-control" name="usuario"  placeholder="Numero de Empleado" required>
+          <input type="number" class="form-control" name="usuario"  placeholder="        Numero de Empleado" required>
         </div>
         <!--div class="tuInput"-->
         <div class="form-group mb-2">
@@ -36,13 +36,13 @@
           <input type="radio" value="1" name="tipo_usuario">Administrador<br>
           <input type="radio" value="2" name="tipo_usuario">Docente<br>
         </div-->
-        <button class="btn1 btn-primary btn-block">
+        <button class="btn1">
           Guardar
         </button>
-        <button class="btn2 btn-primary btn-block" type="reset">
+        <button class="btn2" type="reset">
           Limpiar
         </button>
-        <div class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div>
+        <div1 class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div1>
       </form>
     </div>
   </div>
@@ -53,12 +53,12 @@
       <table class="table table-striped table-bordered bg-white table-sm">
         <thead>
           <tr>
-            <td><b>Usuario</td></b>
-            <td><b>Nombre</td></b>
-            <td><b>Apellido Paterno</td></b>
-            <td><b>Apellido Materno</td></b>
-            <td><b>Tipo de usuario</td></b>
-            <td><b>Acciones</td></b>
+            <th><b>Usuario</th></b>
+            <th><b>Nombre</th></b>
+            <th><b>Apellido Paterno</th></b>
+            <th><b>Apellido Materno</th></b>
+            <th><b>Tipo de usuario</th></b>
+            <th><b>Acciones</th></b>
           </tr>
         </thead>
         <tbody>
