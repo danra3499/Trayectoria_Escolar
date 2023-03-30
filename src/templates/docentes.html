@@ -3,7 +3,7 @@
 {% block body %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/docentes.css')}}">
 <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-4">
         <div class="Registro">
             <h1 class="text-center mb-4">Registrar Docente</h1>
 
@@ -31,18 +31,18 @@
                     <input class="form-control" type="text" name="nombres" placeholder="Nombre(s)" required>
                 </div>
                 <div class="form-group mb-2">
-                    <input class="form-control" type="text" name="apellido_p" placeholder="Apellido paterno" required>
+                    <input class="form-control" type="text" name="apellido_p" placeholder="Apellido Paterno" required>
                 </div>
                 <div class="form-group mb-2">
-                    <input class="form-control" type="text" name="apellido_m" placeholder="Apellido materno" required>
+                    <input class="form-control" type="text" name="apellido_m" placeholder="Apellido Materno" required>
                 </div>
-                <button class="btn btn-primary btn-block">
+                <button class="btn1">
                     Guardar
                 </button>
-                <button class="btn btn-primary btn-block" type="reset">
+                <button class="btn2" type="reset">
                     Limpiar
                 </button>
-                <div class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div>
+                <div1 class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div1>
             </form>
         </div>
     </div>
@@ -53,17 +53,17 @@
     </div> -->
 
     <div class="col-md-7">
-        <div class="card card-body">
+        <div class="tabla">
             <h1 class="text-center">Lista de Docentes</h1>
             <div style = "overflow: scroll; height: 500px;">
             <table class="table table-striped table-hover table-bordered table-sm bg-white">
                 <thead>
                     <tr>
-                        <td><b>Matrícula</td></b>
-                        <td><b>Nombres</td></b>
-                        <td><b>Apellido paterno</td></b>
-                        <td><b>Apellido materno</td></b>
-                        <td><b>Acciones</td></b>
+                        <th><b>Matrícula</th></b>
+                        <th><b>Nombres</th></b>
+                        <th><b>Apellido paterno</th></b>
+                        <th><b>Apellido materno</th></b>
+                        <th><b>Acciones</th></b>
                     </tr>
                 </thead>
                 <tbody>

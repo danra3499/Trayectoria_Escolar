@@ -28,12 +28,11 @@ button:hover{
   top: 5px;
   border-bottom: 3px solid black;
   padding: 10px;
-  
 }
 .Registro input{
     width: 70%;
     padding: 20px 20px 20px 20px;
-    height: 45px;
+    height: 35px;
     font-size: 16px;
     border: 1px solid;
     background: none;
@@ -59,7 +58,6 @@ button:hover{
 .seleccion option{
   text-align: center;
 }
-
 div1{
   color: black;
   font-family: cursive;
