@@ -9,7 +9,7 @@
             <form action="/agregar_materia" method='POST'>
                 <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
                 <div class="form-group mb-2">
-                    <input class="form-control" type="number" name="id" placeholder="id_materia" required> 
+                    <input class="form-control" type="number" name="id" placeholder="     id_materia" required> 
                 </div>
                 <div class="form-group mb-2">
                     <input class="form-control" type="text" name="clave" placeholder="Clave" required>
@@ -18,7 +18,7 @@
                     <input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
                 </div>
                 <div class="form-group mb-2">
-                    <input class="form-control" type="text" name="n_creditos" placeholder="Numero de creditos" required>
+                    <input class="form-control" type="text" name="n_creditos" placeholder="Numero de Creditos" required>
                 </div>
                 <div class="form-group mb-2">
                     <input class="form-control" type="number" name="id_grupo" placeholder="Grupo" required>  
@@ -26,13 +26,13 @@
                 <div class="form-group mb-2">
                     <input class="form-control" type="text" name="id_docente" placeholder="Docente" required>
                 </div>
-                <button class="btn btn-primary btn-block">
+                <button class="btn1">
                     Guardar
                 </button>
-                <button class="btn btn-primary btn-block" type="reset">
+                <button class="btn2" type="reset">
                     Limpiar
                 </button>
-                <div class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div>
+                <div1 class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div1>
             </form>
         </div>
     </div>
@@ -43,19 +43,19 @@
     </div> -->
 
     <div class="col-md-8">
-        <div class="card card-body">
+        <div class="tabla">
             <h1 class="text-center">Lista de Materias</h1>
             <div style = "overflow: scroll; height: 500px;">
                 <table class="table table-striped table-hover table-bordered table-sm bg-white">
                 <thead>
                     <tr>
                         <!--td><b>ID</td></b-->
-                        <td><b>Clave</td></b>
-                        <td><b>Nombre</td></b>
-                        <td><b>Creditos</b>
-                        <td><b>Grupo</td></b>
-                        <td><b>Docente</td></b>
-                        <td><b>Acciones</td></b>
+                        <th><b>Clave</th></b>
+                        <th><b>Nombre</th></b>
+                        <th><b>Creditos</th></b>
+                        <th><b>Grupo</th></b>
+                        <th><b>Docente</th></b>
+                        <th><b>Acciones</th></b>
                     </tr>
                 </thead>
                 <tbody>
