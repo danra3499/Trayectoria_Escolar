@@ -1,0 +1,63 @@
+.formulario{
+    border: solid 2px black  ;
+    position: relative;
+    top: 130px;
+    width: 500px;
+  }
+h3{
+    position: relative;
+    top: 5px;
+    border-bottom: 3px solid black;
+    padding: 10px;
+  }
+.formulario input{
+    width: 70%;
+    padding: 20px 20px 20px 20px;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid;
+    background: none;
+    outline: none;
+    border-radius: 15px;
+    margin: 0 auto;
+  }
+.formulario input::placeholder{
+  text-align: center;
+  line-height: 100px;
+}
+.seleccion select {
+    width: 70%;
+    padding: 0 5px;
+    height: 45px;
+    font-size: 16px;
+    border: 1px solid;
+    background: none;
+    outline: none;
+    border-radius: 15px;
+    margin: 0 auto;
+  }
+.seleccion option{
+    text-align: center;
+}
+button{
+    width: 50%;
+    height: 35px;
+    border: 1px solid;
+    background: rgba(26, 26, 248, 0.664);
+    border-radius: 50px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    left: 25%;
+    margin: 2px;
+    top: 15px;
+  }
+button:hover{
+    border-color: black;
+    transition: .5s;
+  }
+div1{
+    font-family: cursive;
+}
