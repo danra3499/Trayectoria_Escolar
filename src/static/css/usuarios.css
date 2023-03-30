@@ -1,6 +1,6 @@
 /*                                       DISEÑO DE FORMULARIO                                 */
 .col-md-4{
-  border: black 2px solid ;
+  border: dashed 3px black  ;
   position: relative;
   top: 130px;
 }
@@ -24,7 +24,10 @@ button:hover{
     transition: .5s;
   }
 .Registro h1{
-  border-bottom: 4px solid black;
+  position: relative;
+  top: 5px;
+  border-bottom: 3px solid black;
+  
 }
 .Registro input{
     width: 70%;
@@ -52,7 +55,7 @@ button:hover{
   border-radius: 15px;
    margin: 0 auto;
 }
-.seleccion select option::value{
+.seleccion option{
   text-align: center;
 }
 
@@ -62,3 +65,11 @@ button:hover{
   top: 130px;
   left: 70px;
 }
+.tabla{
+  border: none ;
+}
+.tabla h1{
+  border: black 1px solid ;
+}
+
+
