@@ -12,9 +12,10 @@ body{
   transform: translate(-50%, -50%);
   width: 500px;
   padding: 60px;
-  background: palegreen;
+  background: white;
   border-radius: 50px;
   color: black;
+  border: black 1px solid ;
 }
 .formulario h1{
   text-align: center;
@@ -58,6 +59,7 @@ form .username{
   font-size: 16px;
   pointer-events: none;
   transition: .5s;
+  padding: 10px;
 }
 .username span::before{
   content: '';
@@ -74,7 +76,6 @@ form .username{
   top: -5px;
   color: black;
 }
-
 .username input:focus ~ span::before,
 .username input:focus ~ span::before{
   width: 100%;
@@ -83,7 +84,7 @@ button{
   width: 50%;
   height: 40px;
   border: 1px solid;
-  background: black;
+  background: rgba(26, 26, 248, 0.664);
   border-radius: 40px;
   font-size: 17px;
   color: white;
@@ -104,5 +105,15 @@ p{
   position: relative;
   left: 70px;
   top: 30px;
+  font-family: cursive;
 }
 
+/*                     Diseño de Mensajes(alertas)                        */
+div1{
+ position: relative; 
+}
+div1 button{
+  position: absolute;
+  top: 10px;
+  color: black;
+}
