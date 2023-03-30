@@ -4,7 +4,7 @@ class Config:
     MYSQL_USER = 'root'
     # Jimena11
     # secret
-    MYSQL_PASSWORD = 'Jimena11'
+    MYSQL_PASSWORD = ''
     MYSQL_DB = 't_e'
 
 
