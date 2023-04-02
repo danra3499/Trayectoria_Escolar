@@ -1,7 +1,9 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block container %}
-<h1>TRAYECTORIA ESCOLAR ISC</h1>
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<div class="titulo">
+<h1>TRAYECTORIA ESCOLAR ISC</h1></div>
 <h2>Bienvenido</h2>
 {% with messages = get_flashed_messages() %}
 {% if messages %}

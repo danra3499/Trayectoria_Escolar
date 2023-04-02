@@ -6,9 +6,10 @@
   }
 h3{
     position: relative;
-    top: 5px;
     border-bottom: 3px solid black;
-    padding: 10px;
+    padding: 7px;
+    background-color: rgba(26, 26, 248, 0.664);;
+    color: aliceblue;
   }
 .formulario input{
     width: 70%;
@@ -60,4 +61,22 @@ button:hover{
   }
 div1{
     font-family: cursive;
+}
+button2{
+  width: 50%;
+  height: 35px;
+  border: 1px solid;
+  background: rgba(26, 26, 248, 0.664);
+  border-radius: 50px;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  left: 25%;
+  margin: 2px;
+  top: 35px;
+}
+div input ::-ms-value{
+  text-align: center;
 }

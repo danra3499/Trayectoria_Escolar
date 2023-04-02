@@ -1,9 +1,10 @@
 body{
   margin: 0;
   padding: 0;
-  font-family: Verdana;
+  font-family: cursive;
   height: 100vh;
-  color: black;  
+  background-color: gray;
+  background-image: url("img/TESVG1.jpg");
 }
 .formulario{
   position: absolute;
@@ -109,11 +110,18 @@ p{
 }
 
 /*                     Diseño de Mensajes(alertas)                        */
-div1{
- position: relative; 
+.mensajes div{
+  color: red;
+  text-align: center;
+  position: relative;
+  top: 50px;
 }
-div1 button{
-  position: absolute;
-  top: 10px;
-  color: black;
+.salir div1{
+  color: red;
+  text-align: center;
+  position: relative;
+  top: 50px;
+}
+.mensajes button{
+  background-color: black;
 }

@@ -1,4 +1,5 @@
-.body{
-
-    background: url(./IMG/logo-tesvg.jgp) no-repeat 
+.titulo h1{
+    text-align: center;
+    border-bottom: black 2px solid;
+    padding: 5px;
 }
