@@ -4,3 +4,24 @@ h1{
   border-bottom: 2px solid black;
   padding: 10px;
 }
+.d-flex w-100 justify-content-between h5{
+  text-align: center;
+}
+.Regreso a{
+  width: 12%;
+  height: 40px;
+  border: 1px solid;
+  background: rgba(26, 26, 248, 0.664);
+  color: white;
+  border-radius: 50px;
+  font-size: 17px;
+  cursor: pointer;
+  outline: none;
+  float: right;
+  position: relative;
+  top: 20px;
+}
+.Regreso a:hover{
+  border-color: black;
+  transition: .5s;
+}

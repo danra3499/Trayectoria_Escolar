@@ -68,3 +68,7 @@ tr:hover td{
   color: white;
 
 }
+thead{
+  position: sticky;
+  top: 0;
+}

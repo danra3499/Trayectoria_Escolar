@@ -81,7 +81,9 @@ div1{
 tr:hover td{
   background-color: rgba(26, 26, 248, 0.664);
   color: white;
-
+}
+thead{
+  position: sticky;
 }
 
 

@@ -1,6 +1,7 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/grupos.css')}}">
 <div class="row">
   {% for g in data%}
   <div class="col-sm-12 col-md-4 mb-4">
@@ -8,7 +9,8 @@
       <div class="card-body">
         <h3>Ingenieria en Sistemas Computacionales</h3>
         <h2 class="card-title">Grupo: {{g.id}}</h2>
-        <a href="/materia/{{g.id}}" class="btn btn-primary">Materias</a>
+        <div class="mate">
+        <a href="/materia/{{g.id}}" class="btn1">Materias</a> </div>
       </div>
     </div>
   </div>

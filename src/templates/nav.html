@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">>
   <div class="container-fluid">
     <a class="navbar-brand" href="{{url_for('home')}}">Trayectoria Escolar</a> 
@@ -44,7 +44,8 @@
             <li><a class="dropdown-item" href="{{url_for('logout')}}">Cerrar Sesión</a></li>
           </ul>
         </li>
-        <a class="navbar-brand">Ingenieria en Sistemas Computacionales</a>
+        <div class="ing">
+        <a class="navbar-brand" style="float:right;">Ingenieria en Sistemas Computacionales</a></div>
       </ul>
     </div>
   </div>
