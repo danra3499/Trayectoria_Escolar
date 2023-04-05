@@ -7,8 +7,11 @@
       <h3 class="text-center mb-4">Actualización de Datos-Alumno</h3>
       <form action="/actualizar_alumno/{{alumno.0}}" method='POST'>
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-        <div class="form-group mb-2">
+        <!--div class="form-group mb-2">
           <input type="text" class="form-control" readonly="readonly" name="numero_control" placeholder="Numero de control"  value="{{alumno.0}}">
+        </div-->
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" name="numero_control" placeholder="Numero de control"  value="{{alumno.0}}">
         </div>
         <div class="form-group mb-2">
           <input type="text" class="form-control" name="nombres" placeholder="Nombres" value="{{alumno.1}}">
@@ -51,6 +54,9 @@
         </div>
         <div1 class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div1>
       </form>
+      <div class="Regreso">
+        <a class="btn" href="{{url_for('agregar_alumno')}}">Regresar</a> </div>
+    </div>
     </div>
   </div>
 </div>

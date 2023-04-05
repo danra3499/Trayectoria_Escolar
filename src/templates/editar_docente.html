@@ -7,8 +7,12 @@
       <h3 class="text-center mb-4">Actualización de Datos-Docente</h3>
       <form action="/actualizar_docente/{{docente.0}}" method='POST'>
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-        <div class="form-group mb-2">
+        <!--div class="form-group mb-2">
           <input type="text" name="n_control" readonly="readonly" placeholder="Numero de empleado" class="form-control"
+            value="{{docente.0}}" required>
+        </div-->
+        <div class="form-group mb-2">
+          <input type="text" name="n_control" placeholder="Numero de empleado" class="form-control"
             value="{{docente.0}}" required>
         </div>
         <div class="form-group mb-2">
@@ -29,6 +33,9 @@
         </div>
         <div1 class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div1>
       </form>
+      <div class="Regreso">
+        <a class="btn" href="{{url_for('docentes')}}">Regresar</a> </div>
+    </div>
     </div>
   </div>
 </div>

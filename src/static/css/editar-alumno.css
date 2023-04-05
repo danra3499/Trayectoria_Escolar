@@ -15,17 +15,14 @@ h3{
     width: 70%;
     padding: 20px 20px 20px 20px;
     height: 35px;
-    font-size: 16px;
+    font-size: 18px;
     border: 1px solid;
     background: none;
     outline: none;
     border-radius: 15px;
     margin: 0 auto;
+    text-align: center;
   }
-.formulario input::placeholder{
-  text-align: center;
-  line-height: 100px;
-}
 .seleccion select {
     width: 70%;
     padding: 0 5px;
@@ -41,7 +38,7 @@ h3{
     text-align: center;
 }
 button{
-    width: 50%;
+    width: 40%;
     height: 35px;
     border: 1px solid;
     background: rgba(26, 26, 248, 0.664);
@@ -51,7 +48,7 @@ button{
     cursor: pointer;
     outline: none;
     position: relative;
-    left: 25%;
+    left: 30%;
     margin: 2px;
     top: 15px;
   }
@@ -61,6 +58,8 @@ button:hover{
   }
 div1{
     font-family: cursive;
+    position: relative;
+    top: 15px;
 }
 button2{
   width: 50%;
@@ -77,6 +76,21 @@ button2{
   margin: 2px;
   top: 35px;
 }
-div input ::-ms-value{
-  text-align: center;
+.Regreso a{
+  width: 40%;
+  height: 35px;
+  border: 1px solid;
+  background: rgba(26, 26, 248, 0.664);
+  color: white;
+  border-radius: 50px;
+  font-size: 17px;
+  cursor: pointer;
+  outline: none;
+  float: right;
+  position: relative;
+  top: 20px;
+}
+.Regreso a:hover{
+  border-color: black;
+  transition: .5s;
 }

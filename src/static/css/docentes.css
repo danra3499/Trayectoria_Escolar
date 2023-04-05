@@ -3,6 +3,7 @@
     border: black  3px dashed ;
     position: relative;
     top: 130px;
+    height: 50%;
   }
 .Registro h1{
     border-bottom: 4px solid black;
@@ -45,6 +46,8 @@ button:hover{
 div1{
     color: black;
     font-family: cursive;
+    position: relative;
+    top: 15px;
   }
 
   
