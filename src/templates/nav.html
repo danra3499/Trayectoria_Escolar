@@ -8,7 +8,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
+        <link rel="shortcut icon" type="image/png" href="ordenador-portatil.png">
         <title>Ingenieria en Sistemas Computacionales</title>
+        <!--link rel="shortcut icon" href="/img/ordenador-portatil.png"-->
         {% if current_user.tipo_usuario.id == 1 %}
         <li class="nav-item">
           <a class="nav-link" href="{{url_for('usuario')}}">Usuarios</a>

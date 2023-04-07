@@ -3,8 +3,7 @@ body{
   padding: 0;
   font-family: cursive;
   height: 100vh;
-  background-color: gray;
-  background-image: url("img/TESVG1.jpg");
+  background-image: url("/TESVG1.jpg");
 }
 .formulario{
   position: absolute;

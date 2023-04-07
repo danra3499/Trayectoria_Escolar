@@ -1,11 +1,22 @@
 h1{
   position: relative;
-  top: 5px;
+  top: 150px;
   border-bottom: 2px solid black;
   padding: 10px;
 }
-.d-flex w-100 justify-content-between h5{
+.listado{
+  position: relative;
+  top: 180px;
+  width: 50%;
+  border-radius: 100px;
+}
+.lista h5{
   text-align: center;
+  padding: 5px;
+  font-size: 25px;
+}
+.listado p{
+  font-size: 18px;
 }
 .Regreso a{
   width: 12%;
@@ -19,9 +30,10 @@ h1{
   outline: none;
   float: right;
   position: relative;
-  top: 20px;
+  top: 200px;
 }
 .Regreso a:hover{
   border-color: black;
   transition: .5s;
 }
+
