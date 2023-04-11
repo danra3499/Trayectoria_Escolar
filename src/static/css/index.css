@@ -3,3 +3,26 @@
     border-bottom: black 2px solid;
     padding: 5px;
 }
+.sub h2{
+    padding: 12px;
+}
+.col-md-5 h1{
+    padding: 10px;
+    position: relative;
+    left: 120px;
+}
+.col-md-5 h2{
+    padding: 10px;
+    position: relative;
+    left: 100px;
+}
+.col-md-5 table{
+    position: relative;
+    left: 150px;
+}
+.table td {
+    text-align: center;
+}
+.col-md-6 h1{
+    padding: 10px;
+}

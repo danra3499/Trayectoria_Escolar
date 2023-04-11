@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
 <div class="titulo">
 <h1>TRAYECTORIA ESCOLAR ISC</h1></div>
-<h2>Bienvenido</h2>
+<div class="sub">
+<h2>Bienvenido</h2></div>
 {% with messages = get_flashed_messages() %}
 {% if messages %}
 <br />
@@ -149,7 +150,7 @@
         {% endfor %}
       </tbody>
     </table>
-    <h2 class="text-center">Septimo Semestre</h2>
+    <h2 class="text-center">Séptimo Semestre</h2>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
