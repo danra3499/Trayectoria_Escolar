@@ -413,7 +413,11 @@ def editar_cal(parcial, id_materia, id_alumno):
                and id_alumno = '{2}'""".format(parcial, id_materia, id_alumno)
     cursor.execute(query)
     data = cursor.fetchall()
+<<<<<<< HEAD
     return render_template('editar_cal.html', evaluar=data)
+=======
+    return render_template('editar_calificaciones.html', evaluacion=data[0])
+>>>>>>> 851efadb9d355d191c9316f18a03fd1c7c7b1b3b
 
 @app.route('/actualizar_cal/<id>', methods=['POST'])
 @login_required
@@ -429,7 +433,7 @@ def actualizar_cal(id):
             db, id, parcial, calificacion, tipo_evaluacion)
         return redirect(url_for('evaluar_alumno', id=id_materia, id_alumno=alumno))
     else:
-        return render_template('evaluar.html', data=evaluar)
+        return render_template('evaluar_alumno.html', data=evaluar_alumno)
 
 @app.route('/eliminar_cal/<parcial>/<id_materia>/<id_alumno>', methods=['POST', 'GET'])
 @login_required

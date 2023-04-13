@@ -6,6 +6,7 @@ body{
   background-image: url("/TESVG1.jpg");
 }
 .formulario{
+<<<<<<< HEAD
   position: absolute;
   top: 45%;
   left: 70%;
@@ -117,6 +118,12 @@ p{
   left: 70px;
   top: 50px;
   font-family: cursive;
+=======
+  width: 80%;
+  height: auto;
+  margin: 0px auto;
+  color: rgb(255, 0, 0);
+>>>>>>> 851efadb9d355d191c9316f18a03fd1c7c7b1b3b
 }
 
 /*                     Diseño de Mensajes(alertas)                        */
