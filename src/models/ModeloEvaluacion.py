@@ -59,12 +59,12 @@ class Modelo_evaluacion():
     def obtener_calificacion_por_alumnos(self, db, id_materia, id_alumno):
         try:
             cursor = db.connection.cursor()
-            query = "SELECT id_alumno,parcial,calificacion FROM evaluacion WHERE id_materia='{0}' and id_alumno='{1}'".format(id_materia,id_alumno)
+            query = "SELECT id_alumno,parcial,calificacion,id_materia FROM evaluacion WHERE id_materia='{0}' and id_alumno='{1}'".format(id_materia,id_alumno)
             cursor.execute(query)
             data = cursor.fetchall()
             calificacion_por_alumno= []
             for alumc in data:
-                alumcal = Evaluacion(alumc[0], alumc[1], None, alumc[2], None, None, None) 
+                alumcal = Evaluacion(alumc[0], alumc[1], None, alumc[2], None, alumc[3],None) 
                 calificacion_por_alumno.append(alumcal)
             return calificacion_por_alumno
         except Exception as ex:
@@ -92,21 +92,20 @@ class Modelo_evaluacion():
             raise Exception(ex)
     
     @classmethod
-    def editar_cal(self, db, id, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno):
+    def editar_cal(self, db, id, parcial, calificacion, tipo_evaluacion):
         try:
             cursor = db.connection.cursor()
-            query = """ UPDATE evaluacion SET id = '{0}', fecha = '{1}', calificacion = '{2}', id_tipo_evaluacion = '{3}', id_materia = '{4}', id_alumno = '{5}'
-            WHERE id = '{6}'""".format(id, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno, id)
+            query = """ UPDATE evaluacion SET parcial = '{0}', calificacion = '{1}', id_tipo_evaluacion = '{2}' WHERE id = '{3}'""".format(parcial, calificacion, tipo_evaluacion, id)
             cursor.execute(query)
             db.connection.commit()
         except Exception as ex:
             raise Exception(ex)
 
     @classmethod
-    def eliminar_cal(self, db, calificacion):
+    def eliminar_cal(self, db, parcial, id_materia, id_alumno):
         try:
             cursor = db.connection.cursor()
-            query = "DELETE FROM evaluacion WHERE calificacion = '{0}'".format(calificacion)
+            query = "DELETE FROM evaluacion WHERE parcial = '{0}' and id_materia = '{1}' and id_alumno = {2}".format(parcial, id_materia, id_alumno)
             cursor.execute(query)
             db.connection.commit()
         except Exception as ex:

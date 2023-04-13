@@ -76,7 +76,7 @@ form .username{
   color: black;
   font-size: 13px;
 } */
-.username input:focus ~ label .txt-nom,.username input:invalid ~ .label .txt-nom{
+.username input:focus  label .txt-nom,.username input:valid + .label .txt-nom{
   top: -6px;
   color: black;
   font-size: 13px;

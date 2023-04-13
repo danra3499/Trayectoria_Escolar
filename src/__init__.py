@@ -379,8 +379,6 @@ def evaluar(id):
 
     return render_template('evaluar.html', data=alumnos, materias=materias, evaluacion = evaluacion,alumn=alumn, fecha=fecha)
 
-
-
 @app.route('/evaluar/<id>/evaluar_alumno/<id_alumno>', methods=['POST', 'GET'])
 @login_required
 def evaluar_alumno(id,id_alumno):
@@ -390,8 +388,6 @@ def evaluar_alumno(id,id_alumno):
     alumcal = Modelo_evaluacion.obtener_calificacion_por_alumnos(db, id, id_alumno)
     
     return render_template('evaluar_alumno.html', data=alumnos,materias=materias,alumcal=alumcal,fecha=hoy)
-
-
 
 @app.route('/capturar_evaluacion', methods=['POST', 'GET'])
 @login_required
@@ -405,15 +401,16 @@ def capturar_evaluacion():
         id_alumno = request.form['id_alumno']
         Modelo_evaluacion.capturar_evaluaciones(
             db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
-        return redirect(url_for('evaluar', id=id_materia))
+        return redirect(url_for('evaluar_alumno', id=id_materia, id_alumno=id_alumno))
     else:
-        return render_template('evaluar.html', data=evaluar)
+        return render_template('evaluar_alumno.html', data=evaluar_alumno)
 
-@app.route('/editar_cal/<id>', methods=['POST', 'GET'])
+@app.route('/editar_cal/<parcial>/<id_materia>/<id_alumno>', methods=['POST', 'GET'])
 @login_required
-def editar_cal(id):
+def editar_cal(parcial, id_materia, id_alumno):
     cursor = db.connection.cursor()
-    query = """SELECT * FROM evaluacion WHERE id = '{0}'""".format(id)
+    query = """SELECT * FROM evaluacion WHERE parcial = '{0}' and id_materia = '{1}' 
+               and id_alumno = '{2}'""".format(parcial, id_materia, id_alumno)
     cursor.execute(query)
     data = cursor.fetchall()
     return render_template('editar_cal.html', evaluar=data)
@@ -422,24 +419,23 @@ def editar_cal(id):
 @login_required
 def actualizar_cal(id):
     if request.method == 'POST':
+        id = request.form['id_cal']
+        alumno = request.form['id_alumno']
         parcial = request.form['parcial']
-        fecha = request.form['fecha']
         calificacion = request.form['calificacion']
         tipo_evaluacion = request.form.get('tipo_evaluacion')
-        id_materia = request.form['materia']
-        id_alumno = request.form['id_alumno']
+        id_materia = request.form['id_materia']
         Modelo_evaluacion.editar_cal(
-            db, parcial, fecha, calificacion, tipo_evaluacion, id_materia, id_alumno)
-        return redirect(url_for('evaluar', id=id_materia))
+            db, id, parcial, calificacion, tipo_evaluacion)
+        return redirect(url_for('evaluar_alumno', id=id_materia, id_alumno=alumno))
     else:
-        return render_template('evaluar.html')
+        return render_template('evaluar.html', data=evaluar)
 
-@app.route('/eliminar_cal/<calificacion>', methods=['POST', 'GET'])
+@app.route('/eliminar_cal/<parcial>/<id_materia>/<id_alumno>', methods=['POST', 'GET'])
 @login_required
-def eliminar_cal(calificacion):
-    Modelo_evaluacion.eliminar_cal(db, calificacion)
-    flash('Registro eliminado correctamente')
-    return redirect(url_for('evaluar_alumno'))
+def eliminar_cal(parcial,id_materia,id_alumno):
+    Modelo_evaluacion.eliminar_cal(db, parcial, id_materia, id_alumno)
+    return redirect(url_for('evaluar_alumno', id=id_materia, id_alumno=id_alumno))
 
 """---------------------------FIN DE EVALUACIONES---------------------------"""
 

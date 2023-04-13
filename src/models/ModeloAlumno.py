@@ -33,7 +33,7 @@ class Modelo_alumno():
     def obtener_alumno_id(self, db, id_alumno):
         try:
             cursor = db.connection.cursor()
-            query = """SELECT id, nombres 
+            query = """SELECT id, CONCAT(nombres,' ',apellido_p,' ',apellido_m) as nombres
             FROM alumno WHERE id = {0}""".format(id_alumno)
             cursor.execute(query)
             data = cursor.fetchall()
