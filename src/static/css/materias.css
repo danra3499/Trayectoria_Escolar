@@ -17,6 +17,8 @@ h1{
 }
 .listado p{
   font-size: 18px;
+  position: relative;
+  left: 20px;
 }
 .Regreso a{
   width: 12%;

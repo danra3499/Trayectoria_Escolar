@@ -52,10 +52,11 @@ div1{
 .col-md-8{
     position: relative;
     top: 130px;
-    left: 70px;
+    left: 70px;;
   }
-.tabla{
-  border: none ;
+.col-md-8 tabla{
+  width: 100%;
+  height: 3000px;
 }
 .tabla h1{
   border: black 1px solid ;
