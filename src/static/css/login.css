@@ -132,13 +132,13 @@ p{
   color: black;
   text-decoration: none;
   position: relative;
-  left: 70px;
-  top: 50px;
+  left: 30px;
+  top: 80px;
   font-family: cursive;
   width: 80%;
   height: auto;
   margin: 0px auto;
-  color: rgb(255, 0, 0);
+  color: black;
 }
 
 /*                     Diseño de Mensajes(alertas)                        */
