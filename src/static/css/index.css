@@ -1,3 +1,10 @@
+body{
+    background-image: url(logo-tesvg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+   
+}
 .titulo h1{
     text-align: center;
     border-bottom: black 2px solid;
