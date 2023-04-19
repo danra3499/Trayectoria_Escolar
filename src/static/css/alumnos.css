@@ -1,8 +1,16 @@
 /*                                       DISEÑO DE FORMULARIO                                 */
+body{
+  background-image: url(logo-tesvg.jpg);
+  background-size: 20%;
+  background-position: 10% 10%;
+  background-repeat: no-repeat;
+  
+}
 .col-md-4{
-  border: dashed 3px black  ;
+  border: dashed 2.7px black  ;
   position: relative;
-  top: 130px;
+  top: 170px;
+  right: 130px;
 }
 button{
   width: 50%;
@@ -65,7 +73,7 @@ button{
   
 .col-md-8{
     position: relative;
-    top: 130px;
+    top: 50px;
     left: 70px;
   }
   tabla{

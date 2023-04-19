@@ -2,6 +2,7 @@
 {% block title %}{{title}}{% endblock %}
 {% block body %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/materia.css')}}">
+<body>
 <div class="row">
     <div class="col-md-4">
         <div class="Registro">
@@ -18,7 +19,7 @@
                     <input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
                 </div>
                 <div class="form-group mb-2">
-                    <input class="form-control" type="text" name="n_creditos" placeholder="Numero de Creditos" required>
+                    <input class="form-control" type="text" name="n_creditos" placeholder="Numero de Créditos" required>
                 </div>
                 <div class="form-group mb-2">
                     <input class="form-control" type="number" name="id_grupo" placeholder="Grupo" required>  
@@ -52,7 +53,7 @@
                         <!--td><b>ID</td></b-->
                         <th><b>Clave</th></b>
                         <th><b>Nombre</th></b>
-                        <th><b>Creditos</th></b>
+                        <th><b>Créditos</th></b>
                         <th><b>Grupo</th></b>
                         <th><b>Docente</th></b>
                         <th><b>Acciones</th></b>
@@ -78,5 +79,5 @@
         </div>
     </div>
 </div>
-
+</body>
 {% endblock %}

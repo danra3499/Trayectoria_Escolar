@@ -1,15 +1,31 @@
 <!--{% extends 'base.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block customCSS %}-->
-<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
 <!--{% endblock %}
 {% block body %}   
 <div class = "col-md-6 offset-md-3">-->
+<<<<<<< HEAD
 <body>
   <img src="/img/TESVG1.jpg" alt="ING">
   <div class="formulario">
   <div class="col-md-6 offset-md-3">
   <h1 class="text-center mb-4">Inicia Sesión</h1>
+=======
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+    <title>LOGIN</title>
+  </head>
+  <body>
+<!-- <img src="/src/templates/auth/TESVG1.jpg" alt="ING">  -->
+    <p style="background-image: url('TESVG1.jpg');"></p>
+  <div class="formulario">
+  <h1 class="text-center mb-4">INICIAR SESIÓN</h1>
+>>>>>>> Diseño
     <form action="/" method="POST">
       <!--<div class="card card-body"-->  
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
@@ -37,7 +53,7 @@
   <div class="mensajes">
   <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
     <strong>!Usuario o Contraseña Incorrecto!</strong>
-    <!--button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" type="">Cerrar</button-->
+    <button type="btn" class="btn-close" data-bs-dismiss="alert" aria-label="Close" type="">X</button>
   </div>
   </div>
   <!--{% else %}-->
@@ -53,4 +69,5 @@
   {% endwith %}-->
 </div>
 </body>
+</html>
 <!--{% endblock %}

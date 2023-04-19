@@ -1,8 +1,15 @@
 /*                                       DISEÑO DE FORMULARIO                                 */
+body{
+  background-image: url(logo-tesvg.jpg);
+  background-size: 20%;
+  background-position: 10% 10%;
+  background-repeat: no-repeat; 
+}
 .col-md-4{
     border: black  3px dashed ;
     position: relative;
-    top: 130px;
+    top: 200px;
+    right: 100px;
     height: 50%;
   }
 .Registro h1{
@@ -54,7 +61,7 @@ div1{
 /*                                       DISEÑO DE TABLA                                 */
 .col-md-7{
     position: relative;
-    top: 130px;
+    top: 50px;
     left: 70px;
   }
   .tabla{
