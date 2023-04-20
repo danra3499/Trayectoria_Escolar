@@ -16,7 +16,7 @@ button{
     width: 50%;
     height: 35px;
     border: 1px solid;
-    background: rgba(26, 26, 248, 0.664);
+    background: #588100;
     border-radius: 35px;
     font-size: 17px;
     color: white;
@@ -34,7 +34,7 @@ button:hover{
 .Registro h1{
   position: relative;
   top: 5px;
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid #B71C1C;
   padding: 10px;
 }
 .Registro input{
@@ -47,6 +47,8 @@ button:hover{
     outline: none;
     border-radius: 15px;
     margin: 0 auto;
+    text-align: center;
+    text-transform: capitalize;
   }
 .Registro input::placeholder{
   text-align: center;
@@ -82,12 +84,12 @@ div1{
 }
 .tabla h1{
   border: black 1px solid ;
-  background-color: rgba(26, 26, 248, 0.664);
+  background-color: #588100;
   color: white;
   padding: 7px;
 }
 tr:hover td{
-  background-color: rgba(26, 26, 248, 0.664);
+  background-color: #588100;
   color: white;
 }
 thead{

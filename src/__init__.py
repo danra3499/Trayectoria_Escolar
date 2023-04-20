@@ -445,7 +445,7 @@ def pagina_no_encontrada(error):
 
 
 def pagina_no_autorizada(error):
-    return render_template(url_for('l ogin'))
+    return render_template(url_for('login'))
 
 
 def start_app(config):
