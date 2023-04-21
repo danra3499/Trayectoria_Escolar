@@ -3,7 +3,7 @@ body{
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: linear-gradient(rgba(5,7,10,0.75), rgba(5,7,10,0.75)),
+  background-image: linear-gradient(rgba(5,7,10,0.4), rgba(5,7,10,0.4)),
   url(TESVG1.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -13,22 +13,25 @@ body{
 .formulario{
   position: absolute;
   top: 50%;
-  left: 75%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
   height: 550px;
   padding: 60px;
-  background:white;
+  background: transparent;
   border-radius: 50px;
-  color: black;
-  border: black 1px solid ;
+  color: white;
+  border: white 1px solid ;
+  backdrop-filter: blur(15px);
 }
 .formulario h1{
   text-align: center;
   padding: 0 0 20px 0;
-  border-bottom: 1px solid black;
-  font-size: 300%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-bottom: 1px solid white;
+  font-size: 320%;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-family: 'Courier New', Courier, monospace;
+  color: white
 }
 .formulario form{
   padding: 0 40px;
@@ -36,8 +39,8 @@ body{
 }
 form .username{
   position: relative;
-  top: 30px;
-  border-bottom: 2px solid black;
+  top: 40px;
+  border-bottom: 1px solid white;
   margin: 30px 0;
   padding: -5px;
 }
@@ -46,9 +49,11 @@ form .username{
   padding: 0 5px;
   height: 60px;
   font-size: 16px;
+  font-family: 'poppins', sans-serif;
   border: none;
   background: none;
   outline: none; 
+  color: white;
 }
 .username input[type="text"]{
   background: url(http://i.imgur.com/3CBLHUK.png)no-repeat left center;
@@ -60,11 +65,10 @@ form .username{
 }
 .username label{
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50px;
-  color: black;
-  transform: translateY(-50%);
-  font-size: 18px;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
   pointer-events: none;
   transition: .5s;
   padding: 20px;
@@ -78,46 +82,44 @@ form .username{
   height: 2px;
   transition: .5s;
 }
-/* .username input:focus + label .txt-nom,.username input:valid + .label .txt-nom,
-.username input:focus + label .txt-pass,.username input:valid + label .txt-pass{
+.username input:focus + .label,
+.username input:not(:placeholder-shown) + label{
   top: -6px;
-  color: black;
-  font-size: 13px;
-} */
-/* .username input:focus ~ label .txt-nom,.username input:invalid ~ .label .txt-nom{
->>>>>>> Diseño
-  top: -6px;
-  color: black;
-  font-size: 13px;
-} */
-/* .username input:focus ~ label,
-.username input:focus ~ label, .username input:valid ~ label{
-  top: -6px;
-  color: black;
-  font-size: 13px;
-} */
-.username input:focus + .txt-nom{
-  top: -6px;
-  color: black;
-  font-size: 13px;
-}
-.username input:focus + .txt-pass{
-  top: -6px;
-  color: black;
-  font-size: 13px;
+  color: white;
+  /* font-family: 'poppins', sans-serif; */
+  font-family: 'Courier New', Courier, monospace;
+  transform: translateY(-50%);
+  scale: .9;
+  transform-origin: left top;
 }
 .username input:focus ~ span::before,
 .username input:focus ~ span::before{
   width: 100%;
 }
+.username line{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  transform: scale(0);
+  transform: left bottom;
+  transition: transform .4s;
+}
+.username input:focus ~ line,
+.username input:not(:placeholder-shown) ~ line{
+  transform: scale(1);
+}
 button{
   width: 50%;
-  height: 40px;
+  height: 45px;
   border: 1px solid;
-  background: #588100;
+  background: white;
   border-radius: 40px;
   font-size: 17px;
-  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  color: #588100;
   cursor: pointer;
   outline: none;
   position: relative;
@@ -127,23 +129,25 @@ button{
   font-weight: 700!important;
 }
 button:hover{
-  border-color: black;
+  /* border-color: black; */
+  background-color: #588100;;
+  color: white;
   transition: .5s;
 }
 p{
   color: black;
   text-decoration: none;
   position: relative;
-  left: 10px;
-  top: 130px;
+  /* left: 10px; */
+  top: 120px;
   font-family: cursive;
   font-size: 18px;
   width: 80%;
   height: auto;
   margin: 0px auto;
-  color: black;
+  color: white;
+  text-align: center;
 }
-
 /*                     Diseño de Mensajes(alertas)                        */
 .mensajes div{
   color: red;

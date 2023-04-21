@@ -3,12 +3,31 @@ body{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 50%;
-   
 }
-.titulo h1{
+h1{
     text-align: center;
-    border-bottom: black 2px solid;
     padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+}
+h1::after,h1::before{
+    content:'';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: currentColor;
+    top: 125px;
+    transform: scale(0);
+    transition: all 0.2s ease-in;
+}
+h1:hover::before, h1:hover::after{
+    transform: scale(1);
+}
+h1::before{
+    left: 410px;
+}
+h1::after{
+    right: 410px;
 }
 .sub h2{
     padding: 12px;
@@ -19,6 +38,11 @@ body{
     left: 120px;
 }
 .col-md-5 h2{
+    padding: 10px;
+    position: relative;
+    left: 100px;
+}
+.col-md-5 h3{
     padding: 10px;
     position: relative;
     left: 100px;
