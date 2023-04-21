@@ -3,12 +3,17 @@ body{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 50%;
+    background-attachment: fixed;
+    opacity: 1;
+    z-index: -1;
 }
+
 h1{
     text-align: center;
     padding: 5px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 50px;
+    font-weight: 1000;
 }
 h1::after,h1::before{
     content:'';
@@ -30,7 +35,19 @@ h1::after{
     right: 410px;
 }
 .sub h2{
-    padding: 12px;
+    padding: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+}
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    font-size: 35px;
+}
+h3{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    font-size: 25px;
 }
 .col-md-5 h1{
     padding: 10px;
@@ -57,3 +74,5 @@ h1::after{
 .col-md-6 h1{
     padding: 10px;
 }
+
+/*                                                  Diseño de Tablas                                       */
