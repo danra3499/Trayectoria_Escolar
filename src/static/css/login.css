@@ -3,7 +3,7 @@ body{
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: linear-gradient(rgba(5,7,10,0.4), rgba(5,7,10,0.4)),
+  background-image: linear-gradient(rgba(5,7,10,0.3), rgba(5,7,10,0.3)),
   url(TESVG1.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -23,6 +23,7 @@ body{
   color: white;
   border: white 1px solid ;
   backdrop-filter: blur(15px);
+  opacity: 1;
 }
 .formulario h1{
   text-align: center;
@@ -31,7 +32,8 @@ body{
   font-size: 320%;
   /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-family: 'Courier New', Courier, monospace;
-  color: white
+  color: black 
+  
 }
 .formulario form{
   padding: 0 40px;
@@ -44,11 +46,15 @@ form .username{
   margin: 30px 0;
   padding: -5px;
 }
+.username input::placeholder{
+  color: black;
+  font-size: 20px;
+}
 .username input{
   width: 100%;
   padding: 0 5px;
   height: 60px;
-  font-size: 16px;
+  font-size: 20px;
   font-family: 'poppins', sans-serif;
   border: none;
   background: none;
@@ -56,7 +62,7 @@ form .username{
   color: white;
 }
 .username input[type="text"]{
-  background: url(http://i.imgur.com/3CBLHUK.png)no-repeat left center;
+  background: url(http://i.imgur.com/3CBLHUK.png)no-repeat left center ;
   padding-left: 50px;
 }
 .username input[type="password"]{
@@ -82,16 +88,16 @@ form .username{
   height: 2px;
   transition: .5s;
 }
-.username input:focus + .label,
+/* .username input:focus + .label,
 .username input:not(:placeholder-shown) + label{
   top: -6px;
-  color: white;
+  color: black;
   /* font-family: 'poppins', sans-serif; */
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Courier New', Courier, monospace;
   transform: translateY(-50%);
-  scale: .9;
+  font-size: 25px;
   transform-origin: left top;
-}
+} */ */
 .username input:focus ~ span::before,
 .username input:focus ~ span::before{
   width: 100%;
@@ -119,7 +125,7 @@ button{
   border-radius: 40px;
   font-size: 17px;
   font-family: 'Courier New', Courier, monospace;
-  color: #588100;
+  color: black;
   cursor: pointer;
   outline: none;
   position: relative;
