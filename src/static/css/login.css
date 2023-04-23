@@ -50,6 +50,9 @@ form .username{
   color: black;
   font-size: 20px;
 }
+.username input:focus::placeholder{
+  color: transparent;
+}
 .username input{
   width: 100%;
   padding: 0 5px;
@@ -113,10 +116,10 @@ form .username{
   transform: left bottom;
   transition: transform .4s;
 }
-.username input:focus ~ line,
+/* .username input:focus ~ line,
 .username input:not(:placeholder-shown) ~ line{
   transform: scale(1);
-}
+} */
 button{
   width: 50%;
   height: 45px;
@@ -133,10 +136,12 @@ button{
   top: 70px;
   margin: 5px;
   font-weight: 700!important;
+  border-color: #588100;
 }
 button:hover{
   /* border-color: black; */
   background-color: #588100;;
+  border-color: white;
   color: white;
   transition: .5s;
 }
