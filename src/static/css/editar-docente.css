@@ -1,0 +1,182 @@
+body{
+    background-image: url(logo-tesvg.jpg);
+    background-size: 20%;
+    background-position: 10% 10%;
+    background-repeat: no-repeat;
+  }
+  .formulario{
+      /* border: solid 2px black  ; */
+      position: relative;
+      top: 130px;
+      width: 500px;
+      border-style: solid;
+      border-width: 3px;
+      border-top-color: #588100;
+      border-left-color: #588100;
+      border-right-color: #b5b5b5;
+      border-bottom-color: #b5b5b5;
+      justify-content: center;
+      width: 120%;
+      height: 100%;
+    }
+  h3{
+      position: relative;
+      border-bottom: 3px solid black;
+      padding: 7px;
+      background-color: #588100;
+      color: white
+    }
+  .formulario input{
+      width: 20px;
+      padding: 20px 20px 20px 20px;
+      height: 35px;
+      font-size: 18px;
+      border: 1px solid;
+      background: none;
+      outline: none;
+      border-radius: 15px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .formulario input[type="text"]{
+      width: 60%;
+      padding: 20px 20px 20px 20px;
+      height: 35px;
+      font-size: 16px;
+      border: 1px solid;
+      background: none;
+      outline: none;
+      border-radius: 15px;
+      margin: 0 auto;
+      text-align: center;
+      text-transform: capitalize;
+    }
+  .formulario input[type="number"]{
+      width: 60%;
+      padding: 20px 20px 20px 20px;
+      height: 35px;
+      font-size: 16px;
+      border: 1px solid;
+      background: none;
+      outline: none;
+      border-radius: 15px;
+      margin: 0 auto;
+      text-align: center;
+      text-transform: capitalize;
+    }
+  .formulario input[type="password"]{
+      width: 60%;
+      padding: 20px 20px 20px 20px;
+      height: 35px;
+      font-size: 16px;
+      border: 1px solid;
+      background: none;
+      outline: none;
+      border-radius: 15px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  .formulario input::placeholder{
+    text-align: center;
+    line-height: 100px;
+  }
+  .formulario input[type="number"]{
+    position: relative;
+    left: 62px;
+  }
+  .formulario input[type="text"]{
+    position: relative;
+    left: 100px;
+  }
+  .seleccion select{
+    position: relative;
+    left: 100px;
+    appearance: none;
+  }
+  .seleccion select:focus {
+    border-color: #588100;
+    border-width: 3px;
+  }
+  .formulario input[type="password"]{
+    position: relative;
+    left: 100px;
+  }
+  .formulario input:focus{
+    border-color: #588100;
+    border-width: 3px;
+  }
+  .formulario input:focus::placeholder{
+    color: transparent;
+  }
+  .seleccion select {
+      width: 60%;
+      padding: 0 5px;
+      height: 45px;
+      font-size: 16px;
+      border: 1px solid;
+      background: none;
+      outline: none;
+      border-radius: 15px;
+      margin: 0 auto;
+    }
+  .seleccion option{
+      text-align: center;
+  }
+  button{
+      width: 40%;
+      height: 35px;
+      border: 1px solid;
+      background: #588100;
+      border-radius: 50px;
+      font-size: 17px;
+      color: white;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      left: 30%;
+      margin: 2px;
+      top: 25px;
+    }
+  button:hover{
+      border-color: black;
+      transition: .5s;
+    }
+  div1{
+      font-family: cursive;
+      position: relative;
+      top: 30px;
+  }
+  button2{
+    width: 50%;
+    height: 35px;
+    border: 1px solid;
+    background: #588100;
+    border-radius: 50px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    left: 25%;
+    margin: 2px;
+    top: 85px;
+  }
+  .Regreso a{
+    width: 40%;
+    height: 40px;
+    border: 1px solid;
+    background: #588100;
+    color: white;
+    border-radius: 50px;
+    font-size: 17px;
+    cursor: pointer;
+    outline: none;
+    float: right;
+    position: relative;
+    top: 50px;
+  }
+  .Regreso a:hover{
+    border-color: black;
+    transition: .5s;
+    color: white;
+  }

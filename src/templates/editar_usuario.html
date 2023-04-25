@@ -1,6 +1,7 @@
 {% extends 'body.html' %}
 {% block body %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/editar-alumno.css')}}">
+<body>
 <div class="row">
   <div class="col-md-4 offset-md-4">
     <div class="formulario">
@@ -11,25 +12,25 @@
           <!--input type="text" name="usuario" readonly="readonly" placeholder="Numero de empleado" class="form-control"
             value="{{usuarios.1}}">
         </div-->
-        <input type="text" name="usuario" placeholder="Numero de empleado" class="form-control"
+        <input type="text" name="usuario" placeholder="Numero de empleado" class="in"
             value="{{usuarios.1}}">
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="nombres" placeholder="Nombres" value="{{usuarios.2}}">
+          <input type="text" class="in" name="nombres" placeholder="Nombres" value="{{usuarios.2}}">
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="apellido_p" placeholder="Apellido paterno"
+          <input type="text" class="in" name="apellido_p" placeholder="Apellido paterno"
             value="{{usuarios.3}}">
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="apellido_m" placeholder="Apellido meterno"
+          <input type="text" class="in" name="apellido_m" placeholder="Apellido meterno"
             value="{{usuarios.4}}">
         </div>
         <div class="form-group mb-2">
-          <input type="password" class="form-control" name="password" placeholder="Contraseña">
+          <input type="password" class="in" name="password" placeholder="Contraseña">
         </div>
         <div class="seleccion">
-        <select class="form-control mb-2" for="tipo_usuario" name="tipo_usuario" required>
+        <select class="in" for="tipo_usuario" name="tipo_usuario" required>
           <option value="">Tipo Usuario</option>
           <option value="1">Administrador</option>
           <option value="2">Docente</option>
@@ -51,4 +52,5 @@
     </div>
   </div>
 </div>
+</body>
 {% endblock %}
