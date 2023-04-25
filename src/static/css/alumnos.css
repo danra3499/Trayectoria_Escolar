@@ -7,10 +7,17 @@ body{
   
 }
 .col-md-4{
-  border: dashed 2.7px black  ;
+  /* border: dashed 2.7px black  ; */
   position: relative;
-  top: 170px;
+  top: 150px;
   right: 130px;
+  border-style: solid;
+  border-width: 3px;
+  border-top-color: #588100;
+  border-left-color: #588100;
+  border-right-color: #b5b5b5;
+  border-bottom-color: #b5b5b5;
+  justify-content: center;
 }
 button{
   width: 50%;
@@ -44,6 +51,21 @@ button{
   text-align: center;
   text-transform: capitalize;
   }
+.Alum input[type="number"]{
+    position: relative;
+    left: 62px;
+  }
+.Alum input[type="text"]{
+    position: relative;
+    left: 62px;
+  }
+.Alum input:focus{
+    border-color: #588100;
+    border-width: 3px;
+  }
+.Alum input:focus::placeholder{
+    color: transparent;
+  }
 .Alum h1{
     border-bottom: 2px solid #B71C1C;;
     padding: 10px;
@@ -61,14 +83,25 @@ button{
     background: none;
     outline: none;
     border-radius: 15px;
-     margin: 0 auto;
+    margin: 0 auto;
   }
   .seleccion option{
     text-align: center;
   }
+  .seleccion select{
+    position: relative;
+    left: 62px;
+    appearance: none;
+  }
+  .seleccion select:focus {
+    border-color: #588100;
+    border-width: 3px;
+  }
   div1{
     color: black;
     font-family: cursive;
+    position: relative;
+    left: 5px;
   }
 
   /*                                       DISEÑO DE TABLA                                 */

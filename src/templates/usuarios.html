@@ -11,23 +11,23 @@
       <form action="/agregar_usuario" method="POST">
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input type="number" style="text-align: center;" class="form-control" name="usuario"  placeholder=" Numero de Empleado" required>
+          <input type="number" style="text-align: center;" class="in" name="usuario"  placeholder=" Numero de Empleado" required>
         </div>
         <!--div class="tuInput"-->
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="nombres" placeholder="Nombres" required>
+          <input type="text" class="tranformacion1" name="nombres" placeholder="Nombres" required>
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="apellido_p" placeholder="Apellido Paterno" required>
+          <input type="text" class="in" name="apellido_p" placeholder="Apellido Paterno" required>
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="form-control" name="apellido_m" placeholder="Apellido Materno" required>
+          <input type="text" class="in" name="apellido_m" placeholder="Apellido Materno" required>
         </div>
         <div class="form-group mb-2">
-          <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
+          <input type="password" class="in" name="password" placeholder="Contraseña" required>
         </div>
         <div class="seleccion">
-        <select class="form-control mb-2" for="tipo_usuario" name="tipo_usuario" required>
+        <select class="in" for="tipo_usuario" name="tipo_usuario" required>
           <option value="">Tipo Usuario</option>
           <option value="1">Administrador</option>
           <option value="2">Docente</option>
