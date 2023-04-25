@@ -1,5 +1,6 @@
 body{
-    background-image: url(logo-tesvg.jpg);
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url(logo-tesvg.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -29,10 +30,10 @@ h1:hover::before, h1:hover::after{
     transform: scale(1);
 }
 h1::before{
-    left: 410px;
+    left: 350px;
 }
 h1::after{
-    right: 410px;
+    right: 350px;
 }
 .sub h2{
     padding: 25px;

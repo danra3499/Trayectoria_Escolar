@@ -7,10 +7,17 @@ body{
   
 }
 .col-md-4{
-  border: dashed 2.7px black  ;
+  /* border: dashed 2.7px black  ; */
+  margin: auto;
   position: relative;
   top: 200px;
   right: 130px;
+  border-style: solid;
+  border-width: 3px;
+  border-top-color: #588100;
+  border-left-color: #588100;
+  border-right-color: #b5b5b5;
+  border-bottom-color: #b5b5b5;
 }
 button{
     width: 50%;
@@ -53,6 +60,7 @@ button:hover{
 .Registro input::placeholder{
   text-align: center;
   line-height: 100px;
+  border-color: #588100;
 }
 .seleccion select {
   width: 70%;
