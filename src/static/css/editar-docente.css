@@ -88,15 +88,6 @@ body{
     position: relative;
     left: 100px;
   }
-  .seleccion select{
-    position: relative;
-    left: 100px;
-    appearance: none;
-  }
-  .seleccion select:focus {
-    border-color: #588100;
-    border-width: 3px;
-  }
   .formulario input[type="password"]{
     position: relative;
     left: 100px;

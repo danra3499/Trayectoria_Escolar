@@ -16,6 +16,11 @@ h1{
   width: 50%;
   border-radius: 100px;
   background-color: #588100;
+  
+}
+.listado a{
+  color: white;
+ text-decoration: none;
 }
 .lista h5{
   text-align: center;
