@@ -10,7 +10,7 @@
     float: right;
     background: #588100;;
     color: white;
-    width: 50%;
+    width: 40%;
     height: 35px;
     border: 1px solid;
     border-radius: 35px;
@@ -25,4 +25,10 @@
   }
 .mate a{
     text-decoration: none;
+}
+.card-body h3{
+    text-align: center;
+}
+.card-body h2{
+    font-size: 25px;
 }

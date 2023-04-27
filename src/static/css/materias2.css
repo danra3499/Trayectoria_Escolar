@@ -1,3 +1,56 @@
-.h5{
+body{
+    background-image: url(logo-tesvg.jpg);
+    background-size: 20%;
+    background-position: 10% 10%;
+    background-repeat: no-repeat;
+  }
+  h1{
+    position: relative;
+    top: 150px;
+    border-bottom: 2px solid black;
+    padding: 10px;
+  }
+  .listado{
+    position: relative;
+    top: 180px;
+    width: 50%;
+    border-radius: 100px;
+    background-color: #588100;
+    
+  }
+  .listado a{
+    color: white;
+   text-decoration: none;
+  }
+  .lista h5{
     text-align: center;
-}
+    padding: 5px;
+    font-size: 25px;
+  }
+  .listado p{
+    font-size: 18px;
+    position: relative;
+    left: 20px;
+  }
+  .Regreso a{
+    width: 12%;
+    height: 40px;
+    border: 1px solid;
+    background: #588100;;
+    color: white;
+    border-radius: 50px;
+    font-size: 17px;
+    cursor: pointer;
+    outline: none;
+    float: right;
+    position: relative;
+    top: 200px;
+    text-decoration: none;
+  }
+  .Regreso a:hover{
+    border-color: black;
+    color: white;
+    transition: .5s;
+  }
+  
+  

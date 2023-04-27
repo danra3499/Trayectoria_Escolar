@@ -3,8 +3,8 @@ body{
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: linear-gradient(rgba(5,7,10,0.3), rgba(5,7,10,0.3)),
-  url(TESVG1.jpg);
+  background-image: linear-gradient(rgba(5,7,10,0.1), rgba(5,7,10,0.1)),
+  url(tecnologico.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size:100% 100%;
@@ -32,7 +32,7 @@ body{
   font-size: 320%;
   /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-family: 'Courier New', Courier, monospace;
-  color: black 
+  color: black ;
   
 }
 .formulario form{
@@ -47,7 +47,7 @@ form .username{
   padding: -5px;
 }
 .username input::placeholder{
-  color: black;
+  color: white;
   font-size: 20px;
 }
 .username input:focus::placeholder{

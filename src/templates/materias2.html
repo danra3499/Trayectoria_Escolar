@@ -1,21 +1,22 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/materias2.css')}}">
+<body>
 <h1 class="text-center mb-5">Materias</h1>
 <div class="row">
-
   {% for mg in data%}
-  <div class="list-group col-sm-12 col-md-4 mb-4">
-
-    <a href="/lista2/{{mg.id}}" class="list-group-item list-group-item-action active mb-4" aria-current="true">
-      <div class="d-flex w-100 justify-content-between">
+  <div class="listado">
+    <a href="/lista2/{{mg.id}}" class="" aria-current="true">
+      <div class="lista">
         <h5 class="mb-1">{{mg.nombre}}</h5>
       </div>
-
-
     </a>
   </div>
   {% endfor %}
 </div>
-
+<div class="Regreso">
+  <a class="btn" href="{{url_for('calificaciones')}}">Regresar</a> </div>
+</div>
+</body>
 {% endblock %}
