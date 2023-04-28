@@ -51,7 +51,7 @@ form .username{
   font-size: 20px;
 }
 .username input:focus::placeholder{
-  color: transparentñ;
+  color: transparent;
 }
 .username input{
   width: 100%;

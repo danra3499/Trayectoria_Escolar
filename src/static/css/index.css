@@ -90,6 +90,22 @@ h3{
 .card-body a:hover{
     background: white;
     color: #588100;
+    border-color: #588100;
+    transition: .5s;
 }
+.card-body h5{
+    text-align: center;
+    font-size: 25px;
+}
+.materia p{
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+}
+.grupo p{
+    position: relative;
+    top: 10px;
+} 
 
-/*                                                  Diseño de Tablas                                       */
+/*                                               Diseño de Tablas                                     */
+ 

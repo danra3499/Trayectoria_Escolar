@@ -1,0 +1,18 @@
+/*                                       DISEÑO DE FORMULARIO                                 */
+body{
+    background-image: url(logo-tesvg.jpg);
+    background-size: 20%;
+    background-position: 10% 10%;
+    background-repeat: no-repeat;  
+  }
+.col-md-4 offset-md-3{
+    position: relative;
+    left: 250px;
+    top: 100px;
+}
+ /*                                       DISEÑO DE FORMULARIO                                 */
+ .col-md-3{
+    position: relative;
+    left: 250px;
+    top: 100px;
+ } 
