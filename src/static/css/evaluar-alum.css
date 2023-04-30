@@ -5,14 +5,159 @@ body{
     background-position: 10% 10%;
     background-repeat: no-repeat;  
   }
-.col-md-4 offset-md-3{
-    position: relative;
-    left: 250px;
-    top: 100px;
+.evaluar{
+  margin: auto;
+  position: relative;
+  top: 130px;
+  right: 130px;
+  border-style: solid;
+  border-width: 3px;
+  border-top-color: #588100;
+  border-left-color: #588100;
+  border-right-color: #b5b5b5;
+  border-bottom-color: #b5b5b5;
+  justify-content: center;
+  height: 650px;
+  width: 480px;
 }
- /*                                       DISEÑO DE FORMULARIO                                 */
+.evaluar h2{
+    position: relative;
+    top: 5px;
+    border-bottom: 2px solid #B71C1C;
+    padding: 10px;
+}
+.evaluar h5{
+  text-align: center;
+}
+.evaluar input{
+  width: 70%;
+  padding: 20px 20px 20px 20px;
+  height: 35px;
+  font-size: 16px;
+  border: 1px solid;
+  background: none;
+  outline: none;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  text-align: center;
+  position: relative;
+  left: 62px;
+  text-transform: capitalize;
+}
+.se input{
+  background-color: #c6da52;
+}
+.evaluar input:focus{
+  border-color: #588100;
+  border-width: 3px;
+}
+.evaluar input:focus::placeholder{
+  color: transparent;
+}
+.seleccion select{
+  position: relative;
+  left: 62px;
+  appearance: none;
+  width: 70%;
+  padding: 0 5px;
+  height: 45px;
+  font-size: 16px;
+  border: 1px solid;
+  background: none;
+  outline: none;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+.seleccion1 select{
+  position: relative;
+  left: 62px;
+  appearance: none;
+  width: 70%;
+  padding: 0 5px;
+  height: 45px;
+  font-size: 16px;
+  border: 1px solid;
+  background: none;
+  outline: none;
+  border-radius: 15px;
+  margin-top: -7px;
+}
+.seleccion option, .seleccion1 option{
+  text-align: center;
+}
+.seleccion select:focus,.seleccion1 select:focus {
+  border-color: #588100;
+  border-width: 3px;
+}
+button{
+  width: 50%;
+  height: 35px;
+  border: 1px solid;
+  background: #588100;
+  border-radius: 35px;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  left: 25%;
+  margin: 2px;
+  top: 20px;
+}
+button:hover{
+  border-color: black;
+  transition: .5s;
+}
+ /*                                       DISEÑO DE TABLA                                 */
  .col-md-3{
     position: relative;
-    left: 250px;
-    top: 100px;
+    right:80px;
+    top: 300px;
+    left: 50px;
  } 
+ .lista{
+  margin: auto;
+  border-style: solid;
+  border-width: 3px;
+  border-top-color: #588100;
+  border-left-color: #588100;
+  border-right-color: #b5b5b5;
+  border-bottom-color: #b5b5b5;
+  justify-content: center;
+  width: 400px;
+  height: 250px;
+}
+.regreso a{
+  width: 30%;
+  height: 35px;
+  border: 1px solid;
+  background: #588100;
+  border-radius: 35px;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  left: 35%;
+  margin: 2px;
+  top: 3px;
+}
+.regreso a:hover{
+  border-color: black;
+  color: white;
+  transition: .5s;
+}
+.lista h2{
+  position: relative;
+  top: 5px;
+  border-bottom: 2px solid #B71C1C;
+  padding: 5px;
+}
+.table{
+  position: relative;
+  top: 10px;
+}
+tr:hover td{
+  background-color: #588100;
+  color: white;
+}

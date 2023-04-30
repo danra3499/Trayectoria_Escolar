@@ -75,7 +75,9 @@
       <td>{{ a.id }}</td>
       <td>{{ a.id_materia }}</td>
       
-      <td><a class="btn btn-success" href="/evaluar/{{m.id}}/evaluar_alumno/{{a.id}}">Evaluar</a></td>
+      <td><a class="btn btn-success" href="/evaluar/{{m.id}}/evaluar_alumno/{{a.id}}">Evaluar</a>
+         <a class="btn btn-success" href="{{url_for('home')}}">Regresar</a></td>
+      
     </tr>
     
     {% endfor %}

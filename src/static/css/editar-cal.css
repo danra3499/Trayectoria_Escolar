@@ -1,0 +1,63 @@
+body{
+    background-image: url(logo-tesvg.jpg);
+    background-size: 20%;
+    background-position: 10% 10%;
+    background-repeat: no-repeat;  
+}
+.editar{
+    margin: auto;
+    position: relative;
+    top: 130px;
+    right: 130px;
+    border-style: solid;
+    border-width: 3px;
+    border-top-color: #588100;
+    border-left-color: #588100;
+    border-right-color: #b5b5b5;
+    border-bottom-color: #b5b5b5;
+    justify-content: center;
+    height: 650px;
+    width: 480px;
+}
+.editar h2{
+    position: relative;
+    top: 5px;
+    border-bottom: 2px solid #B71C1C;
+    padding: 10px;
+}
+.editar input{
+    width: 70%;
+    padding: 20px 20px 20px 20px;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid;
+    background: none;
+    outline: none;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+    position: relative;
+    left: 62px;
+    text-transform: capitalize;
+}
+.se input{
+    background-color: #c6da52;
+}
+.editar input:focus{
+    border-color: #588100;
+    border-width: 3px;
+}
+.seleccion select{
+    position: relative;
+    left: 62px;
+    appearance: none;
+    width: 70%;
+    padding: 0 5px;
+    height: 45px;
+    font-size: 16px;
+    border: 1px solid;
+    background: none;
+    outline: none;
+    border-radius: 15px;
+    margin-bottom: 5px;
+  }

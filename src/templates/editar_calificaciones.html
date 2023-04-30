@@ -1,27 +1,29 @@
 {% extends 'body.html' %}
 {% block body %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/editar-cal.css')}}">
+<body>
 <div class="row">
   <div class="col-md-4 offset-md-4">
-    <div class="card card-body">
-      <h3 class="text-center mb-4">Editar Calificación</h3>
+    <div class="editar">
+      <h2 class="text-center mb-4">Editar Calificación</h2>
       <form action="/actualizar_cal/{{evaluacion.0}}'" name="id_cal" for="id_cal" method='POST'>
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-        <div class="form-group mb-2">
-            <h6>Num.Control alumno</h6>
-          <input type="text" name="id_alumno" readonly="readonly" placeholder="Numero de control alumno" class="form-control"
+        <div class="se">
+            <h5>Num.Control alumno</h5>
+          <input type="text" name="id_alumno" readonly="readonly" placeholder="Numero de control alumno" class="in"
             value="{{evaluacion.6}}" required>
         </div>
         <div class="form-group mb-2">
-        <input hidden type="email" name="id_cal" readonly="readonly" placeholder="Numero de control alumno" class="form-control"
+        <input hidden type="email" name="id_cal" readonly="readonly" placeholder="Numero de control alumno" class="in"
           value="{{evaluacion.0}}" required>
           <!--<output name="id_cal" id="id_cal" class="form" value="{{evaluacion.0}}"></output>
           <script>
             document.ready = document.getElementById("id_cal").value = "{{evaluacion.0}}" 
           </script>-->
       </div>
-        <div class="form-group mb-2">
-            <h6 >Parcial</h6>
-            <select id="parc"class="form-control mb-2" for="parcial" name="parcial" required> 
+        <div class="seleccion">
+            <h5>Parcial</h5>
+            <select id="parc"class="in" for="parcial" name="parcial" required> 
                 <option value="">Parcial</option>
                 <option value="1">Primero</option>
                 <option value="2">Segundo</option>
@@ -32,28 +34,28 @@
               </script>
         </div>
         <div class="form-group mb-2">
-            <h6>Calificación</h6>
-          <input type="number" class="form-control" name="calificacion" placeholder="Calificacion"
+            <h5>Calificación</h5>
+          <input type="number" class="in" name="calificacion" placeholder="Calificacion"
             value="{{evaluacion.3}}" required>
         </div>
-        <h6>Tipo Evaluacion</h6>
-        <select id="tipo_evaluacion" class="form-control mb-2" for="tipo_evaluacion" name="tipo_evaluacion" required>
+        <div class="seleccion">
+        <select id="tipo_evaluacion" class="in" for="tipo_evaluacion" name="tipo_evaluacion" required>
             <option value="">Tipo de evaluacion</option>
             <option value="1" name="tipo_evaluacion">Curso normal</option>
             <option value="2" name="tipo_evaluacion">Segunda oportunidad</option>
             <option value="3" name="tipo_evaluacion">Recurse</option>
             <option value="4" name="tipo_evaluacion">Especial</option>
-          </select>
+          </select> </div>
           <script>
             document.ready = document.getElementById("tipo_evaluacion").value = "{{evaluacion.4}}" 
           </script>
-        <div class="form-group mb-2">
-            <h6>Fecha de evaluacion</h6>
-          <input type="text" class="form-control" readonly="readonly" name="apellido_m" placeholder="Apellido meterno"
+        <div class="se">
+            <h5>Fecha de evaluacion</h5>
+          <input type="text" class="in" readonly="readonly" name="apellido_m" placeholder="Apellido meterno"
             value="{{evaluacion.2}}" required>
         </div>
         <div class="form-group mb-2">
-        <input hidden type="text" class="form-control" readonly="readonly" name="id_materia" placeholder="id_materia"
+        <input hidden type="text" class="in" readonly="readonly" name="id_materia" placeholder="id_materia"
           value="{{evaluacion.5}}" required>
       </div>
         <div class="mt-3 d-grid gap-2">
@@ -66,7 +68,7 @@
       
     </div>
   </div>
- 
 </div>
+</body>
 
 {% endblock %}
