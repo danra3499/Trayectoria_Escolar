@@ -4,6 +4,9 @@ body{
   background-position: 10% 10%;
   background-repeat: no-repeat;
 }
+/* .row{
+ white-space: ;
+} */
 h1{
   position: relative;
   top: 150px;
@@ -13,13 +16,18 @@ h1{
 .listado{
   position: relative;
   top: 180px;
-  width: 50%;
+  width: 45%;
+  height: 90px;
   border-radius: 100px;
   background-color: #588100;
-  
+  margin-bottom: 1rem;
+  margin-right: 3rem;
+}
+.listado:hover{
+  background-color: #89d631;
 }
 .listado a{
-  color: white;
+ color: white;
  text-decoration: none;
 }
 .lista h5{

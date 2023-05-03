@@ -13,14 +13,21 @@ body{
   .listado{
     position: relative;
     top: 180px;
-    width: 50%;
+    width: 45%;
+    height: 70px;
     border-radius: 100px;
     background-color: #588100;
-    
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+  }
+  .listado:hover{
+    background-color: #89d631;
   }
   .listado a{
     color: white;
    text-decoration: none;
+   position: relative;
+   top: 10px;
   }
   .lista h5{
     text-align: center;

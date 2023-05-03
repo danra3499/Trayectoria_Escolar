@@ -1,0 +1,15 @@
+.evaluar a{
+  width: 30%;
+  height: 35px;
+  border: 1px solid;
+  background: #588100;
+  border-radius: 35px;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  left: 35%;
+  margin: 2px;
+  top: 3px;
+}
