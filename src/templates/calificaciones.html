@@ -3,12 +3,13 @@
 {% block body %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/grupos.css')}}">
 <div class="row">
+  <h1>Lista de Calificaciones</h1>
   {% for g in data%}
   <div class="col-sm-12 col-md-4 mb-4">
     <div class="card">
       <div class="card-body">
-        <h3>Lista de Calificaciones</h3>
-        <h2 class="card-title">Grupo: {{g.id}}</h2>
+        <!-- <h3>Lista de Calificaciones</h3> -->
+        <h3 class="card-title">Grupo: {{g.id}}</h3>
         <div class="mate">
         <a href="/materia2/{{g.id}}" class="btn1">Materias</a></div>
       </div>

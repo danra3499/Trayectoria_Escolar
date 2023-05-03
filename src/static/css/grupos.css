@@ -18,6 +18,8 @@
     cursor: pointer;
     outline: none;
     text-align: center;
+    position: relative;
+    right: 50px;
 }
 .mate a:hover{
     border-color: black;
@@ -28,7 +30,69 @@
 }
 .card-body h3{
     text-align: center;
+    position: relative;
+    top: -10px;
 }
-.card-body h2{
+.card-body{
+    height: 95px;
+    border-radius: 80px 20px;
+    border-color: #588100;
+}
+.card{
+    border-radius: 80px 20px;
+}
+/* .card-body h2{
     font-size: 25px;
+} */
+h1{
+    text-align: center;
+    padding-bottom: 30px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 50px;
+    font-weight: 500;
+}
+h1::after,h1::before{
+    content:'';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: currentColor;
+    top: 115px;
+    transform: scale(0);
+    transition: all 0.2s ease-in;
+}
+h1:hover::before, h1:hover::after{
+    transform: scale(1);
+}
+h1::before{
+    left: 450px;
+}
+h1::after{
+    right: 450px;
+}
+h2{
+    text-align: center;
+    padding-bottom: 30px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 50px;
+    font-weight: 400;
+}
+h2::after,h2::before{
+    content:'';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: currentColor;
+    top: 110px;
+    transform: scale(0);
+    transition: all 0.2s ease-in;
+}
+h2:hover::before, h2:hover::after{
+    transform: scale(1);
+}
+h2::before{
+    left: 250px;
+}
+h2::after{
+    right: 250px;
 }
