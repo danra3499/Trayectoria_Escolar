@@ -35,6 +35,19 @@ body{
       text-align: center;
       text-transform: capitalize;
     }
+.Registro input[type="text"]{
+      width: 70%;
+      padding: 20px 20px 20px 20px;
+      height: 45px;
+      font-size: 16px;
+      border: 1px solid;
+      background: none;
+      outline: none;
+      border-radius: 15px;
+      margin: 0 auto;
+      text-align: center;
+      text-transform: uppercase;
+ }
 .Registro input::placeholder{
     text-align: center;
     line-height: 100px;

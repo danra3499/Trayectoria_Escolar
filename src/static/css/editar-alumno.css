@@ -1,7 +1,7 @@
 body{
-  background-image: url(logo-tesvg.jpg);
-  background-size: 20%;
-  background-position: 10% 10%;
+  background-image: url(logo-tesvg.jpg), url(logo-tec.png);
+  background-size: 20%, 15%;
+  background-position: 10% 10%, 95% 12%;
   background-repeat: no-repeat;
 }
 .formulario{
@@ -135,7 +135,7 @@ button{
     position: relative;
     left: 30%;
     margin: 2px;
-    top: 25px;
+    top: 15px;
   }
 button:hover{
     border-color: black;
@@ -173,7 +173,8 @@ button2{
   outline: none;
   float: right;
   position: relative;
-  top: 50px;
+  top: -10px;
+  left: 230px;
 }
 .Regreso a:hover{
   border-color: black;

@@ -43,11 +43,12 @@
             <strong>{{ current_user.usuario }}</strong>({{current_user.tipo_usuario.usuario }})
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="{{url_for('logout')}}">Cerrar Sesión</a></li>
+            <div class="cs">
+            <li><a class="dropdown-item" href="{{url_for('logout')}}">Cerrar Sesión</a></li></div>
           </ul>
         </li>
         <div class="ing">
-        <a class="navbar-brand" style="float:right;">Ingenieria en Sistemas Computacionales</a></div>
+        <a class="navbar-brand" style="float:left;">Ingenieria en Sistemas Computacionales</a></div>
       </ul>
     </div>
   </div>

@@ -1,9 +1,9 @@
 body{
-    background-image: url(logo-tesvg.jpg);
-    background-size: 20%;
-    background-position: 10% 10%;
-    background-repeat: no-repeat;
-  }
+  background-image: url(logo-tesvg.jpg), url(logo-tec.png);
+  background-size: 20%, 13%;
+  background-position: 10% 15%, 95% 12%;
+  background-repeat: no-repeat;
+}
   h1{
     position: relative;
     top: 150px;

@@ -16,7 +16,7 @@
   <body>
   <div class="formulario">
   <h1 class="text-center mb-4">INICIAR SESIÓN</h1>
-    <form action="/" method="POST">
+    <form action="/" method="POST" autocomplete="off">
       <!--<div class="card card-body"-->  
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
       <div class="username">
@@ -45,7 +45,7 @@
   <div class="mensajes">
   <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
     <strong>!Usuario o Contraseña Incorrecto!</strong>
-    <button type="btn" class="btn-close" data-bs-dismiss="alert" aria-label="Close" type="">X</button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
   </div>
   </div>
   <!--{% else %}-->

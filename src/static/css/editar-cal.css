@@ -1,9 +1,9 @@
 body{
-    background-image: url(logo-tesvg.jpg);
-    background-size: 20%;
-    background-position: 10% 10%;
-    background-repeat: no-repeat;  
-}
+    background-image: url(logo-tesvg.jpg), url(logo-tec.png);
+    background-size: 20%, 13%;
+    background-position: 10% 10%, 95% 12%;
+    background-repeat: no-repeat;
+  }
 .editar{
     margin: auto;
     position: relative;
