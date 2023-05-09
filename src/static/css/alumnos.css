@@ -4,12 +4,14 @@ body{
   background-size: 20%;
   background-position: 10% 10%;
   background-repeat: no-repeat;
-  
+}
+strong{
+  color: #588100;
 }
 .col-md-4{
   /* border: dashed 2.7px black  ; */
   position: relative;
-  top: 150px;
+  top: 190px;
   right: 130px;
   border-style: solid;
   border-width: 3px;
@@ -108,7 +110,7 @@ button{
   
 .col-md-8{
     position: relative;
-    top: 50px;
+    top: 70px;
     left: 70px;
   }
   tabla{

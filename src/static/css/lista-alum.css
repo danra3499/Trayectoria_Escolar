@@ -3,6 +3,10 @@
   background-color: #588100;;
   color: white;
   padding: 7px;
+  margin-top: 70px;
+}
+strong{
+  color: #588100;
 }
 tr:hover td{
   background-color: #588100;

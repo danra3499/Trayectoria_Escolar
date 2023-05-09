@@ -1,13 +1,16 @@
 body{
   background-image: url(logo-tesvg.jpg), url(logo-tec.png);
-  background-size: 20%, 15%;
+  background-size: 20%, 12%;
   background-position: 10% 10%, 95% 12%;
   background-repeat: no-repeat;
+}
+strong{
+  color: #588100;
 }
 .formulario{
     /* border: solid 2px black  ; */
     position: relative;
-    top: 130px;
+    top: 160px;
     width: 500px;
     border-style: solid;
     border-width: 3px;

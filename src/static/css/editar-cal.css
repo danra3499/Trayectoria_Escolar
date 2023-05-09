@@ -4,6 +4,9 @@ body{
     background-position: 10% 10%, 95% 12%;
     background-repeat: no-repeat;
   }
+strong{
+    color: #588100;
+}
 .editar{
     margin: auto;
     position: relative;

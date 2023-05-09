@@ -1,18 +1,36 @@
-.evaluar a{
+.calf td a{
   width: 30%;
   height: 35px;
   border: 1px solid;
   background: #588100;
   border-radius: 35px;
+  border-color: #588100;
   font-size: 15px;
   color: white;
   cursor: pointer;
   outline: none;
   position: relative;
-  left: 35%;
+  left: 15%;
   margin: 2px;
   top: 3px;
 }
+.calf td a:hover{
+  background-color: white;
+  color: #588100;
+}
+.calf h3{
+  text-align: center;
+}
+.pro h3{
+  text-align: center;
+  margin-top: 5px;
+}
+body{
+  margin-top: 90px;
+}
 table{
   border-color: #588100;
+}
+strong{
+  color: #588100;
 }

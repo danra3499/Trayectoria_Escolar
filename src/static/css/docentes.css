@@ -5,10 +5,13 @@ body{
   background-position: 10% 10%;
   background-repeat: no-repeat; 
 }
+strong{
+  color: #588100;
+}
 .col-md-4{
     /* border: black  3px dashed ; */
     position: relative;
-    top: 200px;
+    top: 240px;
     right: 100px;
     height: 50%;
     border-style: solid;
@@ -85,7 +88,7 @@ div1{
 /*                                       DISEÑO DE TABLA                                 */
 .col-md-7{
     position: relative;
-    top: 50px;
+    top: 70px;
     left: 70px;
   }
   .tabla{

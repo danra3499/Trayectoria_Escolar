@@ -1,14 +1,18 @@
 body{
   background-image: url(logo-tesvg.jpg), url(logo-tec.png);
-  background-size: 20%, 13%;
-  background-position: 10% 15%, 95% 12%;
+  background-size: 18%, 11%;
+  background-position: 6% 12%, 95% 12%;
   background-repeat: no-repeat;
+}
+strong{
+  color: #588100;
 }
   h1{
     position: relative;
     top: 150px;
     border-bottom: 2px solid black;
     padding: 10px;
+    margin-top: 100px;
   }
   .listado{
     position: relative;

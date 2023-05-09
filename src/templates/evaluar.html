@@ -2,11 +2,12 @@
 {% block title %}{{title}}{% endblock %}
 {% block body %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/evaluar.css')}}">
+<body>
 <table class="table table-striped table-bordered bg-white table-sm">
   <thead>
     <tr>
-      <td>Materia</td>
-      <td>Grupo</td>
+      <th>Materia</th>
+      <th>Grupo</th>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +24,7 @@
 <table class="table table-striped table-bordered bg-white table-sm">
   <thead>
     <tr>
-      <td>Calificación Grupal</td>
+      <th>Calificación Grupal</th>
     </tr>
   </thead>
   <tbody>
@@ -35,14 +36,16 @@
     {% endfor %}
   </tbody>
 </table>
+
+<div class="pro">
 <h3>Promedio por Alumno</h3>
 <div style = "overflow: scroll; height: 250px;">
 <table class="table table-striped table-bordered bg-white table-sm">
   <thead>
     <tr>
-      <td>Alumno</td>
-      <td>N. Control</td>
-      <td>Calificacion(Promedio)</td>
+      <th>Alumno</th>
+      <th>No.Control</th>
+      <th>Calificación(Promedio)</th>
     </tr>
   </thead>
   <tbody>
@@ -60,13 +63,16 @@
   </tbody>
 </table>
 </div>
+</div>
+
+<div class="calf">
 <h3>Calificar Alumno</h3>
 <div style = "overflow: scroll; height: 250px;">
 <table class="table table-striped table-bordered bg-white table-sm" >
   <thead>
     <tr>
-      <td>Alumno</td>
-      <td>No.Control</td>
+      <th>Alumno</th>
+      <th>No.Control</th>
     </tr>
   </thead>
   <tbody>
@@ -75,11 +81,8 @@
       <td>{{ a.nombre_completo() }}</td>
       <td>{{ a.id }}</td>
       <td>{{ a.id_materia }}</td>
-
-      <div class="evaluar">
       <td><a class="btn btn-success" href="/evaluar/{{m.id}}/evaluar_alumno/{{a.id}}">Evaluar</a>
          <a class="btn btn-success" href="{{url_for('home')}}">Regresar</a></td>
-      </div>
     </tr>
     
     {% endfor %}
@@ -88,6 +91,7 @@
   </tbody>
   
 </table>
+</div>
 </div>
 
 {% endblock %}
