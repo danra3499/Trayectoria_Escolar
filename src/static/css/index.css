@@ -8,12 +8,17 @@ body{
     opacity: 1;
     z-index: -1;
 }
+strong{
+    font-size: 16px;
+    color: #588100;
+}
 h1{
     text-align: center;
     padding: 5px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 50px;
     font-weight: 1000;
+    margin-top: 50px;
 }
 h1::after,h1::before{
     content:'';

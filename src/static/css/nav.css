@@ -1,8 +1,12 @@
 ing a{
-   float: right;
-   margin: 0 15px 0 0;
+  position: relative;
+  left: 50px;
+  float: left;
 }
 .cs a:hover{
    background-color: #588100;
    color: white;
+}
+li a:hover{
+  color: #588100;
 }
