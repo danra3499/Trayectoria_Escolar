@@ -114,6 +114,14 @@ h3{
 .row{
     margin-left: 50px;
 }
+.alerta{
+    text-align: center;
+    font-size: 15px;
+    position: relative;
+    top: -65px;
+    left: 35px;
+    width: 100%;  
+}
 
 
 /*                                               Diseño de Tablas                                     */
