@@ -159,14 +159,19 @@ p{
   text-align: center;
 }
 /*                     Diseño de Mensajes(alertas)                        */
-.mensajes div{
-  color: red;
-  text-align: center;
-  position: relative;
-  top: 80px;
+.mensajes{
+  color: white;
+}
+.mensajes strong{
   font-size: 20px;
 }
-.salir div1{
+/* .mensajes{
+  color: white;
+  text-align: center;
+  position: relative;
+  font-size: 20px;
+} */
+/* .salir div1{
   color: red;
   text-align: center;
   position: relative;
@@ -180,4 +185,5 @@ p{
   top: 1px;
   width: 10%;
   height: 40px;
-}
+} */ 
+

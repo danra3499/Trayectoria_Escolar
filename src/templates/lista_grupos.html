@@ -9,7 +9,7 @@
       <table class="table table-striped table-bordered bg-white table-sm">
         <thead>
           <tr>
-            <th><b>Numero de Control</th></b>  
+            <th><b>Numero de Control</th></b>
             <th><b>Nombre</th></b>
             <th><b>Status</th></b>
             <th><b>Acciones</th></b>
@@ -24,12 +24,14 @@
 
             <td><a class="btn btn-warning" href="/editar_alumno/{{ag.id}}">Editar</a></td>
           </tr>
-          {% endfor %}
         </tbody>
       </table>
+      {% endfor %}
+      {% for g in data %}
       <div class="Regreso">
         <a class="btn" href="/materia/{{g.id}}">Regresar</a>
       </div>
+      {% endfor %}
     </div>
   </div>
 </div>
