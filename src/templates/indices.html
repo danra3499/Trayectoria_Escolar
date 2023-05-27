@@ -1,7 +1,9 @@
 {% extends 'body.html' %}
 {% block title %}{{title}}{% endblock %}
 {% block body %}
-<div class="row">
+<link rel="stylesheet" href="{{url_for('static', filename='css/indices.css')}}">
+<body>
+<div class="formulario">
     <div class="col-md-6">
         <div class="card card-body">
             <h1 class="text-center">Índice de Aprobación en Ordinario (IAO)</h1>
@@ -170,5 +172,5 @@
         </div>
     </div>
 </div>
-
+</body>
 {% endblock %}

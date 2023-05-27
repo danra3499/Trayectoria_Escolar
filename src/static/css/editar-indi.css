@@ -1,0 +1,45 @@
+body{
+    background-image: url(logo-tesvg.jpg), url(logo-tec.png);
+    background-size: 20%, 12%;
+    background-position: 10% 10%, 95% 12%;
+    background-repeat: no-repeat;
+  }
+  strong{
+    color: #588100;
+  }
+
+.row{
+    position: relative;
+    top: 200px;
+}
+.formulario{
+    /* border: solid 2px black  ; */
+    position: relative;
+    top: 100px;
+    width: 500px;
+    border-style: solid;
+    border-width: 3px;
+    border-top-color: #588100;
+    border-left-color: #588100;
+    border-right-color: #b5b5b5;
+    border-bottom-color: #b5b5b5;
+    justify-content: center;
+    width: 120%;
+    height: 100%;
+  }
+  h3{
+    position: relative;
+    border-bottom: 3px solid black;
+    padding: 7px;
+    background-color: #588100;
+    color: white
+  }
+.formulario input{
+    text-align: center;
+    width: 300px;
+    height: 35px;
+    font-size: 18px;
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 20px 20px 20px 20px;
+}

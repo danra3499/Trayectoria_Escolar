@@ -1,0 +1,17 @@
+body{
+    background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+    url(logo-tesvg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-attachment: fixed;
+    opacity: 1;
+    z-index: -1;
+  }
+.row{
+    position: absolute;
+    top: 100px;
+}
+strong{
+    color: #588100;
+  }
