@@ -15,7 +15,8 @@ body{
 .formulario{
     /* border: solid 2px black  ; */
     position: relative;
-    top: 100px;
+    top: 20px;
+    right: 50px;
     width: 500px;
     border-style: solid;
     border-width: 3px;
@@ -25,7 +26,7 @@ body{
     border-bottom-color: #b5b5b5;
     justify-content: center;
     width: 120%;
-    height: 100%;
+    height: 95%;
   }
   h3{
     position: relative;
@@ -37,9 +38,61 @@ body{
 .formulario input{
     text-align: center;
     width: 300px;
-    height: 35px;
+    height: 55px;
     font-size: 18px;
     border: 1px solid;
     border-radius: 15px;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;   
+    position: relative;
+    left: 100px;
+    top: 10px;
+    padding-bottom: 10px;
+}
+button{
+  width: 40%;
+  height: 35px;
+  border: 1px solid;
+  background: #588100;
+  border-radius: 50px;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  left: 30%;
+  margin: 2px;
+  top: 50px;
+}
+button:hover{
+  border-color: black;
+  transition: .5s;
+}
+div1{
+  font-family: cursive;
+  position: relative;
+  top: 30px;
+}
+.Regreso a{
+  width: 40%;
+  height: 40px;
+  border: 1px solid;
+  background: #588100;
+  color: white;
+  border-radius: 50px;
+  font-size: 17px;
+  cursor: pointer;
+  outline: none;
+  float: right;
+  position: relative;
+  top: -10px;
+  left: 230px;
+}
+.Regreso a:hover{
+  border-color: black;
+  transition: .5s;
+  color: white;
+}
+.formulario input:focus{
+  border-color: #588100;
+  border-width: 3px;
 }
