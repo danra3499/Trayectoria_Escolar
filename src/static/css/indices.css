@@ -10,7 +10,12 @@ body{
   }
 .row{
     position: absolute;
-    top: 100px;
+    top: 120px;
+    height: 70%;
+}
+.card card-body{
+  position: absolute;
+  right: 500px;
 }
 strong{
     color: #588100;
