@@ -38,7 +38,7 @@ body{
 .formulario input{
     text-align: center;
     width: 300px;
-    height: 55px;
+    height: 45px;
     font-size: 18px;
     border: 1px solid;
     border-radius: 15px;
@@ -92,7 +92,7 @@ div1{
   transition: .5s;
   color: white;
 }
-.formulario input:focus{
+input:focus{
   border-color: #588100;
   border-width: 3px;
 }
