@@ -69,9 +69,10 @@ def logout():
 def home():
     if current_user.is_authenticated:
         alumnos = Modelo_alumno.obtener_alumnos(db)
+        # alumnos = Modelo_alumno.obtener_alumnos_grupo(db, grupo)
         materias = Modelo_materia.materia_docente(db, current_user.usuario)
         data = []
-        for i in range(1, 25):
+        for i in range(1, 28):
             objeto = 'materia_semestre'+str(i)
             objeto = Modelo_materia.obtener_materias_por_semestre(db, i)
             data.append(objeto)

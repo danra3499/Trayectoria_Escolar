@@ -47,7 +47,7 @@ class ModeloUsuario():
     def agregar_usuario(self, db, usuario, nombres, apellido_p, apellido_m, password, tipo_usuario):
         try:
             cursor = db.connection.cursor()
-            query = """INSERT INTO usuario(usuario, nombres, apellido_p, apellido_m, password, tipo_usuario)
+            query = """INSERT INTO usuario (usuario, nombres, apellido_p, apellido_m, password, tipo_usuario)
             VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')""".format(
                 usuario, nombres, apellido_p, apellido_m, password, tipo_usuario)
             cursor.execute(query)

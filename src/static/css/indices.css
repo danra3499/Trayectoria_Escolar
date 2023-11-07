@@ -16,4 +16,11 @@ body{
 strong{
     color: #588100;
   }
+.info a{
+  height: 40px;
+  width: 20%;
+  border-radius: 35px;
+  position: relative;
+  left: 80%;
+  }
 

@@ -159,5 +159,7 @@ tr:hover td{
 thead{
   position: sticky;
 }
-
+tr td{
+  text-transform: capitalize;
+}
 

@@ -18,7 +18,7 @@
         </div>
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="seleccion">
-        <select class="in" for="parcial" name="parcial" required> 
+        <select class="in" for="parcial" name="parcial" required title="Selecciona un Elemento de la Lista"> 
           <option value="">Parcial</option>
           <option value="1">Primero</option>
           <option value="2">Segundo</option></select>
@@ -32,10 +32,10 @@
           <input type="radio" value="3" name="parcial">Tercero<br>
         </div>--> 
         <div class="form-group mb-2">
-          <input type="text" class="in" name="calificacion" placeholder="Calificación" required>
+          <input type="text" class="in" name="calificacion" placeholder="Calificación" required title="Campo Obligatorio">
         </div>
         <div class="seleccion1">
-        <select class="in" for="tipo_evaluacion" name="tipo_evaluacion" required>
+        <select class="in" for="tipo_evaluacion" name="tipo_evaluacion" required title="Selecciona un Elemento de la Lista">
           <option value="">Tipo de Evaluación</option>
           <option value="1" name="tipo_evaluacion">Curso normal</option>
           <option value="2" name="tipo_evaluacion">Segunda oportunidad</option>

@@ -14,7 +14,8 @@ INSERT INTO semestre(nombre) VALUES
 ('quinto semestre'), 
 ('sexto semestre'), 
 ('septimo semestre'), 
-('octavo semestre');
+('octavo semestre'),
+('noveno semestre');
 
 -- GRUPOS
 INSERT INTO grupo(id, semestre) VALUES
@@ -25,7 +26,8 @@ INSERT INTO grupo(id, semestre) VALUES
 (3501, 5), (3502, 5), (3511, 5),
 (3601, 6), (3602, 6), (3611, 6), 
 (3701, 7), (3702, 7), (3711, 7),
-(3801, 8), (3802, 8), (3811, 8);
+(3801, 8), (3802, 8), (3811, 8),
+(3901, 9), (3902, 9), (3911, 9);
 
 INSERT INTO alumno(id, nombres, apellido_p, apellido_m, genero, status, id_grupo) VALUES
 (2017123089, 'Alonso', 'Guadarrama', 'Ruiz', 'M', true, 3801),

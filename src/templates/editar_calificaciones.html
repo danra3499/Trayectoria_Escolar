@@ -23,8 +23,8 @@
       </div>
         <div class="seleccion">
             <h5>Parcial</h5>
-            <select id="parc"class="in" for="parcial" name="parcial" required> 
-                <option value="">Parcial</option>
+            <select id="parc"class="in" for="parcial" name="parcial" required title="Selecciona un Elemento de la Lista"> 
+                <option value="">Parcial: </option>
                 <option value="1">Primero</option>
                 <option value="2">Segundo</option>
                 <!--option value="3">Tercero</option-->
@@ -35,12 +35,12 @@
         </div>
         <div class="form-group mb-2">
             <h5>Calificación</h5>
-          <input type="number" class="in" name="calificacion" placeholder="Calificacion"
+          <input type="number" class="in" name="calificacion" placeholder="Calificación" title="Calificación"
             value="{{evaluacion.3}}" required>
         </div>
         <div class="seleccion">
           <h5>Tipo de Evaluación</h5>
-        <select id="tipo_evaluacion" class="in" for="tipo_evaluacion" name="tipo_evaluacion" required>
+        <select id="tipo_evaluacion" class="in" for="tipo_evaluacion" name="tipo_evaluacion" required title="Selecciona un Elemento de la Lista">
             <!-- <option value="">Tipo de evaluacion</option> -->
             <option value="1" name="tipo_evaluacion">Curso normal</option>
             <option value="2" name="tipo_evaluacion">Segunda oportunidad</option>

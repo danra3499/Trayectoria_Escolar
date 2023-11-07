@@ -11,7 +11,7 @@ strong{
 .col-md-4{
   /* border: dashed 2.7px black  ; */
   position: relative;
-  top: 190px;
+  top: 180px;
   right: 130px;
   border-style: solid;
   border-width: 3px;
@@ -94,6 +94,8 @@ button{
     position: relative;
     left: 62px;
     appearance: none;
+    padding: 0 5px;
+    margin-bottom: 8px;
   }
   .seleccion select:focus {
     border-color: #588100;

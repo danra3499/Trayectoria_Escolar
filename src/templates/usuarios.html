@@ -8,23 +8,23 @@
     <title>INGENIERIA EN SISTEMAS COMPUTACIONALES</title>
     <div class="Registro">
       <h1 class="text-center mb-4">Registrar Usuarios</h1>
-      <form action="/agregar_usuario" method="POST">
+      <form action="/agregar_usuario" method="POST" autocomplete="nope">
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input type="number" style="text-align: center;" class="in" name="usuario"  placeholder=" Número de Empleado" required>
+          <input title="Campo Obligatorio" type="number" style="text-align: center;" class="in" name="usuario"  placeholder=" Número de Matrícula" required>
         </div>
         <!--div class="tuInput"-->
         <div class="form-group mb-2">
-          <input type="text" class="tranformacion1" name="nombres" placeholder="Nombres" required>
+          <input title="Campo Obligatorio" type="text" class="tranformacion1" name="nombres" placeholder="Nombre(s)" required>
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="in" name="apellido_p" placeholder="Apellido Paterno" required>
+          <input autocomplete="nope" title="Campo Obligatorio" type="text" class="in" name="apellido_p" placeholder="Apellido Paterno" required>
         </div>
         <div class="form-group mb-2">
-          <input type="text" class="in" name="apellido_m" placeholder="Apellido Materno" required>
+          <input autocomplete="nope" title="Campo Obligatorio" type="text" class="in" name="apellido_m" placeholder="Apellido Materno" required>
         </div>
         <div class="form-group mb-2">
-          <input type="password" class="in" name="password" placeholder="Contraseña" required>
+          <input title="Campo Obligatorio" type="password" class="in" name="password" placeholder="Contraseña" required>
         </div>
         <div class="seleccion">
         <select class="in" for="tipo_usuario" name="tipo_usuario" required>
