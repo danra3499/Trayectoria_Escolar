@@ -27,12 +27,14 @@ h3{
     border-bottom: 3px solid black;
     padding: 7px;
     background-color: #588100;
-    color: white
+    color: white;
+    font-size: 25px;
   }
 h6{
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: larger;
+  padding-top: 10px;
 }
 .formulario input{
     width: 20px;
@@ -46,7 +48,7 @@ h6{
     margin: 0 auto;
     text-align: center;
   }
-.idmat input{
+.formulario .mat input{
     background-color: #c6da52;
   }
   .formulario input[type="text"]{
@@ -134,17 +136,17 @@ h6{
     text-align: center;
 }
 button{
-    width: 40%;
+    width: 30%;
     height: 35px;
     border: 1px solid;
     background: #588100;
     border-radius: 50px;
-    font-size: 17px;
+    font-size: 15px;
     color: white;
     cursor: pointer;
     outline: none;
     position: relative;
-    left: 30%;
+    left: 35%;
     margin: 2px;
     top: 15px;
   }
@@ -153,9 +155,10 @@ button:hover{
     transition: .5s;
   }
 div1{
-    font-family: cursive;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     position: relative;
-    top: 7px;
+    top: 1px;
+    font-size: 12px;
 }
 button2{
   width: 50%;
@@ -173,19 +176,19 @@ button2{
   top: 85px;
 }
 .Regreso a{
-  width: 40%;
+  width: 30%;
   height: 40px;
   border: 1px solid;
   background: #588100;
   color: white;
   border-radius: 50px;
-  font-size: 17px;
+  font-size: 15px;
   cursor: pointer;
   outline: none;
   float: right;
   position: relative;
-  top: -10px;
-  left: 230px;
+  top: -30px;
+  left: 200px;
 }
 .Regreso a:hover{
   border-color: black;

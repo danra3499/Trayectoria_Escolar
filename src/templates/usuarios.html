@@ -7,30 +7,30 @@
   <div class="col-md-4">
     <title>INGENIERIA EN SISTEMAS COMPUTACIONALES</title>
     <div class="Registro">
-      <h1 class="text-center mb-4">Registrar Usuarios</h1>
+      <h1 class="text-center mb-4">REGISTRAR USUARIOS</h1>
       <form action="/agregar_usuario" method="POST" autocomplete="nope">
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input title="Campo Obligatorio" type="number" style="text-align: center;" class="in" name="usuario"  placeholder=" Número de Matrícula" required>
+          <input autocomplete="nope" title="Campo Obligatorio" type="number" style="text-align: center;" class="in" name="usuario"  placeholder=" NUMERO DE MATRÍCULA" required>
         </div>
         <!--div class="tuInput"-->
         <div class="form-group mb-2">
-          <input title="Campo Obligatorio" type="text" class="tranformacion1" name="nombres" placeholder="Nombre(s)" required>
+          <input autocomplete="nope" title="Campo Obligatorio" type="text" class="tranformacion1" name="nombres" placeholder="NOMBRES(S)" required >
         </div>
         <div class="form-group mb-2">
-          <input autocomplete="nope" title="Campo Obligatorio" type="text" class="in" name="apellido_p" placeholder="Apellido Paterno" required>
+          <input autocomplete="nope" title="Campo Obligatorio" type="text" class="in" name="apellido_p" placeholder="APELLIDO PATERNO" required>
         </div>
         <div class="form-group mb-2">
-          <input autocomplete="nope" title="Campo Obligatorio" type="text" class="in" name="apellido_m" placeholder="Apellido Materno" required>
+          <input autocomplete="nope" title="Campo Obligatorio" type="text" class="in" name="apellido_m" placeholder="APELLIDO MATERNO" required>
         </div>
         <div class="form-group mb-2">
-          <input title="Campo Obligatorio" type="password" class="in" name="password" placeholder="Contraseña" required>
+          <input title="Campo Obligatorio" type="password" class="in" name="password" placeholder="CONTRASEÑA" required>
         </div>
         <div class="seleccion">
         <select class="in" for="tipo_usuario" name="tipo_usuario" required>
-          <option value="">Tipo Usuario</option>
-          <option value="1">Administrador</option>
-          <option value="2">Docente</option>
+          <option value="">TIPO DE USUARIO</option>
+          <option value="1">ADMINISTRADOR</option>
+          <option value="2">DOCENTE</option>
         </select> </div>
        <!--div class="form-group mb-2">
           <label for="tipo_usuario">Tipo de usuario</label><br>
@@ -38,28 +38,28 @@
           <input type="radio" value="2" name="tipo_usuario">Docente<br>
         </div-->
         <button class="btn1">
-          Guardar
+          GUARDAR
         </button>
         <button class="btn2" type="reset">
-          Limpiar
+          LIMPIAR
         </button>
-        <div1 class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div1>
+        <div1 class="inge"><p class="text-center mt-5">SISTEMA DE TRAYECTORIA ESCOLAR ISC</p></div1>
       </form>
     </div>
   </div>
   <div class="col-md-8">
-    <div class="tabla">
-      <h1 class="text-center">Lista de Usuarios</h1>
+    <div class="tabla" style="width: 1030;">
+      <h1 class="text-center">LISTA DE USUARIOS</h1>
       <div style = "overflow: scroll; height: 500px; ">
-      <table class="table table-striped table-bordered bg-white table-sm">
+      <table class="table table-striped table-bordered bg-white table-sm" style="width: 1000;">
         <thead>
           <tr>
-            <th><b>Usuario</th></b>
-            <th><b>Nombre</th></b>
-            <th><b>Apellido Paterno</th></b>
-            <th><b>Apellido Materno</th></b>
-            <th><b>Tipo de Usuario</th></b>
-            <th><b>Acciones</th></b>
+            <th><b>USUARIO</th></b>
+            <th><b>NOMBRE</th></b>
+            <th><b>APELLIDO PATERNO</th></b>
+            <th><b>APELLIDO MATERNO</th></b>
+            <th><b>TIPO DE USUARIO</th></b>
+            <th><b>ACCIONES</th></b>
           </tr>
         </thead>
         <tbody>
@@ -70,9 +70,9 @@
             <td>{{ u.apellido_p }}</td>
             <td>{{ u.apellido_m }}</td>
             <td>{{ u.tipo_usuario }}</td>
-            <td>
-              <a class="btn btn-warning" href="/editar_usuario/{{u.usuario}}">Editar</a>
-              <a class="btn btn-danger btn-delete" href="/eliminar_usuario/{{u.usuario}}">Eliminar</a>
+            <td style="width: 180;">
+              <a class="btn btn-warning" href="/editar_usuario/{{u.usuario}}" style="width: 80px; font-size: 13px;">EDITAR</a>
+              <a class="btn btn-danger btn-delete" href="/eliminar_usuario/{{u.usuario}}" style="width: 80px; font-size: 13px; position: absolute;">ELIMINAR</a>
             </td>
           </tr>
           {% endfor %}

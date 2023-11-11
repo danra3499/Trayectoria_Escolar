@@ -7,10 +7,9 @@
       <h3 class="text-center mb-4">Actualización de Datos-Materia</h3>
       <form action="/actualizar_materia/{{materia.0}}" method='POST'>
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-        <div class="idmat">
+        <div class="mat">
           <h6>ID-Materia</h6>
-          <input type="text" name="id" readonly="readonly" title="No se puede corregir"
-            value="{{materia.0}}" required>
+          <input type="text" name="id" readonly="readonly" class=in value="{{materia.0}}" title="No se puede corregir">
         </div>
         <div class="form-group mb-2">
           <h6>Clave</h6>

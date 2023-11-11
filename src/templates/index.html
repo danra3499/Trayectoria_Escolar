@@ -7,7 +7,7 @@
 <div class="lines-effect">
 <h1>TRAYECTORIA ESCOLAR ISC</h1></div>
 <div class="sub">
-<h2>Bienvenido</h2></div>
+<h2>BIENVENIDO</h2></div>
 {% with messages = get_flashed_messages() %}
 {% if messages %}
 <br />
@@ -25,14 +25,14 @@
 <div class="row mt-4">
   {% if current_user.tipo_usuario.id == 1 %}
   <div class="col-md-6">
-    <h2 class="text-center">Lista de Alumnos</h2>
-    <h3 class="text-center">Grupo: 3101</h3>
+    <h3 class="text-center">LISTA DE ALUMNOS</h3>
+    <h5 class="text-center">GRUPO: 3101</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>No.control</td></b>
-          <td><b>Alumno</td></b>
-          <td><b>Status</td></b>
+          <td><b>ALUMNO</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -46,13 +46,13 @@
       </tbody>
     </table>
         
-    <h3 class="text-center">Grupo: 3102</h3>
+    <h5 class="text-center">GRUPO: 3102</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>ALUMNO</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -65,13 +65,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3111</h3>
+    <h5 class="text-center">GRUPO: 3111</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>ALUMNO</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -84,13 +84,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3201</h3>
+    <h5 class="text-center">GRUPO: 3201</H5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>ALUMNO</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -103,13 +103,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3202</h3>
+    <H5 class="text-center">Grupo: 3202</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>ALUMNO</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -122,13 +122,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3211</h3>
+    <h5 class="text-center">GRUPO: 3211</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -141,32 +141,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3301</h3>
+    <h5 class="text-center">GRUPO: 3301</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
-        </tr>
-      </thead>
-      <tbody>
-        {% for a in alumnos %}
-        <tr>
-          <td>{{ a.nombre_completo() }}</td>
-          <td>{{ a.id }}</td>
-          <td>{{ a.status }}</td>
-        </tr>
-      </tbody>
-    </table>
-        {% endfor %}
-    <h3 class="text-center">Grupo: 3302</h3>
-    <table class="table table-striped table-bordered bg-white table-sm">
-      <thead>
-        <tr>
-          <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -179,13 +160,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3311</h3>
+    <h5 class="text-center">GRUPO: 3302</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -198,13 +179,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3401</h3>
+    <h5 class="text-center">GRUPO: 3311</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -217,13 +198,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3402</h3>
+    <h5 class="text-center">GRUPO: 3401</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -236,13 +217,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3411</h3>
+    <h5 class="text-center">GRUPO: 3402</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -255,13 +236,13 @@
         {% endfor %}
       </tbody>
     </table>
-      <h3 class="text-center">Grupo: 3501</h3>
+    <h5 class="text-center">GRUPO: 3411</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -274,13 +255,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3502</h3>
+      <h5 class="text-center">GRUPO: 3501</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -293,13 +274,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3511</h3>
+    <h5 class="text-center">GRUPO: 3502</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -312,13 +293,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3601</h3>
+    <h5 class="text-center">GRUPO: 3511</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -331,13 +312,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3602</h3>
+    <h5 class="text-center">GRUPO: 3601</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -350,13 +331,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3611</h3>
+    <h5 class="text-center">GRUPO: 3602</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -369,13 +350,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3701</h3>
+    <h5 class="text-center">GRUPO: 3611</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -388,13 +369,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3702</h3>
+    <h5 class="text-center">GRUPO: 3701</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -407,13 +388,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3711</h3>
+    <h5 class="text-center">GRUPO: 3702</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -426,13 +407,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3801</h3>
+    <h5 class="text-center">GRUPO: 3711</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -445,13 +426,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3802</h3>
+    <h5 class="text-center">GRUPO: 3801</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -464,13 +445,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3811</h3>
+    <h5 class="text-center">GRUPO: 3802</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -483,13 +464,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3901</h3>
+    <h5 class="text-center">GRUPO: 3811</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -502,13 +483,13 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3902</h3>
+    <h5 class="text-center">GRUPO: 3901</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -521,13 +502,32 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Grupo: 3911</h3>
+    <h5 class="text-center">GRUPO: 3902</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
           <td><b>Alumno</td></b>
-          <td><b>No.control</td></b>
-          <td><b>Status</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
+        </tr>
+      </thead>
+      <tbody>
+        {% for a in alumnos %}
+        <tr>
+          <td>{{ a.nombre_completo() }}</td>
+          <td>{{ a.id }}</td>
+          <td>{{ a.status }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h5 class="text-center">GRUPO: 3911</h3>
+    <table class="table table-striped table-bordered bg-white table-sm">
+      <thead>
+        <tr>
+          <td><b>Alumno</td></b>
+          <td><b>NO. DE CONTROL</td></b>
+          <td><b>STATUS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -564,13 +564,13 @@
     </table> -->
   </div>
   <div class="col-md-5">
-    <h2 class="text-center">Lista de Materias</h2>
-    <h3 class="text-center">Primer Semestre</h3>
+    <h3 class="text-center">LISTA DE MATERIAS</h3>
+    <h5 class="text-center">PRIMER SEMESTRE</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Nombre</td></b>
-          <td><b>No.Creditos</td></b>
+          <td><b>NOMBRE</td></b>
+          <td><b>NO. DE CREDITOS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -583,12 +583,12 @@
       </tbody>
     </table>
 
-    <h3 class="text-center">Segundo Semestre</h3>
+    <h5 class="text-center">SEGUNDO SEMESTRE</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Nombre</td></b>
-          <td><b>No.Creditos</td></b>
+          <td><b>NOMBRE</td></b>
+          <td><b>NO. DE CREDITOS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -600,12 +600,12 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Tercer Semestre</h3>
+    <h5 class="text-center">TERCER SEMESTRE</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Nombre</td></b>
-          <td><b>No.Creditos</td></b>
+          <td><b>NOMBRE</td></b>
+          <td><b>NO. DE CREDITOS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -617,12 +617,12 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Cuarto Semestre</h3>
+    <h5 class="text-center">CUARTO SEMESTRE</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Nombre</td></b>
-          <td><b>No.Creditos</td></b>
+          <td><b>NOMBRE</td></b>
+          <td><b>NO. DE CREDITOS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -634,12 +634,12 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Quinto Semestre</h3>
+    <h5 class="text-center">QUINTO SEMESTRE</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Nombre</td></b>
-          <td><b>No.Creditos</td></b>
+          <td><b>NOMBRE</td></b>
+          <td><b>NO. DE CREDITOS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -651,12 +651,12 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Sexto Semestre</h3>
+    <h5 class="text-center">SEXTO SEMESTRE</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Nombre</td></b>
-          <td><b>No.Creditos</td></b>
+          <td><b>NOMBRE</td></b>
+          <td><b>NO. DE CREDITOS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -668,12 +668,12 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Séptimo Semestre</h3>
+    <h5 class="text-center">SEPTIMO SEMESTRE</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Nombre</td></b>
-          <td><b>No.Creditos</td></b>
+          <td><b>NOMBRE</td></b>
+          <td><b>NO. DE CREDITOS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -685,12 +685,12 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Octavo Semestre</h3>
+    <h5 class="text-center">OCTAVO SEMESTRE</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Nombre</td></b>
-          <td><b>No.Creditos</td></b>
+          <td><b>NOMBRE</td></b>
+          <td><b>NO. DE CREDITOS</td></b>
         </tr>
       </thead>
       <tbody>
@@ -702,12 +702,12 @@
         {% endfor %}
       </tbody>
     </table>
-    <h3 class="text-center">Noveno Semestre</h3>
+    <h5 class="text-center">NOVENO SEMESTRE</h5>
     <table class="table table-striped table-bordered bg-white table-sm">
       <thead>
         <tr>
-          <td><b>Nombre</td></b>
-          <td><b>No.Creditos</td></b>
+          <td><b>NOMBRE</td></b>
+          <td><b>NO. DE CREDITOS</td></b>
         </tr>
       </thead>
       <tbody>
