@@ -3,7 +3,7 @@
 {% block body %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/materias.css')}}">
 <body>
-<h1 class="text-center mb-5">Materias</h1>
+<h1 class="text-center mb-5">MATERIAS</h1>
 <div class="row">
   {% for m in data%}
   <!--div class="list-group col-sm-12 col-md-4 mb-4"-->
@@ -14,14 +14,14 @@
         <h5 class="mb-1">{{m.nombre}}</h5>
         <!-- <small>Docente: </small> -->
       </div>
-      <p class="mb-1">Docente: {{m.id_docente}} </p>
+      <p class="mb-1">DOCENTE: {{m.id_docente}} </p>
       <!-- <small>And some small print.</small> -->
     </a>
   </div>
   {% endfor %}
 </div>
 <div class="Regreso">
-  <a class="btn" href="{{url_for('grupos')}}">Regresar</a> </div>
+  <a class="btn" href="{{url_for('grupos')}}">REGRESAR</a> </div>
 </div>
 </body>
 {% endblock %}

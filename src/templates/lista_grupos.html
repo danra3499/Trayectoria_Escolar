@@ -5,14 +5,14 @@
 <div class="row">
   <div class="col-md-12">
     <div class="lista-alum">
-      <h1 class="text-center">Lista de Alumnos</h1>
+      <h1 class="text-center">LISTA DE ALUMNOS</h1>
       <table class="table table-striped table-bordered bg-white table-sm">
         <thead>
           <tr>
-            <th><b>Numero de Control</th></b>
-            <th><b>Nombre</th></b>
-            <th><b>Status</th></b>
-            <th><b>Acciones</th></b>
+            <th><b>NO. DE CONTROL</th></b>
+            <th><b>NOMBRE</th></b>
+            <th><b>STATUS</th></b>
+            <th><b>ACCIONES</th></b>
           </tr>
         </thead>
         <tbody>
@@ -22,14 +22,14 @@
             <td>{{ ag.nombres }}</td>
             <td>{{ ag.status }}</td>
 
-            <td><a class="btn btn-warning" href="/editar_alumno/{{ag.id}}">Editar</a></td>
+            <td><a class="btn btn-warning" href="/editar_alumno/{{ag.id}}">EDITAR</a></td>
           </tr>
         </tbody>
       </table>
       {% endfor %}
       {% for g in data %}
       <div class="Regreso">
-        <a class="btn" href="/materia/{{g.id}}">Regresar</a>
+        <a class="btn" href="/materia/{{g.id}}">REGRESAR</a>
       </div>
       {% endfor %}
     </div>

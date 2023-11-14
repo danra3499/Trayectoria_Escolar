@@ -1,7 +1,7 @@
 /*                                       DISEÑO DE FORMULARIO                                 */
 body{
   background-image: url(logo-tesvg.jpg);
-  background-size: 20%;
+  background-size: 15%;
   background-position: 10% 10%;
   background-repeat: no-repeat;
 }
@@ -27,7 +27,7 @@ button{
     border: 1px solid;
     background: #588100;
     border-radius: 35px;
-    font-size: 17px;
+    font-size: 14px;
     color: white;
     cursor: pointer;
     outline: none;
@@ -71,16 +71,18 @@ button{
 .Alum h1{
     border-bottom: 2px solid #B71C1C;;
     padding: 10px;
+    font-size: 35px;
   }
 .Alum input::placeholder{
     text-align: center;
     line-height: 100px;
+    font-size: 13px;
   }
 .seleccion select {
     width: 70%;
     padding: 0 5px;
     height: 45px;
-    font-size: 16px;
+    font-size: 13px;
     border: 1px solid;
     background: none;
     outline: none;
@@ -103,9 +105,10 @@ button{
   }
   div1{
     color: black;
-    font-family: cursive;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     position: relative;
     left: 5px;
+    font-size: 13px;
   }
 
   /*                                       DISEÑO DE TABLA                                 */
@@ -113,7 +116,7 @@ button{
 .col-md-8{
     position: relative;
     top: 70px;
-    left: 70px;
+    left: -10px;
   }
   tabla{
     border: none ;
@@ -123,12 +126,18 @@ button{
     background-color:  #588100;
     color: white;
     padding: 7px;
+    font-size: 30px;
   }
   tr:hover td{
     background-color: #588100;
     color: white;
   
   }
-  
+ tr th{
+  font-size: 15px;
+ }
+ tr td .a{
+  font-size: 5px;
+}
   
   

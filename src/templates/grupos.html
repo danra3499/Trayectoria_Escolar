@@ -4,15 +4,15 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/grupos.css')}}">
 <body>
 <div class="row">
-  <h2>Ingeniería en Sistemas Computacionales</h2>
+  <h2>INGENIERIA EN SISTEMAS COMPUTACIONALES</h2>
   {% for g in data%}
   <div class="col-sm-12 col-md-4 mb-4">
     <div class="card border-success">
       <div class="card-body">
         <!-- <h3>Ingenieria en Sistemas Computacionales</h3> -->
-        <h3 class="card-title">Grupo: {{g.id}}</h2>
+        <h3 class="card-title">GRUPO: {{g.id}}</h2>
         <div class="mate">
-        <a href="/materia/{{g.id}}" class="btn1">Materias</a> </div>
+        <a href="/materia/{{g.id}}" class="btn1">MATERIAS</a> </div>
       </div>
     </div>
   </div>

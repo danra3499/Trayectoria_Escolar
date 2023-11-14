@@ -6,24 +6,24 @@
 <div class="row">
   <div class="col-md-4">
     <div class="Alum">
-      <h1 class="text-center">Registrar Alumnos</h1>
+      <h1 class="text-center">REGISTRAR ALUMNOS</h1>
       <form action="/agregar_alumno" method="POST">
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="form-group mb-2">
-          <input title="Campo Obligatorio" type="number" class="in" name="numero_control" placeholder="      Número de Control" required>
+          <input title="CAMPO OBLIGATORIO" type="number" class="in" name="numero_control" placeholder="      NUMERO DE CONTROL" required>
         </div>
         <div class="form-group mb-2">
-          <input autocomplete="nope" title="Campo Obligatorio" type="text" class="in" name="nombres" placeholder="Nombre(s)" required>
+          <input autocomplete="nope" title="CAMPO OBLIGATORIO" type="text" class="in" name="nombres" placeholder="NOMBRE(S)" required>
         </div>
         <div class="form-group mb-2">
-          <input autocomplete="nope" title="Campo Obligatorio" type="text" class="in" name="apellido_p" placeholder="Apellido Paterno" required>
+          <input autocomplete="nope" title="CAMPO OBLIGATORIO" type="text" class="in" name="apellido_p" placeholder="APELLIDO PATERNO" required>
         </div>
         <div class="form-group mb-2">
-          <input autocomplete="nope" title="Campo Obligatorio" type="text" class="in" name="apellido_m" placeholder="Apellido Materno" required>
+          <input autocomplete="nope" title="CAMPO OBLIGATORIO" type="text" class="in" name="apellido_m" placeholder="APELLIDO MATERNO" required>
         </div>
         <div class="seleccion">
         <select class="in" for="genero" name="genero" required>
-          <option value="">Género</option>
+          <option value="">GENERO</option>
           <option value="M">Masculino</option>
           <option value="F">Femenino</option>
         </select>
@@ -35,7 +35,7 @@
         </div>-->
         <div class="seleccion">
         <select class="in" for="status" name="status" required>
-          <option value="">Status</option>
+          <option value="">STATUS</option>
           <option value="Activo">Activo</option>
           <option value="Baja">Baja</option>
         </select> 
@@ -49,33 +49,33 @@
           <input type="number" class="form-control" name="semestre" placeholder="Semestre example 2">
         </div>-->
         <div class="form-group mb-2">
-          <input autocomplete="nope" title="Campo Obligatorio" type="number" class="in" name="grupo" placeholder="     Grupo example: 3801" required>
+          <input autocomplete="nope" title="CAMPO OBLIGATORIO" type="number" class="in" name="grupo" placeholder="     GRUPO EXAMPLE: 3801" required>
         </div> 
        <button class="btn1">
-            Guardar
+            GUARDAR
         </button>
         <button class="btn2" type="reset">
-          Limpiar
+          LIMPIAR
         </button>
-        <div1 class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div1>
+        <div1 class="inge"><p class="text-center mt-5">SISTEMA DE TRAYECTORIA ESCOLAR ISC</p></div1>
       </form>
     </div>
   </div>
   <div class="col-md-8">
-    <div class="tabla">
-      <h1 class="text-center">Lista de Alumnos</h1>
+    <div class="tabla" style="width: 1030;">
+      <h1 class="text-center">LISTA DE ALUMNOS</h1>
       <div style = "overflow: scroll; height: 500px;">
       <table class="table table-striped table-bordered bg-white table-sm">
         <thead>
           <tr>
-            <th><b>Nombres</th></b>
-            <th><b>Apellido Paterno</th></b>
-            <th><b>Apellido Materno</th></b>
-            <th><b>No.Control</th></b>
-            <th><b>Genero</th></b>
-            <th><b>Status</th></b>
-            <th><b>Grupo</th></b>
-            <th><b>Acciones</th></b>
+            <th><b>NOMBRE(S)</th></b>
+            <th><b>APELLIDO PATERNO</th></b>
+            <th><b>APELLIDO MATERNO</th></b>
+            <th><b>NO.CONTROL</th></b>
+            <th><b>GENERO</th></b>
+            <th><b>STATUS</th></b>
+            <th><b>GRUPO</b></th></b>
+            <th><b>ACCIONES</th></b>
           </tr>
         </thead>
         <tbody>
@@ -89,8 +89,8 @@
             <td>{{ a.status }}</td>
             <td>{{ a.grupo }}</td>
             <td>
-            <a class="btn btn-warning" href="/editar_alumno/{{a.id}}">Editar</a>
-            <a class="btn btn-danger btn-delete" href="/eliminar_alumno/{{a.id}}">Eliminar</a>
+            <a class="btn btn-warning" href="/editar_alumno/{{a.id}}"style="width: 80px; font-size: 13px;">EDITAR</a>
+            <a class="btn btn-danger btn-delete" href="/eliminar_alumno/{{a.id}}"style="width: 80px; font-size: 13px;">ELIMINAR</a>
           </tr>
           {% endfor %}
         </tbody>
