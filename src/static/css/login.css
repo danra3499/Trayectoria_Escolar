@@ -48,7 +48,7 @@ form .username{
 }
 .username input::placeholder{
   color: white;
-  font-size: 20px;
+  font-size: 15px;
 }
 .username input:focus::placeholder{
   color: transparent;
@@ -150,8 +150,8 @@ p{
   position: relative;
   /* left: 10px; */
   top: 120px;
-  font-family: cursive;
-  font-size: 18px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 13px;
   width: 80%;
   height: auto;
   margin: 0px auto;
