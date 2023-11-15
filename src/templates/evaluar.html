@@ -8,8 +8,8 @@
 <table class="table table-striped table-bordered bg-white table-sm">
   <thead>
     <tr>
-      <th>Materia</th>
-      <th>Grupo</th>
+      <th>MATERIA</th>
+      <th>GRUPO</th>
     </tr>
   </thead>
   <tbody>
@@ -26,7 +26,7 @@
 <table class="table table-striped table-bordered bg-white table-sm">
   <thead>
     <tr>
-      <th>Calificación Grupal</th>
+      <th>CALIFICACION GRUPAL</th>
     </tr>
   </thead>
   <tbody>
@@ -40,15 +40,15 @@
 </table>
 </div>
 <div class="pro">
-<h3>Promedio por Alumno</h3>
+<h4>PROMEDIO POR ALUMNO</h4>
 <div style = "overflow: scroll; height: 250px;">
 <div class="tabla1">
 <table class="table table-striped table-bordered bg-white table-sm">
   <thead>
     <tr>
-      <th>Alumno</th>
-      <th>No.Control</th>
-      <th>Calificación(Promedio)</th>
+      <th>ALUMNO</th>
+      <th>NO. DE CONTROL</th>
+      <th>CALIFICACION(PROMEDIO)</th>
     </tr>
   </thead>
   <tbody>
@@ -69,13 +69,13 @@
 </div>
 </div>
 <div class="calf">
-<h3>Calificar Alumno</h3>
+<h4>CALIFICAR ALUMNO</h4>
 <div style = "overflow: scroll; height: 250px;">
 <table class="table table-striped table-bordered bg-white table-sm" >
   <thead>
     <tr>
-      <th>Alumno</th>
-      <th>No.Control</th>
+      <th>ALUMNO</th>
+      <th>NO. DE CONTROL</th>
     </tr>
   </thead>
   <tbody>
@@ -84,8 +84,8 @@
       <td>{{ a.nombre_completo() }}</td>
       <td>{{ a.id }}</td>
       <td>{{ a.id_materia }}</td>
-      <td><a class="btn btn-success" href="/evaluar/{{m.id}}/evaluar_alumno/{{a.id}}">Evaluar</a>
-         <a class="btn btn-success" href="{{url_for('home')}}">Regresar</a></td>
+      <td><a class="btn btn-success" href="/evaluar/{{m.id}}/evaluar_alumno/{{a.id}}">EVALUAR</a>
+         <a class="btn btn-success" href="{{url_for('home')}}">REGRESAR</a></td>
     </tr>
     
     {% endfor %}

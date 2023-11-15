@@ -5,12 +5,12 @@
 <div class="row">
   <div class="col-md-4 offset-md-4">
     <div class="editar">
-      <h2 class="text-center mb-4">Editar Calificación</h2>
+      <h2 class="text-center mb-4">EDITAR DATOS-CALIFICACIONES</h2>
       <form action="/actualizar_cal/{{evaluacion.0}}'" name="id_cal" for="id_cal" method='POST'>
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="se">
-            <h5>No.Control Alumno</h5>
-          <input type="text" name="id_alumno" readonly="readonly" title="No se puede editar" placeholder="Numero de control alumno" class="in"
+            <h5>NO. DE CONTROL</h5>
+          <input type="text" name="id_alumno" readonly="readonly" title="NO SE PUEDE EDITAR" placeholder="NO. DE CONTROL" class="in"
             value="{{evaluacion.6}}" required>
         </div>
         <div class="form-group mb-2">
@@ -22,11 +22,11 @@
           </script>-->
       </div>
         <div class="seleccion">
-            <h5>Parcial</h5>
+            <h5>PARCIAL</h5>
             <select id="parc"class="in" for="parcial" name="parcial" required title="Selecciona un Elemento de la Lista"> 
-                <option value="">Parcial: </option>
-                <option value="1">Primero</option>
-                <option value="2">Segundo</option>
+                <option value="">PARCIAL: </option>
+                <option value="1">PRIMERO</option>
+                <option value="2">SEGUNDO</option>
                 <!--option value="3">Tercero</option-->
               </select>
               <script>
@@ -34,25 +34,25 @@
               </script>
         </div>
         <div class="form-group mb-2">
-            <h5>Calificación</h5>
-          <input type="number" class="in" name="calificacion" placeholder="Calificación" title="Calificación"
+            <h5>CALIFICACION</h5>
+          <input type="number" class="in" name="calificacion" placeholder="CALIFICACION" title="Calificación"
             value="{{evaluacion.3}}" required>
         </div>
         <div class="seleccion">
-          <h5>Tipo de Evaluación</h5>
+          <h5>TIPO DE EVALUACION</h5>
         <select id="tipo_evaluacion" class="in" for="tipo_evaluacion" name="tipo_evaluacion" required title="Selecciona un Elemento de la Lista">
             <!-- <option value="">Tipo de evaluacion</option> -->
-            <option value="1" name="tipo_evaluacion">Curso normal</option>
-            <option value="2" name="tipo_evaluacion">Segunda oportunidad</option>
-            <option value="3" name="tipo_evaluacion">Recurse</option>
-            <option value="4" name="tipo_evaluacion">Especial</option>
+            <option value="1" name="tipo_evaluacion">CURSO NORMAL</option>
+            <option value="2" name="tipo_evaluacion">SEGUNDA OPORTUNIDAD</option>
+            <option value="3" name="tipo_evaluacion">RECURSE</option>
+            <option value="4" name="tipo_evaluacion">ESPECIAL</option>
           </select> </div>
           <script>
             document.ready = document.getElementById("tipo_evaluacion").value = "{{evaluacion.4}}" 
           </script>
         <div class="se">
-            <h5>Fecha de evaluacion</h5>
-          <input type="text" class="in" readonly="readonly" name="apellido_m" title="No se puede editar" placeholder="Apellido meterno"
+            <h5>FECHA DE EVALUACION</h5>
+          <input type="text" class="in" readonly="readonly" name="apellido_m" title="No se puede editar" placeholder="FECHA DE EVALUACION"
             value="{{evaluacion.2}}" required>
         </div>
         <div class="form-group mb-2">
@@ -60,9 +60,10 @@
           value="{{evaluacion.5}}" required>
       </div>
         <!-- <div class="mt-3 d-grid gap-2"> -->
-          <button class="btn1" type="submit">Actualizar</button>
-          <button class="btn1" type="reset">Limpiar</button>
+          <button class="btn1" type="submit">ACTUALIZAR</button>
+          <button class="btn1" type="reset">LIMPIAR</button>
         <!-- </div> -->
+        <div1 class="inge"><p class="text-center mt-5">SISTEMA DE TRAYECTORIA ESCOLAR ISC</p></div1>
       </form>
       <div class="regreso">
         <a class="btn" href="/evaluar/{{evaluacion.5}}/evaluar_alumno/{{evaluacion.6}}">REGRESAR</a></div>

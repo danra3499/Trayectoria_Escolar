@@ -6,34 +6,34 @@
 <div class="row">
     <div class="col-md-4">
         <div class="Registro">
-            <h1 class="text-center mb-4">Registrar Materia</h1> 
+            <h1 class="text-center mb-4">REGISTRAR MATERIAS</h1> 
             <form action="/agregar_materia" method='POST'>
                 <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
                 <div class="form-group mb-2">
-                    <input autocomplete="nope"  title="Campo Obligatorio" class="in" type="number" name="id" placeholder="     id_materia" required> 
+                    <input autocomplete="nope"  title="CAMPO OBLIGATORIO" class="in" type="number" name="id" placeholder="     ID_MATERIA" required> 
                 </div>
                 <div class="form-group mb-2">
-                    <input autocomplete="nope"  title="Campo Obligatorio" class="in" type="text" name="clave" placeholder="Clave" >
+                    <input autocomplete="nope"  title="CAMPO OBLIGATORIO" class="in" type="text" name="clave" placeholder="CLAVE" >
                 </div>
                 <div class="form-group mb-2">
-                    <input autocomplete="nope" title="Campo Obligatorio" class="in" type="text" name="nombre" placeholder="Nombre de la materia" required>
+                    <input autocomplete="nope" title="CAMPO OBLIGATORIO" class="in" type="text" name="nombre" placeholder="NOMBRE DE LA MATERIA" required>
                 </div>
                 <div class="form-group mb-2">
-                    <input autocomplete="nope" title="Campo Obligatorio" class="in" type="number" name="n_creditos" placeholder="Número de Créditos" required>
+                    <input autocomplete="nope" title="CAMPO OBLIGATORIO" class="in" type="number" name="n_creditos" placeholder="NUMERO DE CREDITOS" required>
                 </div>
                 <div class="form-group mb-2">
-                    <input autocomplete="nope" title="Campo Obligatorio" class="in" type="number" name="id_grupo" placeholder="Grupo" required>  
+                    <input autocomplete="nope" title="CAMPO OBLIGATORIO" class="in" type="number" name="id_grupo" placeholder="GRUPO" required>  
                 </div>
                 <div class="form-group mb-2">
-                    <input autocomplete="nope" title="Campo Obligatorio" class="in" type="number" name="id_docente" placeholder="Docente(Matrícula)" >
+                    <input autocomplete="nope" title="CAMPO OBLIGATORIO" class="in" type="number" name="id_docente" placeholder="DOCENTE(MATRICULA)" >
                 </div>
                 <button class="btn1">
-                    Guardar
+                    GUARDAR
                 </button>
                 <button class="btn2" type="reset">
-                    Limpiar
+                    LIMPIAR
                 </button>
-                <div1 class="inge"><p class="text-center mt-5">Sistema de Trayectoria Escolar ISC</p></div1>
+                <div1 class="inge"><p class="text-center mt-5">SISTEMA DE TRAYECTORIA ESCOLAR ISC</p></div1>
             </form>
         </div>
     </div>
@@ -44,19 +44,19 @@
     </div> -->
 
     <div class="col-md-8">
-        <div class="tabla">
-            <h1 class="text-center">Lista de Materias</h1>
+        <div class="tabla" style="width: 980;">
+            <h1 class="text-center">LISTA DE MATERIAS</h1>
             <div style = "overflow: scroll; height: 500px;">
                 <table class="table table-striped table-hover table-bordered table-sm bg-white">
                 <thead>
                     <tr>
                         <!--td><b>ID</td></b-->
-                        <th><b>Clave</th></b>
-                        <th><b>Nombre</th></b>
-                        <th><b>Créditos</th></b>
-                        <th><b>Grupo</th></b>
-                        <th><b>Docente</th></b>
-                        <th><b>Acciones</th></b>
+                        <th><b>CLAVE</th></b>
+                        <th><b>NOMBRE</th></b>
+                        <th><b>CREDITOS</th></b>
+                        <th><b>GRUPO</th></b>
+                        <th><b>DOCENTE</th></b>
+                        <th><b>ACCIONES</th></b>
                     </tr>
                 </thead>
                 <tbody>
@@ -69,8 +69,8 @@
                         <td>{{ m.id_grupo}}</td>
                         <td>{{ m.id_docente}}</td>
                         <td>
-                            <a class="btn btn-warning" href="/editar_materia/{{m.id}}">Editar</a>
-                            <a class="btn btn-danger btn-delete" href="/eliminar_materia/{{m.id}}">Eliminar</a>
+                            <a class="btn btn-warning" href="/editar_materia/{{m.id}}" style="width: 80px; font-size: 13px;">EDITAR</a>
+                            <a class="btn btn-danger btn-delete" href="/eliminar_materia/{{m.id}}" style="width: 80px; font-size: 13px;">ELIMINAR</a>
                     </tr>
                     {% endfor %}
                 </tbody>

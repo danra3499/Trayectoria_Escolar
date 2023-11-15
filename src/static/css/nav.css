@@ -10,3 +10,6 @@ ing a{
 li a:hover{
   color: #588100;
 }
+ul li a{
+  font-size: 14px;
+}

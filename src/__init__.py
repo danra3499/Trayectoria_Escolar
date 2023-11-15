@@ -180,7 +180,7 @@ def editar_alumno(id):
 
 @app.route('/actualizar_alumno/<id>', methods=['POST'])
 @login_required
-def actualizar_alumno(id):
+def actualizar_alumno(id):  
     if request.method == 'POST':
         numero_control = request.form['numero_control']
         nombres = request.form['nombres']

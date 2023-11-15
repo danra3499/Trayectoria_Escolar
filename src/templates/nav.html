@@ -2,36 +2,36 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">>
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{url_for('home')}}">Trayectoria Escolar</a> 
+    <a class="navbar-brand" href="{{url_for('home')}}">TRAYECTORIA ESCOLAR</a> 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
-          <title>Ingenieria en Sistemas Computacionales</title>
+          <title>INGENIERIA EN SISTEMAS COMPUTACIONALES</title>
           <link rel="icon" type="icon/ico" href="logo-tesvg.ico">
           {% if current_user.tipo_usuario.id == 1 %}
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('usuario')}}">Usuarios</a>
+          <a class="nav-link" href="{{url_for('usuario')}}">USUARIOS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('grupos')}}">Grupos</a>
+          <a class="nav-link" href="{{url_for('grupos')}}">GRUPOS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('agregar_alumno')}}">Alumnos</a>
+          <a class="nav-link" href="{{url_for('agregar_alumno')}}">ALUMNOS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('docentes')}}">Docentes</a>
+          <a class="nav-link" href="{{url_for('docentes')}}">DOCENTES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('materias')}}">Materia</a>
+          <a class="nav-link" href="{{url_for('materias')}}">MATERIA</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('indices')}}">Índices</a>
+          <a class="nav-link" href="{{url_for('indices')}}">INDICES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('calificaciones')}}">Calificaciones</a>
+          <a class="nav-link" href="{{url_for('calificaciones')}}">CALIFICACIONES</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="{{url_for('periodos')}}">Periodos</a>
@@ -44,13 +44,13 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <div class="cs">
-            <li><a class="dropdown-item" href="{{url_for('logout')}}">Cerrar Sesión</a></li></div>
+            <li><a class="dropdown-item" href="{{url_for('logout')}}">CERRAR SESIÓN</a></li></div>
           </ul>
         </li>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto">
         <li class="nav-item"> 
-          <a class="navbar-brand">Ingenieria en Sistemas Computacionales</a>
+          <a class="navbar-brand">INGENIERIA EN SISTEMAS COMPUTACIONALES</a>
         </li>
           </ul>
         </div>
