@@ -141,7 +141,7 @@ button{
     border: 1px solid;
     background: #588100;
     border-radius: 50px;
-    font-size: 15px;
+    font-size: 14px;
     color: white;
     cursor: pointer;
     outline: none;
@@ -166,7 +166,7 @@ button2{
   border: 1px solid;
   background: #588100;
   border-radius: 50px;
-  font-size: 17px;
+  font-size: 15px;
   color: white;
   cursor: pointer;
   outline: none;

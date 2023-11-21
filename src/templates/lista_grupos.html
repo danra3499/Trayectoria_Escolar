@@ -21,12 +21,11 @@
             <td>{{ ag.id }}</td>
             <td>{{ ag.nombres }}</td>
             <td>{{ ag.status }}</td>
-
             <td><a class="btn btn-warning" href="/editar_alumno/{{ag.id}}">EDITAR</a></td>
           </tr>
+          {% endfor %}
         </tbody>
       </table>
-      {% endfor %}
       {% for g in data %}
       <div class="Regreso">
         <a class="btn" href="/materia/{{g.id}}">REGRESAR</a>
