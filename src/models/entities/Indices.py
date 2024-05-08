@@ -1,3 +1,13 @@
+class IndicesAlum():
+    def __init__(self, id_alumno_indice, id_alumno, iao, iac, ipe, ide, ise, ire, nombre):
+        self.id_alumno = id_alumno
+        self.iao = iao
+        self.iac = iac
+        self.ipe = ipe
+        self.ide = ide
+        self.ise = ise
+        self.ire = ire
+        self.nombre = nombre
 class Indices():
     def __init__(self, id_IAO, nivel_IAO, categoria_IAO):
         self.id_IAO = id_IAO

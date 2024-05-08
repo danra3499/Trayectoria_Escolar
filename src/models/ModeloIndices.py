@@ -4,6 +4,120 @@ from .entities.Indices import IndicesIPE
 from .entities.Indices import IndicesIDE
 from .entities.Indices import IndicesISE
 from .entities.Indices import IndicesIRE
+from .entities.Indices import IndicesAlum
+
+"""---------------------- AGREGAR ALUMNOS A INDICES ----------------------------"""
+class Modelo_agregar_alumno():
+    @classmethod
+    def add_Alum_Ind(self, db, id_alumno):
+        try:
+            cursor = db.connection.cursor()
+            query = """INSERT INTO alumno_indice(id_alumno)
+            VALUES({0})""".format(id_alumno)
+            cursor.execute(query)
+            db.connection.commit()
+        except Exception as e:
+            raise Exception(e)
+
+"""---------------------------- ACTUALIZAR INDICES ---------------------------------"""
+
+class Modelo_actualizar_indices():
+    
+
+    @classmethod
+    def actual_IAO(self, db, id_alumno):
+        try:
+            cursor = db.connection.cursor()
+
+            query = "call sp_actualizar_iao('{0}')".format(id_alumno)
+            cursor.execute(query)
+            db.connection.commit()
+        except  Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def actual_IAC(self, db, id_alumno):
+        try:
+            cursor = db.connection.cursor()
+
+            query = "call sp_actualizar_iac('{0}')".format(id_alumno)
+            cursor.execute(query)
+            db.connection.commit()
+        except  Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def actual_IPE(self, db, id_alumno):
+        try:
+            cursor = db.connection.cursor()
+            query = "call sp_actualizar_ipe('{0}')".format(id_alumno)
+            cursor.execute(query)
+            db.connection.commit()
+        except  Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def actual_IDE(self, db, id_alumno):
+        try:
+            cursor = db.connection.cursor()
+
+            query = "call sp_actualizar_ide('{0}')".format(id_alumno)
+            cursor.execute(query)
+            db.connection.commit()
+        except  Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def actual_ISE(self, db, id_alumno):
+        try:
+            cursor = db.connection.cursor()
+
+            query = "call sp_actualizar_ise('{0}')".format(id_alumno)
+            cursor.execute(query)
+            db.connection.commit()
+        except  Exception as ex:
+            raise Exception(ex)
+
+    @classmethod
+    def actual_IRE(self, db, id_alumno):
+        try:
+            cursor = db.connection.cursor()
+
+            query = "call sp_actualizar_ire('{0}')".format(id_alumno)
+            cursor.execute(query)
+            db.connection.commit()
+        except  Exception as ex:
+            raise Exception(ex)
+
+
+"""------------------------------- ALUMNOS INDICES ---------------------------------"""
+
+class Modelo_indice_alumno():
+    @classmethod
+    def obtener_indice_alumnos(self, db, id_grupo):
+        try:
+            cursor = db.connection.cursor()
+            query = """SELECT 
+                        ai.*,
+                        concat(a.nombres,' ', a.apellido_p,' ',a.apellido_m) nombre
+                       FROM 
+                        alumno_indice ai,
+                        grupo g,
+                        alumno a
+                       WHERE g.id = '{0}'
+                       AND g.id = a.id_grupo
+                       AND a.id = ai.id_alumno""".format(id_grupo)
+            cursor.execute(query)
+            data = cursor.fetchall()
+            indicesAlum = []
+            for indalumn in data:
+                indicAlum = IndicesAlum(indalumn[0], indalumn[1], indalumn[2],indalumn[3],indalumn[4],indalumn[5],indalumn[6],indalumn[7],indalumn[8])
+                indicesAlum.append(indicAlum)
+            return indicesAlum
+        except Exception as ex:
+            raise Exception(ex)
+
+
 """-----------------IAO------------------------------"""
 class Modelo_indice():
     @classmethod

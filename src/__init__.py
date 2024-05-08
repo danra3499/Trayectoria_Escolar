@@ -16,12 +16,15 @@ from .models.ModeloEvaluacion import Modelo_evaluacion
 from .models.ModeloMateria import Modelo_materia
 from .models.ModeloGrupo import Modelo_grupo
 from .models.entities.Usuario import Usuario
+from .models.ModeloIndices import Modelo_agregar_alumno
+from .models.ModeloIndices import Modelo_actualizar_indices
 from .models.ModeloIndices import Modelo_indice
 from .models.ModeloIndices import Modelo_indiceIAC
 from .models.ModeloIndices import Modelo_indiceIPE
 from .models.ModeloIndices import Modelo_indiceIDE
 from .models.ModeloIndices import Modelo_indiceISE
 from .models.ModeloIndices import Modelo_indiceIRE
+from .models.ModeloIndices import Modelo_indice_alumno
 from .models.ModeloPeriodos import Modelo_periodo
 from .consts import *
 from datetime import date
@@ -72,7 +75,7 @@ def home():
         # alumnos = Modelo_alumno.obtener_alumnos_grupo(db, grupo)
         materias = Modelo_materia.materia_docente(db, current_user.usuario)
         data = []
-        for i in range(1, 28):
+        for i in range(1, 25):
             objeto = 'materia_semestre'+str(i)
             objeto = Modelo_materia.obtener_materias_por_semestre(db, i)
             data.append(objeto)
@@ -163,6 +166,9 @@ def agregar_alumno():
 
         Modelo_alumno.add(db, numero_control, nombres, apellido_p,
                           apellido_m, genero, status, grupo)
+
+        Modelo_agregar_alumno.add_Alum_Ind(db, numero_control)
+
         return redirect(url_for('agregar_alumno'))
     else:
         return render_template('alumnos.html', data=alumnos)
@@ -325,6 +331,11 @@ def grupos():
     grupos = Modelo_grupo.obtener_grupos(db)
     return render_template('grupos.html', data=grupos)
 
+@app.route('/grupos_indices')
+@login_required
+def grupos_indices():
+    grupos_indices = Modelo_grupo.obtener_grupos(db)
+    return render_template('grupos_indices.html', data=grupos_indices)
 
 # @app.route('/materias')
 # @login_required
@@ -387,8 +398,14 @@ def evaluar_alumno(id,id_alumno):
     materias = Modelo_materia.obtener_materias_id(db, id)
     alumnos = Modelo_alumno.obtener_alumno_id(db,id_alumno)
     alumcal = Modelo_evaluacion.obtener_calificacion_por_alumnos(db, id, id_alumno)
-    
-    return render_template('evaluar_alumno.html', data=alumnos,materias=materias,alumcal=alumcal,fecha=hoy)
+    actipe = Modelo_actualizar_indices.actual_IPE(db, id_alumno)
+    actiao = Modelo_actualizar_indices.actual_IAO(db, id_alumno)
+    actiac = Modelo_actualizar_indices.actual_IAC(db, id_alumno)
+    actide = Modelo_actualizar_indices.actual_IDE(db, id_alumno)
+    actise = Modelo_actualizar_indices.actual_ISE(db, id_alumno)
+    actire = Modelo_actualizar_indices.actual_IRE(db, id_alumno)
+
+    return render_template('evaluar_alumno.html', data=alumnos,materias=materias,alumcal=alumcal,fecha=hoy,actipe=actipe, actiao=actiao, actiac=actiac, actide=actide, actise=actise, actire=actire)
 
 @app.route('/capturar_evaluacion', methods=['POST', 'GET'])
 @login_required
@@ -468,6 +485,13 @@ def indices():
     IndicesISE = Modelo_indiceISE.obtener_indiceISE(db)
     IndicesIRE = Modelo_indiceIRE.obtener_indiceIRE(db)
     return render_template('indices.html',  data=data, IndicesIAC=IndicesIAC, IndicesIPE=IndicesIPE, IndicesIDE = IndicesIDE, IndicesISE = IndicesISE, IndicesIRE = IndicesIRE)
+
+
+@app.route('/alumnos_indices/<grupo>')
+@login_required
+def alumnos_indices(grupo):
+    data = Modelo_indice_alumno.obtener_indice_alumnos(db, grupo)
+    return render_template('lista_alum_indices.html', data=data )
 
 """------------------------------------------IAO------------------------------"""
 @app.route('/editar_indice_IAO/<id_IAO>', methods=['POST','GET'])

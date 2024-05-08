@@ -1,0 +1,41 @@
+{% extends 'body.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/grupos.css')}}">
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-body">
+      <h1 class="text-center">Lista de Indices por Alumnos</h1>
+      <table class="table table-striped table-bordered bg-white table-sm">
+        <thead>
+          <tr>
+            <td><b>Numero de Control</td></b>  
+            <td><b>Nombre</b></td></b>
+            <td><b>IAO</td></b>
+            <td><b>IAC</td></b>
+            <td><b>IPE</td></b>
+            <td><b>IDE</td></b>
+            <td><b>ISE</td></b>
+            <td><b>IRE</b></td></b>
+          </tr>
+        </thead>
+        <tbody>
+          {% for indalumn in data %}
+          <tr>
+            <td>{{ indalumn.id_alumno }}</td>
+            <td>{{indalumn.nombre}}</td>
+            <td>{{indalumn.iao}}</td>
+            <td>{{indalumn.iac}}</td>
+            <td>{{indalumn.ipe}}</td>
+            <td>{{indalumn.ide}}</td>
+            <td>{{indalumn.ise}}</td>
+            <td>{{indalumn.ire}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
